@@ -27,7 +27,7 @@ class SiteController extends Controller
 
         if($model->load($req->post()) && $model->validate()){
             $user->loginAdminUser($model->username);
-            $this->redirect(Variable::$userMange_url);
+            $this->redirect(Variable::$setting_url);
         }
 
         return $this->render(Variable::$siteLogin_view,['model'=>$model]);

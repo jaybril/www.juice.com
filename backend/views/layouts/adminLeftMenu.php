@@ -1,4 +1,12 @@
 <ul>
+    <li>
+        <img src="/img/u175.png" alt="" />网站管理
+        <ul class="submenu">
+             <li <?php  echo $admin_cur=="web" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$setting_url?>">网站设置</a></li>
+            <li <?php echo $admin_cur=="admin" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$adminUserManger_url?>">后台用户管理</a></li>
+
+        </ul>
+    </li>
 <li>
 	<img src="/img/u13.png" alt="" />会员管理
 	<ul class="submenu">
@@ -35,18 +43,7 @@
 
 	</ul>
 </li>
-<li>
-	<img src="/img/u175.png" alt="" />网站管理
-	<ul class="submenu">
-       <!-- <li <?php // echo $admin_cur=="web" ? "class='active'" : "" ?>><a href="<?php //echo \common\widgets\Variable::$setting_url?>">网站设置</a></li> -->
-        <li <?php echo $admin_cur=="express" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$express_url?>">快递管理</a></li>
-		<li <?php echo $admin_cur=="admin" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$adminUserManger_url?>">后台用户管理</a></li>
 
-		<li <?php echo $admin_cur=="national" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$area_url?>">全国区域</a></li>
-<!--		<li  <?php ////echo $admin_cur=="smslog" ? "class='active'" : "" ?><a href=" <?php ////echo \common\widgets\Variable::$smsLog_url?><!--">短信日志</a></li>-->
-
-	</ul>
-</li>
 
 
 <!--<li <?php echo $admin_cur=="article" ? "class='active'" : "" ?> >

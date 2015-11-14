@@ -33,7 +33,7 @@
      public static $adminUserManger_url='/websettingmanger/adminusermanger';
      public static $addAdminUser_url='/websettingmanger/addadminuser';
      public static $editAdminUser_url='/websettingmanger/editadminuser';
-     public static $setting_url='/websettingmanger/setting';
+     public static $setting_url='/websettingmanger/index';
      public static $area_url='/websettingmanger/area';
      public static $smsLog_url='/websettingmanger/smslog';
      public static $addCustomer_url='/usermanger/addcustomer';
@@ -43,9 +43,7 @@
      public static $addProduct_url='/productmanger/addproduct';
      public static $editProduct_url='/productmanger/editproduct';
      public static $addProductimages_url='/productmanger/addproductimages';
-     public static $express_url='/websettingmanger/express';
-     public static $addExpress_url='/websettingmanger/addexpress';
-     public static $editExpress_url='/websettingmanger/editexpress';
+
 
      /*
       * 一些视图文件
@@ -84,9 +82,7 @@
      public static $addProduct_view='/productManger/addProduct';
      public static $editProduct_view='/productManger/editProduct';
      public static $addProductImages_view='/productManger/addProductImages';
-     public static $express_view='/webSettingManger/express';
-     public static $addExpress_view='/webSettingManger/addExpress';
-     public static $editExpress_view='/webSettingManger/editExpress';
+
 
      /*
       * 一些字符串常量
