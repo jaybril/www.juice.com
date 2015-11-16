@@ -13,13 +13,14 @@
         <ul class="submenu">
             <li <?php echo $admin_cur=="material" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$materialManger_url?>">素材分类</a></li>
             <li <?php echo $admin_cur=="banner" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$bannerList_url?>">首页banner</a></li>
+            <li <?php echo $admin_cur=="auth" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$authList_url?>">资质认证</a></li>
         </ul>
     </li>
     <li>
         <img src="/img/u187.png" alt="" />新闻管理
         <ul class="submenu">
             <li <?php echo $admin_cur=="article" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$articleManger_url?>">新闻管理</a></li>
-            <li <?php echo $admin_cur=="articleCat" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$articleCat_url?>">鲜橙生活</a></li>
+            <li <?php echo $admin_cur=="liftObject" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$liftObject_url?>">鲜橙生活</a></li>
             <li <?php echo $admin_cur=="articleCat" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$articleCat_url?>">文章分类</a></li>
 
         </ul>

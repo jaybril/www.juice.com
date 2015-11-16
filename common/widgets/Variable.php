@@ -29,9 +29,13 @@
      public static $addArticle_url='/multimediamanger/addarticle';
      public static $showArticle_url='/multimediamanger/showarticle';
      public static $liftObject_url='/multimediamanger/liftobject';
+     public static $editLiftObject_url='/multimediamanger/editliftobject';
+     public static $showLiftObject_url='/multimediamanger/showliftobject';
      public static $materialManger_url='/multimediamanger/materialmanger';
      public static $bannerList_url='/multimediamanger/bannerlist';
      public static $addBanner_url='/multimediamanger/addbanner';
+     public static $authList_url='/multimediamanger/authlist';
+     public static $addAuth_url='/multimediamanger/addauth';
      public static $editMaterial_url='/multimediamanger/editmaterial';
      public static $commentManger_url='/comment/index';
      public static $adminUserManger_url='/websettingmanger/adminusermanger';
@@ -75,9 +79,13 @@
      public static $addArticle_view='/multimediaManger/addArticle';
      public static $showArticle_view='/multimediaManger/showArticle';
      public static $liftObject_view='/multimediamanger/liftObject';
+     public static $editLiftObject_view='/multimediamanger/editLiftObject';
+     public static $showLiftObject_view='/multimediamanger/showLiftObject';
      public static $materialManger_view='/multimediaManger/materialManger';
      public static $bannerList_view='/multimediaManger/bannerList';
      public static $addBanner_view='/multimediaManger/addBanner';
+     public static $authList_view='/multimediaManger/authList';
+     public static $addAuth_view='/multimediaManger/addAuth';
      public static $editMaterial_view='/multimediaManger/editMaterial';
      public static $layoutMaterialMenu_view='/layouts/materialMenu';
      public static $adminUserManger_view='/webSettingManger/adminUserManger';
@@ -115,6 +123,8 @@
      public static $flash_error='error';
      //素材类型
      public static $materialId_banner=1000;//首页banner
+     public static $materialId_auth=1002;//资质认证
+     public static $materialId_productVideo=1003;//产品视频
      //文章类型
      public static $articleCat_type_news=1004;//新闻
      public static $articleCat_type_nutrition=1005;//橙子营养

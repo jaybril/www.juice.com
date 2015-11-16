@@ -26,6 +26,11 @@ class MaterialForm extends Model
                 'message'=>'请输入图片跳转链接'
             ],
             [
+                ['address'],
+                'required',
+                'message'=>''
+            ],
+            [
                 ['sort'],
                 'required',
                 'message'=>'请输入显示顺序'
@@ -42,6 +47,7 @@ class MaterialForm extends Model
     {
         return [
             'banner' =>['pcUrl', 'sort','address','isShow','materialId'],
+            'auth' =>['address','isShow'],
             'update' =>['pcUrl', 'sort','address','isShow','materialId'],
         ];
     }

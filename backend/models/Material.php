@@ -6,6 +6,12 @@
 
     class Material extends  ActiveRecord{
         /*
+     * 获得商家的名称
+     */
+        public function  getAdminUser(){
+            return $this->hasOne(AdminUser::className(),['id'=>'addUser']);
+        }
+        /*
          *添加一个产品图片
          */
         public function addOneImage($type=0,$materialId,$useId,$address,$isDefault=0,$isShow=0,$width=200,$height=200,$sort,$pcUrl){

@@ -41,11 +41,11 @@
 //                    'required',
 //                    'message'=>'请输入文章分类'
 //                ],
-                [
-                    ['content'],
-                    'required',
-                    'message'=>'请输入文章内容'
-                ],
+//                [
+//                    ['content'],
+//                    'required',
+//                    'message'=>'请输入文章内容'
+//                ],
 //                [
 //                    ['status'],
 //                    'required',
@@ -74,6 +74,7 @@
             return [
                 'create' =>['title','author','useId','content','isTop','description','pic'],
                 'update' =>['title','author','useId','content','isTop','description','pic'],
+                'editLiftObject' =>['content'],
             ];
         }
     }

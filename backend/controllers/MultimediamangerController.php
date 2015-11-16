@@ -41,7 +41,7 @@ class MultimediamangerController extends  Controller{
             $this->redirect(Variable::$home_url);
             return;
         }
-        $query = Material::find()->where(['materialId'=>1000]);
+        $query = Material::find()->where(['materialId'=>Variable::$materialId_banner]);
         $pagination = new Pagination([
             'defaultPageSize' => 5,
             'totalCount' => $query->count(),
@@ -78,6 +78,53 @@ class MultimediamangerController extends  Controller{
             }
         }
         return $this->render(Variable::$addBanner_view,['model'=>$form,'materialModel'=>$materialModel]);
+    }
+    /*
+ *资质认证列表
+ */
+    public function actionAuthlist(){
+        $user=new AdminUser();
+        if(!$user->checkUserIsLogin()){
+            $this->redirect(Variable::$home_url);
+            return;
+        }
+        $query = Material::find()->where(['materialId'=>Variable::$materialId_auth]);
+        $pagination = new Pagination([
+            'defaultPageSize' => 5,
+            'totalCount' => $query->count(),
+        ]);
+        $countries = $query->orderBy('addTime DESC')->offset($pagination->offset)->limit($pagination->limit)->all();
+        return $this->render(Variable::$authList_view,[
+            'countries' => $countries,
+            'pagination' => $pagination,
+        ]);
+
+    }
+    /*
+ *添加资质认证
+ *
+ */
+    public function actionAddauth(){
+        $user=new AdminUser();
+        if(!$user->checkUserIsLogin()){
+            $this->redirect(Variable::$home_url);
+            return;
+        }
+        $req=Yii::$app->request;//创建一个请求对象
+        $form = new MaterialForm();
+        $form->materialId=Variable::$materialId_auth;
+        $materialModel=new Material();
+        //添加
+        $form->setScenario('auth');
+
+        if($form->load($req->post()) && $form->validate()){
+            if($materialModel->addOneImage(0,$form->materialId,$form->materialId,$form->address,0,$form->isShow,200,200,$form->sort,$form->pcUrl)){
+                Yii::$app->session->setFlash(Variable::$flash_success,'资质认证添加成功');
+                $this->redirect(Variable::$authList_url);
+                return;
+            }
+        }
+        return $this->render(Variable::$addAuth_view,['model'=>$form,'materialModel'=>$materialModel]);
     }
     /*
 *删除素材
@@ -339,5 +386,70 @@ class MultimediamangerController extends  Controller{
         }
         JsonParser::GenerateJsonResult('_0002','文章删除失败，请刷新重试');
         exit;
+    }
+    /*鲜橙生活*/
+    public function actionLiftobject(){
+        $user=new AdminUser();
+        if(!$user->checkUserIsLogin()){
+            $this->redirect(Variable::$home_url);
+            return;
+        }
+        $countries = Article::find()->where(['in','categoryId',[Variable::$articleCat_type_good,Variable::$articleCat_type_nutrition,Variable::$articleCat_type_people]])->all();
+        return $this->render(Variable::$liftObject_view,[
+            'countries' => $countries,
+        ]);
+    }
+    /*
+    *编辑鲜橙生活
+    */
+    public function actionEditliftobject(){
+        $user=new AdminUser();
+        if(!$user->checkUserIsLogin()){
+            $this->redirect(Variable::$home_url);
+            return;
+        }
+        $req=Yii::$app->request;//创建一个请求对象
+        $form = new ArticleForm();
+        $form->setScenario('editLiftObject');
+        $id=trim($req->get('id'));
+        if (!is_numeric($id) || $id == 0) {
+            $this->redirect(Variable::$liftObject_url);
+            return;
+        }
+        $articleModel = Article::findOne($id);
+        $form->categoryId=$articleModel->categoryId;
+        //修改
+        if($form->load($req->post()) && $form->validate()){
+            $isSuccess = (new Article())->updateArticleContent($id,$form->content);
+            if($isSuccess){
+                Yii::$app->session->setFlash(Variable::$flash_success,'资料更新成功');
+            }
+            else{
+                Yii::$app->session->setFlash(Variable::$flash_error,'资料更新失败，请刷新重试');
+            }
+            $this->redirect(Yii::$app->urlManager->createUrl([Variable::$showLiftObject_url,'id'=>$id]));
+        }
+
+        $articleModel = Article::findOne($id);
+        $form->content=$articleModel->content;
+        $form->title=$articleModel->articleCat->name;
+        return $this->render(Variable::$editLiftObject_view,['model'=>$form,'articleModel'=>$articleModel]);
+    }
+    /*
+ *展示文章
+ */
+    public function actionShowliftobject(){
+        $user=new AdminUser();
+        if(!$user->checkUserIsLogin()){
+            $this->redirect(Variable::$home_url);
+            return;
+        }
+        $req=Yii::$app->request;
+        $id=trim($req->get('id'));
+        if (!is_numeric($id) || $id == 0) {
+            $this->redirect(Variable::$articleManger_url);
+            return;
+        }
+        return $this->render(Variable::$showLiftObject_view,['model' => (new Article())->findOne($id)]);
     }
 }

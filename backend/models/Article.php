@@ -61,4 +61,21 @@
             }
             return false;
         }
+        /*
+         * 更新文章内容
+         */
+        public function updateArticleContent($id,$content){
+            $model=Article::findOne($id);
+            if(!$model){
+                return false;
+            }
+            $model->content=$content;
+            $model->addTime=date('Y-m-d H:i:s',time());
+            $model->addUser=Yii::$app->session->get(Variable::$session_userId_str);
+            if($model->save()){
+                return true;
+            }
+            return false;
+
+        }
     }
