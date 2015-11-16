@@ -19,7 +19,7 @@ class SiteController extends Controller
     {
         $user=new AdminUser();
         if($user->checkUserIsLogin()){
-            $this->redirect(Variable::$userMange_url);
+            $this->redirect(Variable::$setting_url);
             return;
         }
         $req=Yii::$app->request;//创建一个请求对象
@@ -38,7 +38,7 @@ class SiteController extends Controller
     public function actionLogin(){
         $user=new AdminUser();
         if($user->checkUserIsLogin()){
-            $this->redirect(Variable::$userMange_url);
+            $this->redirect(Variable::$setting_url);
             return;
         }
         $req=Yii::$app->request;//创建一个请求对象
@@ -46,7 +46,7 @@ class SiteController extends Controller
 
         if($model->load($req->post()) && $model->validate()){
             $user->loginAdminUser($model->username);
-            $this->redirect(Variable::$userMange_url);
+            $this->redirect(Variable::$setting_url);
         }
         return $this->render(Variable::$siteLogin_view,['model'=>$model]);
     }

@@ -25,7 +25,7 @@ class SettingForm extends Model
     {
         return array(
             //去掉收尾空格
-            [['name', 'registration','website','copyright','email','phone','addr'], 'trim'],
+            [['name', 'registration','website','copyright','email','phone','addr','background'], 'trim'],
             [
                 ['name'],
                 'required',

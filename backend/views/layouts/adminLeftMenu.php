@@ -4,21 +4,25 @@
         <ul class="submenu">
              <li <?php  echo $admin_cur=="web" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$setting_url?>">网站设置</a></li>
             <li <?php echo $admin_cur=="admin" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$adminUserManger_url?>">后台用户管理</a></li>
+            <li <?php echo $admin_cur=="jion" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$joinList_url?>">加盟管理</a></li>
 
         </ul>
     </li>
-<li>
-	<img src="/img/u13.png" alt="" />会员管理
-	<ul class="submenu">
-		<li <?php echo $admin_cur=="index" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$userMange_url?>">会员管理</a></li>
-	</ul>
-</li>
-<li>
-	<img src="/img/u19.png" alt="" />订单管理
-	<ul class="submenu">
-		<li <?php echo $admin_cur=="order" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$orderManger_url?>">订单管理</a></li>
-	</ul>
-</li>
+    <li>
+        <img src="/img/u187.png" alt="" />素材管理
+        <ul class="submenu">
+            <li <?php echo $admin_cur=="material" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$materialManger_url?>">素材分类</a></li>
+            <li <?php echo $admin_cur=="banner" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$bannerList_url?>">首页banner</a></li>
+        </ul>
+    </li>
+    <li>
+        <img src="/img/u187.png" alt="" />素材管理
+        <ul class="submenu">
+            <li <?php echo $admin_cur=="article" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$articleManger_url?>">文章管理</a></li>
+            <li <?php echo $admin_cur=="articleCat" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$articleCat_url?>">文章分类</a></li>
+
+        </ul>
+    </li>
 <li>
 	<img src="/img/u124.png" alt="" />产品管理
 	<ul class="submenu">
@@ -32,15 +36,6 @@
 	<ul class="submenu">
 		<li <?php echo $admin_cur=="activity" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$activityList_url?>">活动管理</a></li>
 		<li <?php echo $admin_cur=="activitywater" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$activityWater_url?>">活动流水</a></li>
-	</ul>
-</li>
-<li>
-	<img src="/img/u187.png" alt="" />文章/素材管理
-	<ul class="submenu">
-		<li <?php echo $admin_cur=="article" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$articleManger_url?>">文章管理</a></li>
-        <li <?php echo $admin_cur=="articleCat" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$articleCat_url?>">文章分类</a></li>
-		<li <?php echo $admin_cur=="material" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$materialManger_url?>">素材分类</a></li>
-
 	</ul>
 </li>
 

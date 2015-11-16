@@ -29,13 +29,17 @@
      public static $addArticle_url='/multimediamanger/addarticle';
      public static $showArticle_url='/multimediamanger/showarticle';
      public static $materialManger_url='/multimediamanger/materialmanger';
+     public static $bannerList_url='/multimediamanger/bannerlist';
+     public static $addBanner_url='/multimediamanger/addbanner';
+     public static $editMaterial_url='/multimediamanger/editmaterial';
      public static $commentManger_url='/comment/index';
      public static $adminUserManger_url='/websettingmanger/adminusermanger';
      public static $addAdminUser_url='/websettingmanger/addadminuser';
      public static $editAdminUser_url='/websettingmanger/editadminuser';
      public static $setting_url='/websettingmanger/index';
      public static $area_url='/websettingmanger/area';
-     public static $smsLog_url='/websettingmanger/smslog';
+     public static $joinList_url='/websettingmanger/joinlist';
+     public static $editJoin_url='/websettingmanger/editjoin';
      public static $addCustomer_url='/usermanger/addcustomer';
      public static $addSeller_url='/productmanger/addseller';
      public static $editSeller_url='/productmanger/eidtseller';
@@ -70,13 +74,17 @@
      public static $addArticle_view='/multimediaManger/addArticle';
      public static $showArticle_view='/multimediaManger/showArticle';
      public static $materialManger_view='/multimediaManger/materialManger';
+     public static $bannerList_view='/multimediaManger/bannerList';
+     public static $addBanner_view='/multimediaManger/addBanner';
+     public static $editMaterial_view='/multimediaManger/editMaterial';
      public static $layoutMaterialMenu_view='/layouts/materialMenu';
      public static $adminUserManger_view='/webSettingManger/adminUserManger';
      public static $addAdminUser_view='/webSettingManger/addAdminUser';
      public static $editAdminUser_view='/webSettingManger/editAdminUser';
      public static $setting_view='/webSettingManger/setting';
      public static $area_view='/webSettingManger/area';
-     public static $smsLog_view='/webSettingManger/smsLog';
+     public static $joinList_view='/webSettingManger/joinList';
+     public static $editJoin_view='/webSettingManger/editJoin';
      public static $addSeller_view='/productManger/addSeller';
      public static $editSeller_view='/productManger/eidtSeller';
      public static $addProduct_view='/productManger/addProduct';
@@ -98,5 +106,12 @@
      public static $orderPayMethod_alipay = 0;//支付宝
      public static $orderPayMethod_wechat = 1;//微信
      public static $orderPayMethod_balance = 2;//余额
+
+
+     //session flash
+     public static $flash_success='success';
+     public static $flash_error='error';
+     //素材类型
+     public static $materialId_banner=1000;
 
 }

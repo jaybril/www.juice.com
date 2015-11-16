@@ -84,7 +84,7 @@
                                     'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|',
                                     'forecolor', 'backcolor', '|',
                                     'lineheight', '|',
-                                    'indent', '|'
+                                    'simpleupload', '|'
                                 ],
                             ]
                         ]

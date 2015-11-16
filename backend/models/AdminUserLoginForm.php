@@ -6,6 +6,7 @@
  * Time: 11:23
  */
     namespace backend\models;
+        use common\widgets\GlobalArray;
         use yii\base\Model;
         use yii\captcha\Captcha;
         use yii\captcha\CaptchaValidator;
@@ -34,6 +35,9 @@
                 }
                 if(md5($this->password)!=$model->password){
                     $this->addError('password','密码不正确');
+                }
+                if($model->status==1){
+                    $this->addError('username','用户处于冻结状态，请联系系统管理员解锁');
                 }
         }
     }

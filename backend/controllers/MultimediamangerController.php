@@ -9,6 +9,8 @@ namespace backend\controllers;
 use backend\models\Article;
 use backend\models\ArticleCategory;
 use backend\models\ArticleForm;
+use backend\models\Material;
+use backend\models\MaterialForm;
 use Yii;
 use backend\models\MaterialCategory;
 use yii\web\Controller;
@@ -24,11 +26,118 @@ class MultimediamangerController extends  Controller{
                 'class' => 'kucha\ueditor\UEditorAction',
                 'config' => [
                     "imageUrlPrefix"  =>'',//图片访问路径前缀
-                    "imagePathFormat" => "/uploads/articleImages/" //上传保存路径
+                    "imagePathFormat" => "/uploads/{yyyy}{mm}{dd}/{time}{rand:6}" //上传保存路径
                 ],
             ]
         ];
     }
+
+/*
+ *banner列表
+ */
+    public function actionBannerlist(){
+        $user=new AdminUser();
+        if(!$user->checkUserIsLogin()){
+            $this->redirect(Variable::$home_url);
+            return;
+        }
+        $query = Material::find()->where(['materialId'=>1000]);
+        $pagination = new Pagination([
+            'defaultPageSize' => 5,
+            'totalCount' => $query->count(),
+        ]);
+        $countries = $query->orderBy('addTime DESC')->offset($pagination->offset)->limit($pagination->limit)->all();
+        return $this->render(Variable::$bannerList_view,[
+            'countries' => $countries,
+            'pagination' => $pagination,
+        ]);
+
+    }
+/*
+ *添加banner
+ *
+ */
+    public function actionAddbanner(){
+        $user=new AdminUser();
+        if(!$user->checkUserIsLogin()){
+            $this->redirect(Variable::$home_url);
+            return;
+        }
+        $req=Yii::$app->request;//创建一个请求对象
+        $form = new MaterialForm();
+        $form->materialId=Variable::$materialId_banner;
+        $materialModel=new Material();
+        //添加
+        $form->setScenario('banner');
+
+        if($form->load($req->post()) && $form->validate()){
+            if($materialModel->addOneImage(0,$form->materialId,$form->materialId,$form->address,0,$form->isShow,200,200,$form->sort,$form->pcUrl)){
+                Yii::$app->session->setFlash(Variable::$flash_success,'banner添加成功');
+                $this->redirect(Variable::$bannerList_url);
+                return;
+            }
+        }
+        return $this->render(Variable::$addBanner_view,['model'=>$form,'materialModel'=>$materialModel]);
+    }
+    /*
+*删除素材
+*/
+    public function actionDeletematerial(){
+        $id=trim(Yii::$app->request->post('id'));
+        if(!isset($id) || empty($id)){
+            JsonParser::GenerateJsonResult('_0001','ID不能为空');
+            exit;
+        }
+        $isDelete=(new Material())->deleteMateria($id);
+        if($isDelete){
+            JsonParser::GenerateJsonResult('_0000','删除成功');
+            exit;
+        }
+        JsonParser::GenerateJsonResult('_0002','删除失败，请刷新重试');
+        exit;
+    }
+
+    /*
+     *编辑素材
+     */
+    public function actionEditmaterial(){
+        $user=new AdminUser();
+        if(!$user->checkUserIsLogin()){
+            $this->redirect(Variable::$home_url);
+            return;
+        }
+        $req=Yii::$app->request;//创建一个请求对象
+        $form = new MaterialForm();
+        $form->setScenario('update');
+        $id=trim($req->get('id'));
+        if (!is_numeric($id) || $id == 0) {
+            $this->redirect(Variable::$setting_url);
+            return;
+        }
+        $materialModel = Material::findOne($id);
+        $form->materialId=$materialModel->materialId;
+        //修改
+        if($form->load($req->post()) && $form->validate()){
+            $isSuccess = (new Material())->updateMaterial($id,$form->materialId,$form->address,$form->isShow,$form->sort,$form->pcUrl);
+            if($isSuccess){
+                Yii::$app->session->setFlash(Variable::$flash_success,'资料更新成功');
+            }
+            else{
+                Yii::$app->session->setFlash(Variable::$flash_error,'资料更新失败，请刷新重试');
+            }
+        }
+        $materialModel = Material::findOne($id);
+        $form->materialId=$materialModel->materialId;
+        $form->address=$materialModel->address;
+        $form->isShow=$materialModel->isShow;
+        $form->sort=$materialModel->sort;
+        $form->pcUrl=$materialModel->pcUrl;
+        return $this->render(Variable::$editMaterial_view,['model'=>$form,'materialModel'=>$materialModel]);
+
+    }
+
+
+
 
     /*
      *文章管理页面
@@ -95,6 +204,7 @@ class MultimediamangerController extends  Controller{
         JsonParser::GenerateJsonResult('_0001','素材分类添加失败，请刷新重试');
         exit;
     }
+
     /*
      *删除素材分类
      */
