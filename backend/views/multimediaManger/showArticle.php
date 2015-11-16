@@ -3,7 +3,7 @@
         <div class="adminCon-left">
             <?php
                 use common\widgets\Tool;
-                $admin_cur="material";
+                $admin_cur="article";
                 $this->title=Tool::echoEncodeString($model->title);
             ?>
             <?=$this->render(\common\widgets\Variable::$layoutAdminLeftMenu_view,['admin_cur'=>$admin_cur]); ?>

@@ -37,12 +37,7 @@
                     <?=$form->field($model, 'addr')->textInput()->label('公司地址');?>
 <!--                    --><?php //echo \common\widgets\file_upload\FileUpload::widget();?>
                     <?= $form->field($model, 'background')->label('网站背景图片')->widget('common\widgets\file_upload\FileUpload',[
-                        'config'=>[
-//                            'imageActionName'=>'background_upload',
-//                            'fileFieldName'=>'background_upload',
-//                            'imageFieldName'=>'background_upload',
-//                            'fileName'=>'background_upload'
-                        ]
+                        'config'=>[]
                     ]) ?>
 <!--                    --><?//= $form->field($model,'logo')->label('网站logo')->widget(UEditor::className(),[
 //                        'clientOptions' => [

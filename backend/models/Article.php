@@ -25,7 +25,7 @@
         /*
         * 添加文章
         */
-        public  function  addAerticle($title,$keywords,$categoryId,$content,$status,$isTop,$description,$pic){
+        public  function  addAerticle($title,$keywords,$categoryId,$content,$status,$isTop,$description,$pic,$isIndexShow){
             $model=new Article();
             $model->title=$title;
             $model->keywords=$keywords;
@@ -36,6 +36,7 @@
             $model->description=$description;
             $model->pic=$pic;
             $model->source='0';
+            $model->isIndexShow=$isIndexShow;
             $model->author=Yii::$app->session->get(Variable::$session_userId_str);
             $model->addTime=date('Y-m-d H:i:s',time());
             $model->publishTime=date('Y-m-d H:i:s',time());

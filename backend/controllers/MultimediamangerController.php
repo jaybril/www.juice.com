@@ -136,30 +136,6 @@ class MultimediamangerController extends  Controller{
 
     }
 
-
-
-
-    /*
-     *文章管理页面
-     */
-    public function actionArticlemanger(){
-        $user=new AdminUser();
-        if(!$user->checkUserIsLogin()){
-            $this->redirect(Variable::$home_url);
-            return;
-        }
-        $query = Article::find();
-        $pagination = new Pagination([
-            'defaultPageSize' => 8,
-            'totalCount' => $query->count(),
-        ]);
-        $countries = $query->orderBy('addTime DESC')->offset($pagination->offset)->limit($pagination->limit)->all();
-        return $this->render(Variable::$articleManger_view,[
-            'countries' => $countries,
-            'pagination' => $pagination,
-        ]);
-
-    }
     /*
      *素材管理页面
      */
@@ -222,6 +198,8 @@ class MultimediamangerController extends  Controller{
             JsonParser::GenerateJsonResult('_0002','素材分类删除失败，请刷新重试');
             exit;
     }
+    /*
+     * 文章分类*/
     public function actionArticlcat(){
         $user=new AdminUser();
         if(!$user->checkUserIsLogin()){
@@ -264,8 +242,8 @@ class MultimediamangerController extends  Controller{
         exit;
     }
     /*
-    *删除素材分类
-    */
+*删除文章分类
+*/
     public function actionDeletearticlecat(){
         $id=trim(Yii::$app->request->post('id'));
         if(!isset($id) || empty($id)){
@@ -280,6 +258,29 @@ class MultimediamangerController extends  Controller{
         JsonParser::GenerateJsonResult('_0002','分类删除失败，请刷新重试');
         exit;
     }
+
+    /*
+     *文章管理页面
+     */
+    public function actionArticlemanger(){
+        $user=new AdminUser();
+        if(!$user->checkUserIsLogin()){
+            $this->redirect(Variable::$home_url);
+            return;
+        }
+        $query = Article::find();
+        $pagination = new Pagination([
+            'defaultPageSize' => 8,
+            'totalCount' => $query->count(),
+        ]);
+        $countries = $query->orderBy('addTime DESC')->offset($pagination->offset)->limit($pagination->limit)->all();
+        return $this->render(Variable::$articleManger_view,[
+            'countries' => $countries,
+            'pagination' => $pagination,
+        ]);
+
+    }
+
     /*
     * 添加文章
     */
@@ -292,17 +293,18 @@ class MultimediamangerController extends  Controller{
         $req=Yii::$app->request;//创建一个请求对象
         $form = new ArticleForm();
         $articleModel=new Article();
-        $articleCatModel=ArticleCategory::find()->all();
+        $form->categoryId=Variable::$articleCat_type_news;
+        $form->status=1;
+//        $articleCatModel=ArticleCategory::findAll(['categoryId'=>Variable::$articleCat_type_news]);
         //添加
         $form->setScenario('create');
-
         if($form->load($req->post()) && $form->validate()){
-            if($articleModel->addAerticle($form->title,$form->keywords,$form->categoryId,$form->content,$form->status,$form->isTop,$form->description,$form->pic)){
+            if($articleModel->addAerticle($form->title,$form->keywords,$form->categoryId,$form->content,$form->status,$form->isTop,$form->description,$form->pic,$form->isIndexShow)){
                 $this->redirect(Variable::$articleManger_url);
                 return;
             }
         }
-        return $this->render(Variable::$addArticle_view,['model'=>$form,'articleModel'=>$articleModel,'articleCatModel'=>$articleCatModel]);
+        return $this->render(Variable::$addArticle_view,['model'=>$form,'articleModel'=>$articleModel]);
     }
     /*
      *展示文章

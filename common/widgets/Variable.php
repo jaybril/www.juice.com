@@ -28,6 +28,7 @@
      public static $articleCat_url='/multimediamanger/articlcat';
      public static $addArticle_url='/multimediamanger/addarticle';
      public static $showArticle_url='/multimediamanger/showarticle';
+     public static $liftObject_url='/multimediamanger/liftobject';
      public static $materialManger_url='/multimediamanger/materialmanger';
      public static $bannerList_url='/multimediamanger/bannerlist';
      public static $addBanner_url='/multimediamanger/addbanner';
@@ -73,6 +74,7 @@
      public static $articleCat_view='/multimediaManger/articleCat';
      public static $addArticle_view='/multimediaManger/addArticle';
      public static $showArticle_view='/multimediaManger/showArticle';
+     public static $liftObject_view='/multimediamanger/liftObject';
      public static $materialManger_view='/multimediaManger/materialManger';
      public static $bannerList_view='/multimediaManger/bannerList';
      public static $addBanner_view='/multimediaManger/addBanner';
@@ -112,6 +114,11 @@
      public static $flash_success='success';
      public static $flash_error='error';
      //素材类型
-     public static $materialId_banner=1000;
+     public static $materialId_banner=1000;//首页banner
+     //文章类型
+     public static $articleCat_type_news=1004;//新闻
+     public static $articleCat_type_nutrition=1005;//橙子营养
+     public static $articleCat_type_good=1006;//橙子好处
+     public static $articleCat_type_people=1007;//适用人群
 
 }

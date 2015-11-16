@@ -25,21 +25,21 @@
                         'method'=>'post'
                     ]);
                     ?>
-                    <?= $form->field($model, 'username')->textInput(['disabled'=>true])->label('姓名') ?>
-                    <?= $form->field($model, 'mobile')->textInput(['disabled'=>true])->label('手机号') ?>
-                    <?= $form->field($model, 'email')->textInput(['disabled'=>true])->label('邮箱') ?>
-                    <?= $form->field($model, 'company')->textInput(['disabled'=>true])->label('公司名称') ?>
-                    <?= $form->field($model, 'industry')->textInput(['disabled'=>true])->label('行业性质') ?>
-                    <?= $form->field($model, 'nature')->textInput(['disabled'=>true])->label('公司性质') ?>
-                    <?= $form->field($model, 'inCity')->textInput(['disabled'=>true])->label('所在城市') ?>
-                    <?= $form->field($model, 'area')->textInput(['disabled'=>true])->label('代理区域') ?>
-                    <?= $form->field($model, 'inMoney')->textInput(['disabled'=>true])->label('投入资金') ?>
-                    <?= $form->field($model, 'inCount')->textInput(['disabled'=>true])->label('投放数量') ?>
-                    <?= $form->field($model, 'inPlace')->textInput(['disabled'=>true])->label('投放场所') ?>
-                    <?= $form->field($model, 'inSource')->textInput(['disabled'=>true])->label('渠道资源') ?>
-                    <?= $form->field($model, 'hardwareSource')->textInput(['disabled'=>true])->label('硬件资源') ?>
-                    <?= $form->field($model, 'experience')->textInput(['disabled'=>true])->label('申请时间') ?>
-                    <?= $form->field($model, 'status', ['options' => ['class' => 'form-group col-lg-12 paddingLeft']])->dropDownList(\common\widgets\GlobalArray::$jionStatusArr)->label('状态');
+                    <?= $form->field($model, 'username', ['options' => ['class' => 'form-group col-lg-3 paddingLeft']])->textInput(['disabled'=>true])->label('姓名') ?>
+                    <?= $form->field($model, 'mobile', ['options' => ['class' => 'form-group col-lg-3 paddingLeft']])->textInput(['disabled'=>true])->label('手机号') ?>
+                    <?= $form->field($model, 'email', ['options' => ['class' => 'form-group col-lg-3 paddingLeft']])->textInput(['disabled'=>true])->label('邮箱') ?>
+                    <?= $form->field($model, 'company', ['options' => ['class' => 'form-group col-lg-3 paddingLeft']])->textInput(['disabled'=>true])->label('公司名称') ?>
+                    <?= $form->field($model, 'industry', ['options' => ['class' => 'form-group col-lg-3 paddingLeft']])->textInput(['disabled'=>true])->label('行业性质') ?>
+                    <?= $form->field($model, 'nature', ['options' => ['class' => 'form-group col-lg-3 paddingLeft']])->textInput(['disabled'=>true])->label('公司性质') ?>
+                    <?= $form->field($model, 'inCity', ['options' => ['class' => 'form-group col-lg-3 paddingLeft']])->textInput(['disabled'=>true])->label('所在城市') ?>
+                    <?= $form->field($model, 'area', ['options' => ['class' => 'form-group col-lg-3 paddingLeft']])->textInput(['disabled'=>true])->label('代理区域') ?>
+                    <?= $form->field($model, 'inMoney', ['options' => ['class' => 'form-group col-lg-3 paddingLeft']])->textInput(['disabled'=>true])->label('投入资金') ?>
+                    <?= $form->field($model, 'inCount', ['options' => ['class' => 'form-group col-lg-3 paddingLeft']])->textInput(['disabled'=>true])->label('投放数量') ?>
+                    <?= $form->field($model, 'inPlace', ['options' => ['class' => 'form-group col-lg-6 paddingLeft']])->textInput(['disabled'=>true])->label('投放场所') ?>
+                    <?= $form->field($model, 'inSource', ['options' => ['class' => 'form-group col-lg-6 paddingLeft']])->textarea(['disabled'=>true])->label('渠道资源') ?>
+                    <?= $form->field($model, 'hardwareSource', ['options' => ['class' => 'form-group col-lg-6 paddingLeft']])->textarea(['disabled'=>true])->label('硬件资源') ?>
+                    <?= $form->field($model, 'experience', ['options' => ['class' => 'form-group col-lg-6 paddingLeft']])->textInput(['disabled'=>true])->label('申请时间') ?>
+                    <?= $form->field($model, 'status', ['options' => ['class' => 'form-group col-lg-6 paddingLeft']])->dropDownList(\common\widgets\GlobalArray::$jionStatusArr)->label('状态');
                     ?>
                     <?php
                     echo   $form->errorSummary($model,['header'=>false]);
