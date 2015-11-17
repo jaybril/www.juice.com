@@ -5,6 +5,7 @@
              <li <?php  echo $admin_cur=="web" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$setting_url?>">网站设置</a></li>
             <li <?php echo $admin_cur=="admin" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$adminUserManger_url?>">后台用户管理</a></li>
             <li <?php echo $admin_cur=="jion" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$joinList_url?>">加盟管理</a></li>
+            <li <?php echo $admin_cur=="employ" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$employIndex_url?>">招聘管理</a></li>
 
         </ul>
     </li>
@@ -26,9 +27,9 @@
         </ul>
     </li>
 <li>
-	<img src="/img/u124.png" alt="" />产品管理
+	<img src="/img/u124.png" alt="" />招聘管理
 	<ul class="submenu">
-		<li <?php echo $admin_cur=="product" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$productManger_url?>">产品管理</a></li>
+		<li <?php echo $admin_cur=="" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$productManger_url?>">产品管理</a></li>
 		<li <?php echo $admin_cur=="seller" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$sellerManger_url?>">商家管理</a></li>
 		<li <?php echo $admin_cur=="type" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$productCat_url?>">产品类别</a></li>
 	</ul>

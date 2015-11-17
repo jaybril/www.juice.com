@@ -91,6 +91,9 @@ a:hover,a:focus{
 .paddingLeft{
     padding-left:0 !important;
 }
+.margin0{
+    margin:0 !important;
+}
 .pagination {
     display: table;
     padding-left: 0;

@@ -94,4 +94,22 @@ return array (
                     '@yii2mod/alert' => $vendorDir . '/yii2mod/yii2-sweet-alert',
                 ),
         ),
+    'unclead/yii2-multiple-input' =>
+        array (
+            'name' => 'unclead/yii2-multiple-input',
+            'version' => '0.1.0.0',
+            'alias' =>
+                array (
+                    '@unclead/widgets' => $vendorDir . '/unclead/yii2-multiple-input',
+                ),
+        ),
+    'vova07/yii2-fileapi-widget' =>
+        array (
+            'name' => 'vova07/yii2-fileapi-widget',
+            'version' => '0.1.0.0',
+            'alias' =>
+                array (
+                    '@vova07/fileapi' => $vendorDir . '/vova07/yii2-fileapi-widget',
+                ),
+        ),
 );

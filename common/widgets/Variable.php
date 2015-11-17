@@ -52,6 +52,9 @@
      public static $addProduct_url='/productmanger/addproduct';
      public static $editProduct_url='/productmanger/editproduct';
      public static $addProductimages_url='/productmanger/addproductimages';
+     public static $employIndex_url='/employ/index';
+     public static $addEmploy_url='/employ/addemploy';
+     public static $editEmploy_url='/employ/editemploy';
 
 
      /*
@@ -100,6 +103,9 @@
      public static $addProduct_view='/productManger/addProduct';
      public static $editProduct_view='/productManger/editProduct';
      public static $addProductImages_view='/productManger/addProductImages';
+     public static $employIndex_view='/employ/index';
+     public static $addEmploy_view='/employ/addEmploy';
+     public static $editEmploy_view='/employ/editEmploy';
 
 
      /*

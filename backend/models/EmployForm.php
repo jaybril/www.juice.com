@@ -4,11 +4,18 @@ use yii\base\Model;
 
 class EmployForm extends Model
 {
-    public $pcUrl;
-    public $sort;
+    public $department;
+    public $employName;
     public $address;
-    public $isShow;
-    public $materialId;
+    public $employCode;
+    public $group;
+    public $count;
+    public $money;
+    public $type;
+    public $category;
+    public $description;
+    public $sendEmail;
+    public $status;
 
     public function rules()
     {
@@ -46,6 +53,7 @@ class EmployForm extends Model
     {
         return [
             'create' =>['department', 'employName','address','employCode','group','count','money','type','category','description','sendEmail','status'],
+            'update' =>['department', 'employName','address','employCode','group','count','money','type','category','description','sendEmail','status'],
 
         ];
     }
