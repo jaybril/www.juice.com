@@ -55,6 +55,8 @@
      public static $employIndex_url='/employ/index';
      public static $addEmploy_url='/employ/addemploy';
      public static $editEmploy_url='/employ/editemploy';
+     public static $barIndex_url='/bar/index';
+     public static $editBarList_url='/bar/editbarlist';
 
 
      /*
@@ -106,6 +108,8 @@
      public static $employIndex_view='/employ/index';
      public static $addEmploy_view='/employ/addEmploy';
      public static $editEmploy_view='/employ/editEmploy';
+     public static $barIndex_view='/bar/index';
+     public static $editBarList_view='/bar/editBarList';
 
 
      /*

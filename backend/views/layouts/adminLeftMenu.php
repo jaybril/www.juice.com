@@ -4,8 +4,9 @@
         <ul class="submenu">
              <li <?php  echo $admin_cur=="web" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$setting_url?>">网站设置</a></li>
             <li <?php echo $admin_cur=="admin" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$adminUserManger_url?>">后台用户管理</a></li>
-            <li <?php echo $admin_cur=="jion" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$joinList_url?>">加盟管理</a></li>
+            <li <?php echo $admin_cur=="join" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$joinList_url?>">加盟管理</a></li>
             <li <?php echo $admin_cur=="employ" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$employIndex_url?>">招聘管理</a></li>
+            <li <?php echo $admin_cur=="bar" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$barIndex_url?>">导航栏管理</a></li>
 
         </ul>
     </li>

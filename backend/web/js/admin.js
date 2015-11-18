@@ -534,3 +534,25 @@ var deleteEmploy=function(obj,id){
     }, function () {
     });
 }
+//删除bar
+var deleteBar=function(obj,id){
+    if (!parseInt(id) || id == 0) {
+        layer.msg('ID不存在，出错啦~', {icon: 2});
+        return;
+    }
+    //询问框
+    layer.confirm('确定删除该记录？', {
+        btn: ['删除', '取消'] //按钮
+    }, function () {
+        var index = layer.load(1, {shade: [0.1, '#fff']});
+        $.post('/bar/deletebar', {'id': id}, function (json) {
+            if (json) {
+                layer.closeAll();
+                layer.msg(json.message, {icon: 1});
+                LocationPageByTimeOut('', 1);
+                return;
+            }
+        }, 'json');
+    }, function () {
+    });
+}

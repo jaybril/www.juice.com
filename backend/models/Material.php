@@ -6,7 +6,7 @@
 
     class Material extends  ActiveRecord{
         /*
-     * 获得商家的名称
+     * 获得后台用户的名称
      */
         public function  getAdminUser(){
             return $this->hasOne(AdminUser::className(),['id'=>'addUser']);

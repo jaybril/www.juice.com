@@ -49,46 +49,8 @@
 
                     <?= $form->field($model, 'status', ['options' => ['class' => 'form-group col-lg-12 paddingLeft']])->dropDownList(\common\widgets\GlobalArray::$employStatusArr, ['prompt' => '请选择职位状态'])->label('职位状态');
                     ?>
-<!--                    --><?//=$form->field($model, 'description')->textarea()->label('职位描述');?>
-                    <?= $form->field($model, 'description')->widget(MultipleInput::className(), [
-                        'limit' => 4,
-                        'columns' => [
-                            [
-                                'name'  => 'user_id',
-                                'title' => '子栏目名',
-                                'defaultValue' => 1,
-                                'options' => [
-                                    'class' => 'input-priority col-lg-3'
-                                ]
-                            ],
-                            [
-                                'name'  => 'priority',
-                                'enableError' => true,
-                                'title' => '链接地址',
-                                'options' => [
-                                    'class' => 'input-priority'
-                                ]
-                            ],
-//                            [
-//                                'name'  => 'file',
-//                                'title' => 'File',
-//                                'type'  => Widget::className(),
-//                                'options' => [
-//                                    'settings' => [
-//                                        'url' => ['site/fileapi-upload']
-//                                    ]
-//                                ]
-//                            ],
-                        ],
-                        'addButtonOptions' => [
-                            'class' => 'btn btn-success',
-                            'label' => '添加一行' // also you can use html code
-                        ],
-                        'removeButtonOptions' => [
-                            'label' => '删除该行'
-                        ]
-                    ])->label("子栏目列表");
-                    ?>
+                    <?=$form->field($model, 'description')->textarea()->label('职位描述');?>
+
                     <?php
                     echo   $form->errorSummary($model,['header'=>false]);
                     ?>
