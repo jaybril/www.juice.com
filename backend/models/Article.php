@@ -78,4 +78,28 @@
             return false;
 
         }
+        /*
+         *更新文章一些
+         *
+         */
+        public function updateArticleByService($id,$title,$useId,$keywords,$pic,$content){
+            $model=Article::findOne($id);
+            if(!$model){
+                return false;
+            }
+            $model->content=$content;
+            $model->title=$title;
+            $model->useId=$useId;
+            $model->keywords=$keywords;
+            $model->pic=$pic;
+            $model->content=$content;
+            $model->addTime=date('Y-m-d H:i:s',time());
+            $model->addUser=Yii::$app->session->get(Variable::$session_userId_str);
+            if($model->save()){
+                return true;
+            }
+            return false;
+
+        }
+
     }

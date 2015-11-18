@@ -66,7 +66,7 @@ class EmployController extends  Controller{
         return $this->render(Variable::$addEmploy_view,['model'=>$form]);
     }
     /*
-* 修改活动页面
+* 修改招聘页面
 */
     public function actionEditemploy(){
         $user=new AdminUser();

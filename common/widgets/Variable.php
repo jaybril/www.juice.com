@@ -57,6 +57,9 @@
      public static $editEmploy_url='/employ/editemploy';
      public static $barIndex_url='/bar/index';
      public static $editBarList_url='/bar/editbarlist';
+     public static $serviceIndex_url='/service/index';
+     public static $addService_url='/service/addservice';
+     public static $editService_url='/service/editservice';
 
 
      /*
@@ -110,6 +113,9 @@
      public static $editEmploy_view='/employ/editEmploy';
      public static $barIndex_view='/bar/index';
      public static $editBarList_view='/bar/editBarList';
+     public static $serviceIndex_view='/service/index';
+     public static $addService_view='/service/addService';
+     public static $editService_view='/service/editService';
 
 
      /*
@@ -140,5 +146,6 @@
      public static $articleCat_type_nutrition=1005;//橙子营养
      public static $articleCat_type_good=1006;//橙子好处
      public static $articleCat_type_people=1007;//适用人群
+     public static $articleCat_type_service=1008;//服务项
 
 }

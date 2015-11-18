@@ -74,7 +74,8 @@
             return [
                 'create' =>['title','author','useId','content','isTop','description','pic'],
                 'update' =>['title','author','useId','content','isTop','description','pic'],
-                'editLiftObject' =>['content'],
+                'update' =>['title','author','useId','content','isTop','description','pic'],
+                'service' =>['title','keywords','pic','useId','content'],
             ];
         }
     }

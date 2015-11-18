@@ -40,6 +40,16 @@
                         </tr>
                         <?php
                             foreach($countries as $k=>$v){
+                                $arr=[
+                                    Variable::$articleCat_type_good,
+                                    Variable::$articleCat_type_nutrition,
+                                    Variable::$articleCat_type_people,
+                                    Variable::$articleCat_type_service
+                                ];
+                                $c=$v->categoryId;
+                                if(in_array($c,$arr)){
+                                    break;
+                                }
                                 echo ' <tr>';
                                 echo '<td>'.($k+1).'</td>';
                                 echo '<td><a href="'.Yii::$app->urlManager->createUrl([Variable::$showArticle_url,'id'=>Html::encode($v['id'])]).'"  >'.Tool::echoEncodeString($v->title).'</a></td>';

@@ -7,6 +7,7 @@
             <li <?php echo $admin_cur=="join" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$joinList_url?>">加盟管理</a></li>
             <li <?php echo $admin_cur=="employ" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$employIndex_url?>">招聘管理</a></li>
             <li <?php echo $admin_cur=="bar" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$barIndex_url?>">导航栏管理</a></li>
+            <li <?php echo $admin_cur=="service" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$serviceIndex_url?>">服务项管理</a></li>
 
         </ul>
     </li>
