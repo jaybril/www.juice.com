@@ -61,7 +61,10 @@
      public static $addService_url='/service/addservice';
      public static $editService_url='/service/editservice';
      public static $customerIndex_url='/customer/index';
-     public static $editCusCatList_url='/bar/editcuscat';
+     public static $editCusCatList_url='/customer/editcuscat';
+     public static $customerBrand_url='/customer/brand';
+     public static $editBrand_url='/customer/editbrand';
+     public static $addBrand_url='/customer/addbrand';
 
 
      /*
@@ -119,7 +122,10 @@
      public static $addService_view='/service/addService';
      public static $editService_view='/service/editService';
      public static $customerIndex_view='/customer/index';
-     public static $editCusCatList_view='/bar/editCusCat';
+     public static $editCusCatList_view='/customer/editCusCat';
+     public static $customerBrand_view='/customer/brand';
+     public static $editBrand_view='/customer/editBrand';
+     public static $addBrand_view='/customer/addBrand';
 
 
      /*

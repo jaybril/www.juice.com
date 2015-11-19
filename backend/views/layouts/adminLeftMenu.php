@@ -31,8 +31,8 @@
 <li>
 	<img src="/img/u118.png" alt="" />客户管理
 	<ul class="submenu">
-		<li <?php echo $admin_cur=="activity" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$customerIndex_url?>">客户分类管理</a></li>
-		<li <?php echo $admin_cur=="activitywater" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$activityWater_url?>">品牌信息</a></li>
+		<li <?php echo $admin_cur=="customer" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$customerIndex_url?>">客户分类管理</a></li>
+		<li <?php echo $admin_cur=="brand" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$customerBrand_url?>">品牌信息</a></li>
 	</ul>
 </li>
 

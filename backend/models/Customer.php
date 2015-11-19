@@ -11,45 +11,48 @@ class Customer extends  ActiveRecord{
     public function  getAdminUser(){
         return $this->hasOne(AdminUser::className(),['id'=>'addUser']);
     }
-    public function addEmploy($department,$employName,$address,$employCode,$group,$count,$money,$type,$category,$description,$sendEmail,$status){
+    /*
+     *获取父级
+     */
+    public function  getParent(){
+        return $this->hasOne(Customer::className(),['id'=>'parentId']);
+    }
+    /*
+     *增加一个cus
+     *
+     */
+    public function addCus($name,$sort,$level,$parentId,$blogo,$clogo){
         $model=new Customer();
-        $model->department=$department;
-        $model->employName=$employName;
-        $model->address=$address;
-        $model->employCode=$employCode;
-        $model->group=$group;
-        $model->count=$count;
-        $model->money=$money;
-        $model->type=$type;
-        $model->category=$category;
-        $model->description=$description;
-        $model->sendEmail=$sendEmail;
-        $model->status=$status;
-        $model->publishTime=date('Y-m-d H:i:s',time());
+        $model->name=$name;
+        $model->sort=$sort;
+        $model->level=$level;
+        $model->parentId=$parentId;
+        $model->blogo=$blogo;
+        $model->clogo=$clogo;
+        $model->count=0;
         $model->addTime=date('Y-m-d H:i:s',time());
         $model->addUser=Yii::$app->session->get(Variable::$session_userId_str);
+
         if($model->save()){
             return true;
         }
         return false;
     }
-    public function updateEmploy($id,$department,$employName,$address,$employCode,$group,$count,$money,$type,$category,$description,$sendEmail,$status){
+    /*
+    *增加一个cus
+    *
+    */
+    public function updateCus($id,$name,$sort,$level,$blogo,$clogo){
         $model=Customer::findOne($id);
         if(!$model){
             return false;
         }
-        $model->department=$department;
-        $model->employName=$employName;
-        $model->address=$address;
-        $model->employCode=$employCode;
-        $model->group=$group;
-        $model->count=$count;
-        $model->money=$money;
-        $model->type=$type;
-        $model->category=$category;
-        $model->description=$description;
-        $model->sendEmail=$sendEmail;
-        $model->status=$status;
+        $model->name=$name;
+        $model->sort=$sort;
+        $model->level=$level;
+//        $model->parentId=$parentId;
+        $model->blogo=$blogo;
+        $model->clogo=$clogo;
         $model->addTime=date('Y-m-d H:i:s',time());
         $model->addUser=Yii::$app->session->get(Variable::$session_userId_str);
         if($model->save()){
@@ -58,9 +61,9 @@ class Customer extends  ActiveRecord{
         return false;
     }
     /*
-        * 删除活动
+        * 删除
         */
-    public function deleteEmploy($id){
+    public function deleteCus($id){
         $model=Customer::findOne($id);
         if(!$model){
             return false;

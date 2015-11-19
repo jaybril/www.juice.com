@@ -587,7 +587,6 @@ var deleteOnRow=function(obj,id){
         }
     }
     deleteBar(obj,id);
-
 }
 var addOneRow=function(obj){
     var parentId= $.trim($("#parentId").val());
@@ -639,6 +638,116 @@ var updateOnRow=function(obj,id){
             layer.closeAll();
             layer.msg(json.message, {icon: 1});
             LocationPageByTimeOut('', 1);
+            return;
+        }
+    }, 'json');
+
+}
+
+/*客户分类操作--start*/
+
+var addOnRowForCus=function(){
+    var count=$('#rowTable').find('.list__item').length;
+    var index=count?count:0;
+    var item='<tr class="list__item" id="tr_'+index+'">';
+    item+=' <td class="list_name">';
+    item+=' <div class="form-group">';
+    item+='<input type="text" class="input-priority col-lg-3 form-control barName">';
+    item+='</div>';
+    item+='</td>';
+    item+='<td class="list_link">';
+    item+='<div class="form-group">';
+    item+='<input type="text"  class="input-priority form-control barLink">';
+    item+='<div class="help-block help-block-error">';
+    item+='</div>';
+    item+='</div>';
+    item+='</td>';
+    item+='<td>';
+    item+='<div class="btn btn btn-success" onclick="submitOneRowForCus(this)">添加</div>';
+    item+='<div class="btn btn btn-cancel" style="margin-left: 4px;" onclick="deleteOnRowForCus(this,100000000000000)">删除</div>';
+    item+='</td>';
+    item+='</tr>';
+    $("#rowTable").append(item);
+}
+var submitOneRowForCus=function(obj){
+    //var parentId= $.trim($("#parentId").val());
+    //if(!parentId){
+    //    layer.msg('加载出错，清刷新重试', {icon: 1});
+    //    return;
+    //}
+    var s= $(obj).parents('.list__item');
+    if(!s){
+        layer.msg('加载出错，清刷新重试', {icon: 1});
+        return;
+    }
+    var name=$(s).find('.list_name').find('.barName').val();
+    var sort=$(s).find('.list_link').find('.barLink').val();
+    //询问框
+    layer.confirm('确定添加记录？', {
+        btn: ['添加', '取消'] //按钮
+    }, function () {
+        var index = layer.load(1, {shade: [0.1, '#fff']});
+        $.post('/customer/addcus', {'name':name,'sort':sort}, function (json) {
+            if (json) {
+                layer.closeAll();
+                layer.msg(json.message, {icon: 1});
+                LocationPageByTimeOut('', 1);
+                return;
+            }
+        }, 'json');
+    }, function () {
+    });
+}
+var deleteOnRowForCus=function(obj,id){
+    if(id==100000000000000){
+        var s= $(obj).parents('.list__item');
+        if(s){
+            s.remove();
+        }
+    }
+    deleteCus(obj,id);
+}
+var deleteCus=function(obj,id){
+    if (!parseInt(id) || id == 0) {
+        layer.msg('ID不存在，出错啦~', {icon: 2});
+        return;
+    }
+    //询问框
+    layer.confirm('确定删除该记录？', {
+        btn: ['删除', '取消'] //按钮
+    }, function () {
+        var index = layer.load(1, {shade: [0.1, '#fff']});
+        $.post('/customer/deletecus', {'id': id}, function (json) {
+            if (json) {
+                layer.closeAll();
+                layer.msg(json.message, {icon: 1});
+                LocationPageByTimeOut('', 1);
+                return;
+            }
+        }, 'json');
+    }, function () {
+    });
+}
+var updateOnRowForCus=function(obj,id){
+
+    //var barId= $.trim($("#barId").val());
+    if(!id){
+        layer.msg('加载出错，清刷新重试', {icon: 1});
+        return;
+    }
+    var s= $(obj).parents('.list__item');
+    if(!s){
+        layer.msg('加载出错，清刷新重试', {icon: 1});
+        return;
+    }
+    var name=$(s).find('.list_name').find('.barName').val();
+    var sort=$(s).find('.list_link').find('.barLink').val();
+    var index = layer.load(1, {shade: [0.1, '#fff']});
+    $.post('/customer/updatecus', {'id': id,'name':name,'sort':sort}, function (json) {
+        if (json) {
+            layer.closeAll();
+            layer.msg(json.message, {icon: 1});
+            //LocationPageByTimeOut('', 1);
             return;
         }
     }, 'json');

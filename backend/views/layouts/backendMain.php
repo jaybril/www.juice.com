@@ -15,7 +15,7 @@
     </div>
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; 名坡日照绿茶后台管理系统 <?= date('Y') ?></p>
+        <p class="pull-left">&copy; 橙汁先生后台管理系统 <?= date('Y') ?></p>
         <!--        <p class="pull-right">--><?//= Yii::powered() ?><!--</p>-->
     </div>
 </footer>

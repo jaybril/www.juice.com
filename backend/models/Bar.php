@@ -54,7 +54,7 @@ class Bar extends  ActiveRecord{
         return false;
     }
     /*
-   *增加一个栏目
+   *更新一个栏目
    *
    */
     public function updateBar($id,$name,$link){
