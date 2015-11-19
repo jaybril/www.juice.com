@@ -315,7 +315,7 @@ class MultimediamangerController extends  Controller{
             $this->redirect(Variable::$home_url);
             return;
         }
-        $query = Article::find();
+        $query = Article::find()->where(['<>','categoryId',[1001,1003,1004,1006,1005,1007,1008]]);
         $pagination = new Pagination([
             'defaultPageSize' => 8,
             'totalCount' => $query->count(),
@@ -376,15 +376,15 @@ class MultimediamangerController extends  Controller{
     public function actionDeletearticle(){
         $id=trim(Yii::$app->request->post('id'));
         if(!isset($id) || empty($id)){
-            JsonParser::GenerateJsonResult('_0001','文章ID不能为空');
+            JsonParser::GenerateJsonResult('_0001','ID不能为空');
             exit;
         }
         $isDelete=(new Article())->deleteArticle($id);
         if($isDelete){
-            JsonParser::GenerateJsonResult('_0000','文章删除成功');
+            JsonParser::GenerateJsonResult('_0000','删除成功');
             exit;
         }
-        JsonParser::GenerateJsonResult('_0002','文章删除失败，请刷新重试');
+        JsonParser::GenerateJsonResult('_0002','删除失败，请刷新重试');
         exit;
     }
     /*鲜橙生活*/

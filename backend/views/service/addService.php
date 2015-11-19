@@ -35,7 +35,9 @@
                     <div class="row">
                         <?= $form->field($model, 'pic')->label('请选择图片')->widget('common\widgets\file_upload\FileUpload',['config'=>[]]) ?>
                     </div>
+                    <div class="row">
                         <?=$form->field($model, 'content', ['options' => ['class' => 'form-group col-lg-12  paddingLeft']])->textarea()->label('文字描述');?>
+                    </div>
                     <?php
                     echo   $form->errorSummary($model,['header'=>false,'class' => 'form-group col-lg-7  paddingLeft']);
                     ?>

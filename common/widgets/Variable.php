@@ -60,6 +60,8 @@
      public static $serviceIndex_url='/service/index';
      public static $addService_url='/service/addservice';
      public static $editService_url='/service/editservice';
+     public static $customerIndex_url='/customer/index';
+     public static $editCusCatList_url='/bar/editcuscat';
 
 
      /*
@@ -116,6 +118,8 @@
      public static $serviceIndex_view='/service/index';
      public static $addService_view='/service/addService';
      public static $editService_view='/service/editService';
+     public static $customerIndex_view='/customer/index';
+     public static $editCusCatList_view='/bar/editCusCat';
 
 
      /*
@@ -141,11 +145,16 @@
      public static $materialId_banner=1000;//首页banner
      public static $materialId_auth=1002;//资质认证
      public static $materialId_productVideo=1003;//产品视频
+     public static $materialId_placeImg=1004;//点位图片
      //文章类型
      public static $articleCat_type_news=1004;//新闻
      public static $articleCat_type_nutrition=1005;//橙子营养
      public static $articleCat_type_good=1006;//橙子好处
      public static $articleCat_type_people=1007;//适用人群
      public static $articleCat_type_service=1008;//服务项
+     //客户分类
+     public static $customer_type_c=0;//客户分类
+     public static $customer_type_p=1;//品牌
+     public static $customer_type_w=2;//点位
 
 }

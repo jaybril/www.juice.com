@@ -29,18 +29,10 @@
         </ul>
     </li>
 <li>
-	<img src="/img/u124.png" alt="" />招聘管理
+	<img src="/img/u118.png" alt="" />客户管理
 	<ul class="submenu">
-		<li <?php echo $admin_cur=="" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$productManger_url?>">产品管理</a></li>
-		<li <?php echo $admin_cur=="seller" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$sellerManger_url?>">商家管理</a></li>
-		<li <?php echo $admin_cur=="type" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$productCat_url?>">产品类别</a></li>
-	</ul>
-</li>
-<li>
-	<img src="/img/u118.png" alt="" />活动管理
-	<ul class="submenu">
-		<li <?php echo $admin_cur=="activity" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$activityList_url?>">活动管理</a></li>
-		<li <?php echo $admin_cur=="activitywater" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$activityWater_url?>">活动流水</a></li>
+		<li <?php echo $admin_cur=="activity" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$customerIndex_url?>">客户分类管理</a></li>
+		<li <?php echo $admin_cur=="activitywater" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$activityWater_url?>">品牌信息</a></li>
 	</ul>
 </li>
 
