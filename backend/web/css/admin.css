@@ -361,7 +361,7 @@ html,body{
 /*.articleM-con .admin-table th:nth-of-type(5),.articleM-con .admin-table td:nth-of-type(5){*/
 	/*width: 120px;*/
 /*}*/
-.articleM-con .admin-table td a:first-child{
+.articleM-con .admin-table td a{
 	margin-right: 10px;
 }
 /******后台文章管理结束********/

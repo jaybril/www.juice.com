@@ -573,7 +573,7 @@ var addOnRow=function(){
     item+='</div>';
     item+='</td>';
     item+='<td>';
-    item+='<div class="btn btn btn-success" onclick="addOneRow(this)">添加</div>';
+    item+='<div class="btn btn btn-danger" onclick="addOneRow(this)">添加</div>';
     item+='<div class="btn btn btn-cancel" style="margin-left: 4px;" onclick="deleteOnRow(this,100000000000000)">删除</div>';
     item+='</td>';
     item+='</tr>';
@@ -646,7 +646,7 @@ var updateOnRow=function(obj,id){
 
 /*客户分类操作--start*/
 
-var addOnRowForCus=function(){
+var addOnRowForCus=function(level){
     var count=$('#rowTable').find('.list__item').length;
     var index=count?count:0;
     var item='<tr class="list__item" id="tr_'+index+'">';
@@ -663,18 +663,18 @@ var addOnRowForCus=function(){
     item+='</div>';
     item+='</td>';
     item+='<td>';
-    item+='<div class="btn btn btn-success" onclick="submitOneRowForCus(this)">添加</div>';
+    item+='<div class="btn btn btn-danger" onclick="submitOneRowForCus(this,'+level+')">添加</div>';
     item+='<div class="btn btn btn-cancel" style="margin-left: 4px;" onclick="deleteOnRowForCus(this,100000000000000)">删除</div>';
     item+='</td>';
     item+='</tr>';
     $("#rowTable").append(item);
 }
-var submitOneRowForCus=function(obj){
-    //var parentId= $.trim($("#parentId").val());
-    //if(!parentId){
-    //    layer.msg('加载出错，清刷新重试', {icon: 1});
-    //    return;
-    //}
+var submitOneRowForCus=function(obj,level){
+    var parentId= $.trim($("#parentId").val());
+    if(level==2 && !parentId){
+        layer.msg('加载出错，清刷新重试', {icon: 1});
+        return;
+    }
     var s= $(obj).parents('.list__item');
     if(!s){
         layer.msg('加载出错，清刷新重试', {icon: 1});
@@ -682,12 +682,13 @@ var submitOneRowForCus=function(obj){
     }
     var name=$(s).find('.list_name').find('.barName').val();
     var sort=$(s).find('.list_link').find('.barLink').val();
+    //var level=
     //询问框
     layer.confirm('确定添加记录？', {
         btn: ['添加', '取消'] //按钮
     }, function () {
         var index = layer.load(1, {shade: [0.1, '#fff']});
-        $.post('/customer/addcus', {'name':name,'sort':sort}, function (json) {
+        $.post('/customer/addcus', {'name':name,'sort':sort,'level':level,'parentId':parentId}, function (json) {
             if (json) {
                 layer.closeAll();
                 layer.msg(json.message, {icon: 1});

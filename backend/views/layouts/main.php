@@ -68,7 +68,6 @@ AppAsset::register($this);
 <footer class="footer">
     <div class="container">
         <p class="pull-left">&copy; 橙汁先生茶后台管理系统 <?= date('Y') ?></p>
-<!--        <p class="pull-right">--><?//= Yii::powered() ?><!--</p>-->
     </div>
 </footer>
 

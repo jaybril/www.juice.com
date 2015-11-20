@@ -65,6 +65,8 @@
      public static $customerBrand_url='/customer/brand';
      public static $editBrand_url='/customer/editbrand';
      public static $addBrand_url='/customer/addbrand';
+     public static $editPoint_url='/customer/editpoint';
+     public static $editPointImg_url='/customer/editpointimg';
 
 
      /*
@@ -126,6 +128,8 @@
      public static $customerBrand_view='/customer/brand';
      public static $editBrand_view='/customer/editBrand';
      public static $addBrand_view='/customer/addBrand';
+     public static $editPoint_view='/customer/editPoint';
+     public static $editPointImg_view='/customer/editpointImg';
 
 
      /*

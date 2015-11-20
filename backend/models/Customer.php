@@ -21,7 +21,7 @@ class Customer extends  ActiveRecord{
      *增加一个cus
      *
      */
-    public function addCus($name,$sort,$level,$parentId,$blogo,$clogo){
+    public function addCus($name,$sort,$level,$parentId,$blogo,$clogo,$img1='',$img2='',$img3='',$img4='',$img5=''){
         $model=new Customer();
         $model->name=$name;
         $model->sort=$sort;
@@ -29,6 +29,11 @@ class Customer extends  ActiveRecord{
         $model->parentId=$parentId;
         $model->blogo=$blogo;
         $model->clogo=$clogo;
+        $model->img1=$img1;
+        $model->img2=$img2;
+        $model->img3=$img3;
+        $model->img4=$img4;
+        $model->img5=$img5;
         $model->count=0;
         $model->addTime=date('Y-m-d H:i:s',time());
         $model->addUser=Yii::$app->session->get(Variable::$session_userId_str);
@@ -42,17 +47,22 @@ class Customer extends  ActiveRecord{
     *增加一个cus
     *
     */
-    public function updateCus($id,$name,$sort,$level,$blogo,$clogo){
+    public function updateCus($id,$name,$sort,$level,$blogo,$clogo,$img1='',$img2='',$img3='',$img4='',$img5=''){
         $model=Customer::findOne($id);
         if(!$model){
             return false;
         }
         $model->name=$name;
         $model->sort=$sort;
-        $model->level=$level;
+//        $model->level=$level;
 //        $model->parentId=$parentId;
         $model->blogo=$blogo;
         $model->clogo=$clogo;
+        $model->img1=$img1;
+        $model->img2=$img2;
+        $model->img3=$img3;
+        $model->img4=$img4;
+        $model->img5=$img5;
         $model->addTime=date('Y-m-d H:i:s',time());
         $model->addUser=Yii::$app->session->get(Variable::$session_userId_str);
         if($model->save()){
@@ -73,4 +83,5 @@ class Customer extends  ActiveRecord{
         }
         return false;
     }
+
 }

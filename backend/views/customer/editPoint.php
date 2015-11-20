@@ -8,12 +8,12 @@
             use yii\helpers\Html;
             use yii\widgets\ActiveForm;
             $admin_cur="customer";
-            $this->title='编辑客户分类';
+            $this->title='编辑点位信息';
             ?>
             <?=$this->render(\common\widgets\Variable::$layoutAdminLeftMenu_view,['admin_cur'=>$admin_cur]); ?>
         </div>
         <div class="adminCon-right">
-            <?= Tool::setBreadcrumbs([['客户分类管理',Variable::$customerIndex_url],[$this->title]]) ?>
+            <?= Tool::setBreadcrumbs([['品牌管理',Variable::$customerBrand_url],[$this->title]]) ?>
             <div class="member">
                 <style>
                     .top{
@@ -26,16 +26,16 @@
                     }
                 </style>
                 <div class="row top">
-<!--                    <div>-->
-<!--                        <input type="hidden" value="--><?//=$barModel->id;?><!--" id="parentId">-->
-<!--                        <b style="color: #939090;">栏目名：</b>-->
-<!--                        <b>--><?//=$barModel->name ;?><!--</b>-->
-<!--                    </div>-->
+                                        <div>
+                                            <input type="hidden" value="<?=$brandModel->id;?>" id="parentId">
+                                            <b style="color: #939090;">品牌名：</b>
+                                            <b><?=$brandModel->name ;?></b>
+                                        </div>
                 </div>
                 <div id="barform-name" class="multiple-input">
                     <table class="multiple-input-list table table-condensed" id="rowTable">
                         <thead>
-                        <tr><th class="list-cell__user_id">分类名</th>
+                        <tr><th class="list-cell__user_id">点位名</th>
                             <th class="list-cell__priority">展示顺序</th>
                             <th class="list-cell__button"></th>
                         </tr>
@@ -61,6 +61,7 @@
                                 echo'</td>';
                                 echo'<td>';
                                 echo'<div class="btn btn btn-success" onclick="updateOnRowForCus(this,'.$v->id.')">更新</div>';
+                                echo'<div class="btn btn btn-danger" style="margin-left: 4px;"><a style="color:#FFFFFF" href='.Yii::$app->urlManager->createUrl([\common\widgets\Variable::$editPointImg_url,'id'=>Tool::echoEncodeString($v->id)]).'>编辑点位图片</a></div>';
                                 echo'<div class="btn btn btn-cancel" style="margin-left: 4px;" onclick="deleteOnRowForCus(this,'.$v->id.')">删除</div>';
                                 echo'</td>';
                                 echo'</tr>';
@@ -74,8 +75,8 @@
                     </table>
                 </div>
                 <div class="form-group">
-                    <button type="button" class="btn  btn-success col-lg-2 col-lg-offset-2" onclick="addOnRowForCus(0)">添加一个客户分类</button>
-                    <a class="btn-cancel col-lg-2 col-lg-offset-1" href="<?php echo \common\widgets\Variable::$customerIndex_url ;?>">返回</a>
+                    <button type="button" class="btn  btn-success col-lg-2 col-lg-offset-2" onclick="addOnRowForCus(2)">添加一个点位</button>
+                    <a class="btn-cancel col-lg-2 col-lg-offset-1" href="<?php echo \common\widgets\Variable::$customerBrand_url ;?>">返回</a>
                 </div>
             </div>
         </div>

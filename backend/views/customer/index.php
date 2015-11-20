@@ -15,9 +15,9 @@
             <?= Tool::setBreadcrumbs([[$this->title]]) ?>
             <div class="member">
                 <div class="member-head">
-                                        <div class="seller-head">
-                                            <a href="<?=Variable::$editCusCatList_url?>" class="seller-head-add">+添加客户分类</a>
-                                        </div>
+<!--                                        <div class="seller-head">-->
+<!--                                            <a href="--><?//=Variable::$editCusCatList_url?><!--" class="seller-head-add">+添加客户分类</a>-->
+<!--                                        </div>-->
                 </div>
                 <div class="member-con articleM-con">
                     <table cellpadding="0" cellspacing="0" border="0" class="admin-table">
@@ -35,7 +35,7 @@
                             echo '<td>'.Tool::echoEncodeString($v->name).'</td>';
                             echo '<td>'.Tool::echoEncodeString($v->count).'</td>';
                             echo '<td>'.Tool::echoEncodeString($v->adminUser->username,0).'</td>';
-                            echo '<td><a href="'.Yii::$app->urlManager->createUrl([Variable::$editBarList_url,'id'=>Html::encode($v['id'])]).'"  >编辑</a><a onclick="deleteBar(this,'.Tool::echoEncodeString($v->id).')">删除</a></td>';
+                            echo '<td><a href="'.Yii::$app->urlManager->createUrl([Variable::$editCusCatList_url,'id'=>Html::encode($v['id'])]).'"  >编辑</a><a onclick="deleteBar(this,'.Tool::echoEncodeString($v->id).')">删除</a></td>';
                             echo '</tr>';
                         }
                         ?>

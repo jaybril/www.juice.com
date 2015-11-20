@@ -216,5 +216,30 @@ class CustomerController extends  Controller{
         print_r($form->clogo);
         return $this->render(Variable::$editBrand_view,['model'=>$form,'customerModel'=>$customerModel,'catModel'=>$catModel]);
     }
+    public function actionEditpoint(){
+        $user=new AdminUser();
+        if(!$user->checkUserIsLogin()){
+            $this->redirect(Variable::$home_url);
+            return;
+        }
+//        $form=new CustomerForm();
+//        $req=Yii::$app->request;//创建一个请求对象
+//        $form->setScenario('update');
+//        if($form->load($req->post()) && $form->validate()){
+//            print_r($form);
+//        }
+//        $form->setScenario('update');
+        $req=Yii::$app->request;//创建一个请求对象
+        $id=trim($req->get('id'));
+        if (!is_numeric($id) || $id == 0) {
+            $this->redirect(Variable::$barIndex_url);
+            return;
+        }
+        $brandModel=Customer::findOne($id);
+        $catModel = Customer::find()->where(['parentId'=>$id])->all();
+//        $barListModel=Bar::find()->where(['parentBar'=>$id])->all();
+
+        return $this->render(Variable::$editPoint_view,['catModel'=>$catModel,'brandModel'=>$brandModel]);
+    }
 
 }
