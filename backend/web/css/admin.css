@@ -135,7 +135,7 @@ html,body{
 }
 .member > .member-head{
 	line-height: 60px;
-	background-color: #F8F8F8;
+	/*background-color: #F8F8F8;*/
 	height: 60px;
 	padding-right: 20px;
 	text-align: right;
@@ -1062,10 +1062,11 @@ html,body{
     width: 160px;
     height: 40px;
     text-align: center;
-    color: #aeaeae !important;
-    border: 1px dashed #ddd;
+    color: #CB2929 !important;
+    border: 1px dashed #CB2929;
     line-height: 38px;
     float: right;
+    font-size: 20px;
 }
 
 .seller-head .seller-head-add:hover{

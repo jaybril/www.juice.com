@@ -15,9 +15,9 @@
             <?= Tool::setBreadcrumbs([[$this->title]]) ?>
             <div class="member">
                 <div class="member-head">
-<!--                                        <div class="seller-head">-->
-<!--                                            <a href="--><?//=Variable::$editCusCatList_url?><!--" class="seller-head-add">+添加客户分类</a>-->
-<!--                                        </div>-->
+                                        <div class="seller-head">
+                                            <a href="<?=Variable::$editCusCatList_url?>" class="seller-head-add">+添加客户分类</a>
+                                        </div>
                 </div>
                 <div class="member-con articleM-con">
                     <table cellpadding="0" cellspacing="0" border="0" class="admin-table">

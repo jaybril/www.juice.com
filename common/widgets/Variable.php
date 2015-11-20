@@ -43,6 +43,7 @@
      public static $editAdminUser_url='/websettingmanger/editadminuser';
      public static $setting_url='/websettingmanger/index';
      public static $area_url='/websettingmanger/area';
+     public static $video_url='/websettingmanger/video';
      public static $joinList_url='/websettingmanger/joinlist';
      public static $editJoin_url='/websettingmanger/editjoin';
      public static $addCustomer_url='/usermanger/addcustomer';
@@ -108,6 +109,7 @@
      public static $editAdminUser_view='/webSettingManger/editAdminUser';
      public static $setting_view='/webSettingManger/setting';
      public static $area_view='/webSettingManger/area';
+     public static $video_view='/webSettingManger/video';
      public static $joinList_view='/webSettingManger/joinList';
      public static $editJoin_view='/webSettingManger/editJoin';
      public static $addSeller_view='/productManger/addSeller';

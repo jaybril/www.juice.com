@@ -12,6 +12,7 @@ use backend\models\Express;
 use backend\models\ExpressForm;
 use backend\models\Join;
 use backend\models\JoinForm;
+use backend\models\Material;
 use backend\models\SettingForm;
 use backend\models\WebSiteConfig;
 use yii\bootstrap\Alert;
@@ -70,6 +71,7 @@ class WebsettingmangerController extends Controller{
                 Yii::$app->session->setFlash('success','配置成功');
                 $this->redirect(Variable::$setting_url);
                 return;
+
             }
             Yii::$app->session->setFlash('error','配置更新失败，请刷新重试');
         }
@@ -256,5 +258,58 @@ class WebsettingmangerController extends Controller{
         }
         JsonParser::GenerateJsonResult('_0002','删除失败，请刷新重试');
         exit;
+    }
+
+    public function actionVideo(){
+        $video=Material::findOne(['materialId'=>Variable::$materialId_productVideo]);
+
+        return $this->render(Variable::$video_view,['video'=>$video]);
+    }
+    public function actionUploadvideo(){
+
+        $targetFolder = '/video'; // Relative to the root
+        $verifyToken = md5('unique_salt' . time());
+
+        if (!empty($_FILES)) {
+//            print_r($_FILES);
+//            exit;
+            $tempFile = $_FILES['file']['tmp_name'];
+
+//            echo '---';
+//            exit;
+            $targetPath = $_SERVER['DOCUMENT_ROOT'] . $targetFolder;
+            $targetFile = rtrim($targetPath,'/') . '/' . $_FILES['file']['name'];
+//            print_r($targetFile);
+
+            // Validate the file type
+            $fileTypes = array('jpg','jpeg','gif','png'); // File extensions
+            $fileParts = pathinfo($_FILES['file']['name']);
+
+//            if (in_array($fileParts['extension'],$fileTypes)) {
+                if(move_uploaded_file($tempFile,$targetFile)){
+                    $model=Material::find()->where(['materialId'=>Variable::$materialId_productVideo])->one();
+                    if($model){
+                        $model->address='video/'.$_FILES['file']['name'];
+                        $model->save();
+                    }
+                    else{
+                        $model=new Material();
+                        $model->type=2;
+                        $model->materialId=Variable::$materialId_productVideo;
+                        $model->address='/video/'.$_FILES['file']['name'];
+                        $model->save();
+                    }
+
+
+//                   JsonParser::GenerateJsonResult("_0000",'video/'.$_FILES['file']['name']);
+//                    echo 'ss';
+                };
+            echo 'fail';
+            exit;
+
+//            } else {
+//                echo 'Invalid file type.';
+//            }
+        }
     }
 }

@@ -242,4 +242,61 @@ class CustomerController extends  Controller{
         return $this->render(Variable::$editPoint_view,['catModel'=>$catModel,'brandModel'=>$brandModel]);
     }
 
+    /*
+* 修改品牌
+*/
+    public function actionEditpointimg(){
+        $user=new AdminUser();
+        if(!$user->checkUserIsLogin()){
+            $this->redirect(Variable::$home_url);
+            return;
+        }
+        $req=Yii::$app->request;//创建一个请求对象
+        $form = new CustomerForm();
+        $form->level=Variable::$customer_type_w;
+        $form->setScenario('img');
+        $id=trim($req->get('id'));
+        if (!is_numeric($id) || $id == 0) {
+            $this->redirect(Variable::$customerBrand_url);
+            return;
+        }
+        //修改
+        if($form->load($req->post()) && $form->validate()){
+            $isSuccess = (new Customer())->updateCus($id,$form->name,$form->sort,$form->level,$form->blogo,$form->clogo,$form->img1,$form->img2,$form->img3,$form->img4,$form->img5);
+            if($isSuccess){
+                Yii::$app->session->setFlash(Variable::$flash_success,'设置成功');
+            }
+            else{
+//                $form->addError('','更新失败');
+                Yii::$app->session->setFlash(Variable::$flash_error,'设置失败，请重试');
+            }
+        }
+        $customerModel = Customer::findOne($id);
+        $form->img1=$customerModel->img1;
+        $form->img2=$customerModel->img2;
+        $form->img3=$customerModel->img3;
+        $form->img4=$customerModel->img4;
+        $form->img5=$customerModel->img5;
+        $form->name=$customerModel->name;
+        $form->id=$customerModel->id;
+        $list=[];
+        if(!empty($form->img1)){
+            array_push($list,$form->img1);
+        }
+        if(!empty($form->img2)){
+            array_push($list,$form->img2);
+        }
+        if(!empty($form->img3)){
+            array_push($list,$form->img3);
+        }
+        if(!empty($form->img4)){
+            array_push($list,$form->img4);
+        }
+        if(!empty($form->img5)){
+            array_push($list,$form->img5);
+        }
+
+        return $this->render(Variable::$editPointImg_view,['model'=>$form,'customerModel'=>$customerModel,'list'=>$list]);
+    }
+
 }

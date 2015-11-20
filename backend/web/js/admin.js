@@ -748,7 +748,7 @@ var updateOnRowForCus=function(obj,id){
         if (json) {
             layer.closeAll();
             layer.msg(json.message, {icon: 1});
-            //LocationPageByTimeOut('', 1);
+            LocationPageByTimeOut('', 1);
             return;
         }
     }, 'json');

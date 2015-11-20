@@ -4,17 +4,23 @@ use yii\base\Model;
 
 class CustomerForm extends Model
 {
+    public $id;
     public $name;
     public $level;
     public $parentId;
     public $blogo;
     public $clogo;
     public $sort;
+    public $img1;
+    public $img2;
+    public $img3;
+    public $img4;
+    public $img5;
 
     public function rules()
     {
         return array(
-            [['name', 'level','parentId','blogo','clogo','sort'], 'trim'],
+            [['name', 'level','parentId','blogo','clogo','sort','img1','img2','img3','img4','img5'], 'trim'],
             [
                 ['name'],
                 'required',
@@ -38,6 +44,7 @@ class CustomerForm extends Model
         return [
             'create' =>['name', 'blogo','clogo','sort','parentId'],
             'update' =>['name', 'blogo','clogo','sort','parentId'],
+            'img' =>['level','parentId','img1','img2','img3','img4','img5'],
 
         ];
     }

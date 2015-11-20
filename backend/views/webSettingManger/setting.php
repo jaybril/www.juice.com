@@ -39,21 +39,10 @@
                     <?= $form->field($model, 'background')->label('网站背景图片')->widget('common\widgets\file_upload\FileUpload',[
                         'config'=>[]
                     ]) ?>
-<!--                    --><?//= $form->field($model,'logo')->label('网站logo')->widget(UEditor::className(),[
-//                        'clientOptions' => [
-//                            //编辑区域大小
-//                            'initialFrameHeight' => '250',
-//                            //设置语言
-//                            'lang' =>'zh-cn', //中文为 zh-cn
-//                            //定制菜单
-//                            'toolbars' => [
-//                                [
-//                                    'simpleupload', 'undo', 'redo', '|',
-//                                ],
-//                            ]
-//                        ]
-//                    ]);
-//                    ?>
+                    <?= $form->field($model, 'logo')->label('网站logo')->widget('common\widgets\file_upload\FileUpload',[
+                        'config'=>[]
+                    ]) ?>
+
                     <?php
                     echo   $form->errorSummary($model,['header'=>false]);
                     ?>

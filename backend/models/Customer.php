@@ -52,17 +52,30 @@ class Customer extends  ActiveRecord{
         if(!$model){
             return false;
         }
-        $model->name=$name;
-        $model->sort=$sort;
-//        $model->level=$level;
-//        $model->parentId=$parentId;
+        if($name){
+            $model->name=$name;
+        }
+        if($sort){
+            $model->sort=$sort;
+        }
+        if($img1){
+            $model->img1=$img1;
+        }
+        if($img2){
+            $model->img2=$img2;
+        }
+        if($img3){
+            $model->img3=$img3;
+        }
+        if($img4){
+            $model->img4=$img4;
+        }
+        if($img5){
+            $model->img5=$img5;
+        }
+
         $model->blogo=$blogo;
         $model->clogo=$clogo;
-        $model->img1=$img1;
-        $model->img2=$img2;
-        $model->img3=$img3;
-        $model->img4=$img4;
-        $model->img5=$img5;
         $model->addTime=date('Y-m-d H:i:s',time());
         $model->addUser=Yii::$app->session->get(Variable::$session_userId_str);
         if($model->save()){

@@ -8,13 +8,14 @@
             <li <?php echo $admin_cur=="employ" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$employIndex_url?>">招聘管理</a></li>
             <li <?php echo $admin_cur=="bar" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$barIndex_url?>">导航栏管理</a></li>
             <li <?php echo $admin_cur=="service" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$serviceIndex_url?>">服务项管理</a></li>
+            <li <?php echo $admin_cur=="video" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$video_url?>">视频管理</a></li>
 
         </ul>
     </li>
     <li>
         <img src="/img/u187.png" alt="" />素材管理
         <ul class="submenu">
-            <li <?php echo $admin_cur=="material" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$materialManger_url?>">素材分类</a></li>
+<!--            <li <?php //echo $admin_cur=="material" ? "class='active'" : "" ?><a href="--><?php //echo \common\widgets\Variable::$materialManger_url?><!--">素材分类</a></li>-->
             <li <?php echo $admin_cur=="banner" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$bannerList_url?>">首页banner</a></li>
             <li <?php echo $admin_cur=="auth" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$authList_url?>">资质认证</a></li>
         </ul>
@@ -24,7 +25,7 @@
         <ul class="submenu">
             <li <?php echo $admin_cur=="article" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$articleManger_url?>">新闻管理</a></li>
             <li <?php echo $admin_cur=="liftObject" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$liftObject_url?>">鲜橙生活</a></li>
-            <li <?php echo $admin_cur=="articleCat" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$articleCat_url?>">文章分类</a></li>
+<!--            <li <?php //echo $admin_cur=="articleCat" ? "class='active'" : "" ?><a href="--><?php //echo \common\widgets\Variable::$articleCat_url?><!--">文章分类</a></li>-->
 
         </ul>
     </li>

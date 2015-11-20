@@ -29,13 +29,14 @@ class AppAsset extends AssetBundle
         'css/jcarousel.connected-carousels.css'
     ];
     public $js = [
-        'js/jquery-ui.js',
+//        'js/jquery-ui.js',
         'js/admin.js',
         'js/html5.js',
         'js/selectivizr.js',
         'layer/layer.js',
         'js/jcarousel.connected-carousels.js',
-        'js/jquery.jcarousel.min.js'
+        'js/jquery.jcarousel.min.js',
+        'uploadify/jquery.uploadify.min.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
