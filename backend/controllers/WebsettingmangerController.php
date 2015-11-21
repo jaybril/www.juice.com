@@ -312,4 +312,44 @@ class WebsettingmangerController extends Controller{
 //            }
         }
     }
+
+    public function actionUploadnetvideo(){
+        $videoLink=trim(Yii::$app->request->post('videoLink'));
+        if(!isset($videoLink) || empty($videoLink)){
+            JsonParser::GenerateJsonResult('_0001','不合法的视频链接');
+            exit;
+        }
+        $ch = curl_init();
+        curl_setopt ($ch, CURLOPT_URL, $videoLink);
+        //不下载
+        curl_setopt($ch, CURLOPT_NOBODY, 1);
+        //设置超时
+        curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 3);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 3);
+        curl_exec($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        if($http_code == 200) {
+            $model=Material::find()->where(['materialId'=>Variable::$materialId_productVideo])->one();
+            if($model){
+                $model->address='video/'.$_FILES['file']['name'];
+                if($model->save()){
+                    JsonParser::GenerateJsonResult('_0000','上传成功');
+                    exit;
+                };
+            }
+            else{
+                $model=new Material();
+                $model->type=2;
+                $model->materialId=Variable::$materialId_productVideo;
+                $model->address='/video/'.$_FILES['file']['name'];
+                if($model->save()){
+                    JsonParser::GenerateJsonResult('_0000','上传成功');
+                    exit;
+                }
+            }
+
+        }
+        JsonParser::GenerateJsonResult('_0001','不合法的视频链接');
+        exit;
+    }
 }

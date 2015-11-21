@@ -754,3 +754,31 @@ var updateOnRowForCus=function(obj,id){
     }, 'json');
 
 }
+var submitVideo= function () {
+    var videoLink=$("#videoLink").val();
+
+    $.ajax({
+        type: "POST",
+        cache: false,
+        url: '/websettingmanger/uploadnetvideo',
+        data: {'videoLink':videoLink},
+        success: function(json) {
+            if(json){
+                if(json.status=='_0001'){
+                    layer.closeAll();
+                    layer.msg(json.message, {icon: 1});
+                    LocationPageByTimeOut('', 1);
+                    return;
+                }
+                layer.closeAll();
+                layer.msg(json.message, {icon: 1});
+                return;
+            }
+            alert(1);
+        },
+        error: function() {
+            alert('网络链接出错，请刷新重试');
+        }
+    });
+
+}

@@ -42,11 +42,11 @@
                                         <tr class="list__item">
                                             <td class="list_name">
                                                 <div class="form-group">
-                                                    <input type="text" class="input-priority col-lg-3 form-control barName" value="edwdw">
+                                                    <input type="text" id="videoLink" class="input-priority col-lg-3 form-control barName" value="<?=$video->address?>">
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="btn btn btn-success" onclick="updateOnRowForCus(this,1020)">确定</div>
+                                                <div class="btn btn btn-success" onclick="submitVideo()">确定</div>
 <!--                                                <div class="btn btn btn-cancel" style="margin-left: 4px;" onclick="deleteOnRowForCus(this,1020)">删除</div>-->
                                             </td>
                                         </tr>
