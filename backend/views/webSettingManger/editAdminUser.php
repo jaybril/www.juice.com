@@ -29,8 +29,15 @@
                     <?=$form->field($model, 'password')->passwordInput()->label('密码');?>
                     <?=$form->field($model, 'mobile')->textInput()->label('手机号码');?>
                     <?=$form->field($model, 'role')->textInput()->label('用户角色');?>
-                    <?= $form->field($model, 'status', ['options' => ['class' => 'form-group col-lg-12 paddingLeft']])->dropDownList(\common\widgets\GlobalArray::$userStatusArray, ['prompt' => '请选择用户状态'])->label('用户状态');
+                    <?php
+                    if($model->role!='超级管理员'){
+
+                        echo $form->field($model, 'status', ['options' => ['class' => 'form-group col-lg-12 paddingLeft']])->dropDownList(\common\widgets\GlobalArray::$userStatusArray, ['prompt' => '请选择用户状态'])->label('用户状态');
+
+                    }
+
                     ?>
+
                     <?php
                         echo   $form->errorSummary($model,['header'=>false]);
                     ?>

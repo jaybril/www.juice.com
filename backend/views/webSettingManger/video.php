@@ -69,6 +69,8 @@
                     <p>提示：</p>
                     <p>1）考虑到浏览器兼容性问题，请最好选择mp4、mov、mpeg等格式的视频上传</p>
                     <p>2）上传本地视频或者添加的网络视频源在下面的视频栏没有播放，则说明本地视频或者网络视频源不存在，请重新上传</p>
+                    <p>3）本地上传的视频文件不能超过20M</p>
+                    <p>4）系统配置需要把php.ini里的upload_max_filesize</p>
                 </div>
                 <div class="row" style="margin-top: 50px">
                     <div class="col-sm-3">

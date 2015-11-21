@@ -31,9 +31,7 @@
                     <?=$form->field($model, 'isTop',['options' => ['class' => 'form-group col-lg-5  paddingLeft']])->checkbox(['template'=>"<div class=\"test\">{label}{input}{error}</div>"])->label('是否置顶');?>
                     <?= $form->field($model, 'isIndexShow', ['options' => ['class' => 'form-group col-lg-7  paddingLeft']])->dropDownList(GlobalArray::$articleIsIndexShowArr, ['prompt' => '请选择是否首页展示'])->label('是否首页展示'); ?>
                     <?=$form->field($model, 'description', ['options' => ['class' => 'form-group col-lg-7  paddingLeft']])->textarea()->label('文章描述');?>
-<!--                    --><?//=$form->field($model, 'keywords')->textarea()->label('文章关键字');?>
                     <?= $form->field($model, 'pic',['options' => ['class' => 'form-group col-lg-7  paddingLeft']])->label('文章主题图')->widget('common\widgets\file_upload\FileUpload',['config'=>[]]) ?>
-<!--                    --><?//= $form->field($model, 'categoryId', ['options' => ['class' => 'form-group col-lg-6   paddingLeft']])->dropDownList(\yii\helpers\ArrayHelper::map($articleCatModel,'id','name'), ['prompt' => '请选择文章分类'])->label('文章分类'); ?>
                     <?= $form->field($model,'content',['options' => ['class' => 'form-group col-lg-12  paddingLeft']])->label('文章内容')->widget(UEditor::className(),[
                         'clientOptions' => [
                             //编辑区域大小

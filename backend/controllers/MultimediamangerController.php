@@ -315,7 +315,7 @@ class MultimediamangerController extends  Controller{
             $this->redirect(Variable::$home_url);
             return;
         }
-        $query = Article::find()->andWhere(['not in','categoryId',[1004,1006,1005,1007,1008]]);
+        $query = Article::find()->andWhere(['not in','categoryId',[1006,1005,1007,1008]]);
 
         $pagination = new Pagination([
             'defaultPageSize' => 8,

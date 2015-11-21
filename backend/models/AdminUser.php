@@ -64,7 +64,9 @@
             if(!$model){
                 return false;
             }
-            $model->password=md5($password);
+            if($model->password ==$password){
+                $model->password=md5($password);
+            }
             $model->mobile=$mobile;
             $model->role=$role;
             $model->status=$status;

@@ -44,7 +44,12 @@
                                 echo '<td>'.Tool::echoEncodeString($v->loginIp).'</td>';
                                 echo ' <td>'.Tool::echoEncodeString($v->loginTime).'</td>';
                                 echo '<td>'.Tool::echoEncodeString($v->addTime).'</td>';
-                                echo '<td><a href="'.Yii::$app->urlManager->createUrl([\common\widgets\Variable::$editAdminUser_url,'id'=>Tool::echoEncodeString($v->id)]).'">编辑</a><a onclick="deleteAdminUser(this,'.Tool::echoEncodeString($v->id).')">删除</a></td>';
+//                                $rr='<a onclick="deleteAdminUser(this,'.Tool::echoEncodeString($v->id).')">删除</a>';
+//                                if($v->role=='超级管理员'){
+//                                    $rr='';
+//                                }
+                                $rr='';
+                                echo '<td><a href="'.Yii::$app->urlManager->createUrl([\common\widgets\Variable::$editAdminUser_url,'id'=>Tool::echoEncodeString($v->id)]).'">编辑</a>'.$rr.'</td>';
                                 echo '</tr>';
                             }
                         ?>

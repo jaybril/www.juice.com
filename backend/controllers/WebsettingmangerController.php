@@ -243,6 +243,7 @@ class WebsettingmangerController extends Controller{
         $form->role=$adminUserModel->role;
         $form->mobile=$adminUserModel->mobile;
         $form->status=$adminUserModel->status;
+        $form->role=$adminUserModel->role;
         return $this->render(Variable::$editAdminUser_view,['model'=>$form,'adminUserModel'=>$adminUserModel,]);
     }
     /*
@@ -290,17 +291,11 @@ class WebsettingmangerController extends Controller{
                         $model->address='/'.$targetFolder.$path;
                         $model->save();
                     }
-
-
-//                   JsonParser::GenerateJsonResult("_0000",'video/'.$_FILES['file']['name']);
-//                    echo 'ss';
-                };
-            echo 'fail';
-            exit;
-
-//            } else {
-//                echo 'Invalid file type.';
-//            }
+                }
+                else{
+                    echo 'fail';
+                    exit;
+                }
         }
     }
 
@@ -325,7 +320,7 @@ class WebsettingmangerController extends Controller{
         if($http_code == 200) {
             $model=Material::find()->where(['materialId'=>Variable::$materialId_productVideo])->one();
             if($model){
-                $model->address='video/'.$_FILES['file']['name'];
+                $model->address=$videoLink;
                 if($model->save()){
                     JsonParser::GenerateJsonResult('_0000','上传成功');
                     exit;
@@ -335,7 +330,7 @@ class WebsettingmangerController extends Controller{
                 $model=new Material();
                 $model->type=2;
                 $model->materialId=Variable::$materialId_productVideo;
-                $model->address='/video/'.$_FILES['file']['name'];
+                $model->address=$videoLink;
                 if($model->save()){
                     JsonParser::GenerateJsonResult('_0000','上传成功');
                     exit;

@@ -94,9 +94,9 @@
      public static $articleCat_view='/multimediaManger/articleCat';
      public static $addArticle_view='/multimediaManger/addArticle';
      public static $showArticle_view='/multimediaManger/showArticle';
-     public static $liftObject_view='/multimediamanger/liftObject';
-     public static $editLiftObject_view='/multimediamanger/editLiftObject';
-     public static $showLiftObject_view='/multimediamanger/showLiftObject';
+     public static $liftObject_view='/multimediaManger/liftObject';
+     public static $editLiftObject_view='/multimediaManger/editLiftObject';
+     public static $showLiftObject_view='/multimediaManger/showLiftObject';
      public static $materialManger_view='/multimediaManger/materialManger';
      public static $bannerList_view='/multimediaManger/bannerList';
      public static $addBanner_view='/multimediaManger/addBanner';

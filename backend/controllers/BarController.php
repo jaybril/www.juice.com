@@ -64,7 +64,7 @@ class BarController extends  Controller{
         $barModel = Bar::findOne($id);
         $barListModel=Bar::find()->where(['parentBar'=>$id])->all();
 
-        return $this->render(Variable::$editBarList_url,['barModel'=>$barModel,'barListModel'=>$barListModel]);
+        return $this->render(Variable::$editBarList_view,['barModel'=>$barModel,'barListModel'=>$barListModel]);
     }
     /*
 * 删除

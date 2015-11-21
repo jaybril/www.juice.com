@@ -26,11 +26,6 @@
                     }
                 </style>
                 <div class="row top">
-<!--                    <div>-->
-<!--                        <input type="hidden" value="--><?//=$barModel->id;?><!--" id="parentId">-->
-<!--                        <b style="color: #939090;">栏目名：</b>-->
-<!--                        <b>--><?//=$barModel->name ;?><!--</b>-->
-<!--                    </div>-->
                 </div>
                 <div id="barform-name" class="multiple-input">
                     <table class="multiple-input-list table table-condensed" id="rowTable">
