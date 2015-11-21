@@ -33,21 +33,21 @@
                     'required',
                     'message'=>'请输入密码'
                 ],
-                [
-                    ['role'],
-                    'required',
-                    'message'=>'请填写用户角色'
-                ],
-                [
-                    ['mobile'],
-                    'required',
-                    'message'=>'请填写用户手机号码'
-                ],
-                [
-                    ['mobile'],
-                    'required',
-                    'message'=>'请填写用户手机号码'
-                ],
+//                [
+//                    ['role'],
+//                    'required',
+//                    'message'=>'请填写用户角色'
+//                ],
+//                [
+//                    ['mobile'],
+//                    'required',
+//                    'message'=>'请填写用户手机号码'
+//                ],
+//                [
+//                    ['mobile'],
+//                    'required',
+//                    'message'=>'请填写用户手机号码'
+//                ],
                 [
                     ['mobile'],
                     'checkPhoneIsOk'

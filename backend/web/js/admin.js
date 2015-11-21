@@ -762,6 +762,7 @@ var submitVideo= function () {
         cache: false,
         url: '/websettingmanger/uploadnetvideo',
         data: {'videoLink':videoLink},
+        dataType:'json',
         success: function(json) {
             if(json){
                 if(json.status=='_0001'){

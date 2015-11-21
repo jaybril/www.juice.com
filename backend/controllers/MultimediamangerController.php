@@ -315,11 +315,13 @@ class MultimediamangerController extends  Controller{
             $this->redirect(Variable::$home_url);
             return;
         }
-        $query = Article::find()->where(['<>','categoryId',[1001,1003,1004,1006,1005,1007,1008]]);
+        $query = Article::find()->andWhere(['not in','categoryId',[1004,1006,1005,1007,1008]]);
+
         $pagination = new Pagination([
             'defaultPageSize' => 8,
             'totalCount' => $query->count(),
         ]);
+//        var_dump($query->count());
         $countries = $query->orderBy('addTime DESC')->offset($pagination->offset)->limit($pagination->limit)->all();
         return $this->render(Variable::$articleManger_view,[
             'countries' => $countries,

@@ -26,7 +26,8 @@ class AppAsset extends AssetBundle
         'css/otherpage.css',
         'css/reset.css',
         'css/site.css',
-        'css/jcarousel.connected-carousels.css'
+        'css/jcarousel.connected-carousels.css',
+        'js/video/video-js.min.css'
     ];
     public $js = [
 //        'js/jquery-ui.js',
@@ -36,7 +37,8 @@ class AppAsset extends AssetBundle
         'layer/layer.js',
         'js/jcarousel.connected-carousels.js',
         'js/jquery.jcarousel.min.js',
-        'uploadify/jquery.uploadify.min.js'
+        'uploadify/jquery.uploadify.min.js',
+        'js/video/video.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

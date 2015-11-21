@@ -196,10 +196,13 @@ class WebsettingmangerController extends Controller{
         $form->setScenario('create');
         if($form->load($req->post()) && $form->validate()){
             if($user->addAdminUser($form->username,$form->password,$form->mobile,$form->role,$form->status)){
+                Yii::$app->session->setFlash(Variable::$flash_success,'添加成功');
                 $this->redirect(Variable::$adminUserManger_url);
                 return;
+            }{
+                Yii::$app->session->setFlash(Variable::$flash_error,'添加失败，请刷新重试');
             }
-            $form->addError('','添加失败，请检查数据');
+
         }
         return $this->render(Variable::$addAdminUser_view,['model'=>$form]);
     }
@@ -228,10 +231,10 @@ class WebsettingmangerController extends Controller{
         if($form->load($req->post()) && $form->validate()){
             $isSuccess = $adminUserModel->updateAdminUser($id,$form->password,$form->mobile,$form->role,$form->status);
             if($isSuccess){
-                $form->addError('','资料更新成功');
+                Yii::$app->session->setFlash(Variable::$flash_success,'更新成功');
             }
             else{
-                $form->addError('','资料更新失败');
+                Yii::$app->session->setFlash(Variable::$flash_success,'更新失败，');
             }
         }
         $adminUserModel = $adminUserModel->findUserByUserId($id);
@@ -266,37 +269,25 @@ class WebsettingmangerController extends Controller{
         return $this->render(Variable::$video_view,['video'=>$video]);
     }
     public function actionUploadvideo(){
-
-        $targetFolder = '/video'; // Relative to the root
-        $verifyToken = md5('unique_salt' . time());
-
+        $targetFolder = 'video/';
         if (!empty($_FILES)) {
-//            print_r($_FILES);
-//            exit;
-            $tempFile = $_FILES['file']['tmp_name'];
-
-//            echo '---';
-//            exit;
-            $targetPath = $_SERVER['DOCUMENT_ROOT'] . $targetFolder;
-            $targetFile = rtrim($targetPath,'/') . '/' . $_FILES['file']['name'];
-//            print_r($targetFile);
-
-            // Validate the file type
-            $fileTypes = array('jpg','jpeg','gif','png'); // File extensions
-            $fileParts = pathinfo($_FILES['file']['name']);
-
-//            if (in_array($fileParts['extension'],$fileTypes)) {
-                if(move_uploaded_file($tempFile,$targetFile)){
+            $fileName=$_FILES['file']['name'];
+            $arr=explode('.',$fileName);
+            $ext='.'.$arr[count($arr)-1];
+            $tep=$_FILES['file']['tmp_name'];
+            $path=pathinfo($tep);
+            $path=$path['basename'].$ext;
+                if(move_uploaded_file($tep,$targetFolder.$path)){
                     $model=Material::find()->where(['materialId'=>Variable::$materialId_productVideo])->one();
                     if($model){
-                        $model->address='video/'.$_FILES['file']['name'];
+                        $model->address='/'.$targetFolder.$path;
                         $model->save();
                     }
                     else{
                         $model=new Material();
                         $model->type=2;
                         $model->materialId=Variable::$materialId_productVideo;
-                        $model->address='/video/'.$_FILES['file']['name'];
+                        $model->address='/'.$targetFolder.$path;
                         $model->save();
                     }
 
@@ -319,6 +310,9 @@ class WebsettingmangerController extends Controller{
             JsonParser::GenerateJsonResult('_0001','不合法的视频链接');
             exit;
         }
+        $ss='video/';
+        if(!strpos($videoLink,$ss)){
+
         $ch = curl_init();
         curl_setopt ($ch, CURLOPT_URL, $videoLink);
         //不下载
@@ -351,5 +345,10 @@ class WebsettingmangerController extends Controller{
         }
         JsonParser::GenerateJsonResult('_0001','不合法的视频链接');
         exit;
+        }
+        JsonParser::GenerateJsonResult('_0000','上传成功');
+        exit;
+
     }
+
 }

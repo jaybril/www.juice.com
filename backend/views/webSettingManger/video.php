@@ -23,13 +23,19 @@
 
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">添加网络链接</a></li>
-                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">本地上传</a></li>
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">本地上传</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">网络视频源 </a></li>
                         </ul>
 
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="home">
+                                <form>
+                                    <input id="projectfile" name="file" type="file" />
+                                </form>
+
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile">
                                 <div id="barform-name" class="multiple-input">
                                     <table class="multiple-input-list table table-condensed" id="rowTable">
                                         <thead>
@@ -47,17 +53,12 @@
                                             </td>
                                             <td>
                                                 <div class="btn btn btn-success" onclick="submitVideo()">确定</div>
-<!--                                                <div class="btn btn btn-cancel" style="margin-left: 4px;" onclick="deleteOnRowForCus(this,1020)">删除</div>-->
+                                                <!--                                                <div class="btn btn btn-cancel" style="margin-left: 4px;" onclick="deleteOnRowForCus(this,1020)">删除</div>-->
                                             </td>
                                         </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="profile">
-                                <form>
-                                    <input id="projectfile" name="file" type="file" />
-                                </form>
                             </div>
                         </div>
 
@@ -65,20 +66,28 @@
 
                 </div>
                 <div class="row">
-<!--                    <object type="application/x-shockwave-flash" data="--><?//=$video->address?><!--" width="100%" height="300px">-->
-<!--                        <param name="allowFullScreen" value="true">-->
-<!--                        <param name="allowScriptAccess" value="always">-->
-<!--                        <param name="movie" value="--><?//=$video->address?><!--">-->
-<!--                        <param name="flashvars" value="imglogo=&amp;paid=0&amp;partnerId=localhost">-->
-<!--                    </object>-->
-                    <video width="400" height="240" controls >
-                        <source src="<?=$video->address?>" type="video/ogg" width="300px">
-<!--                        <source src="movie.mp4" type="video/mp4">-->
-<!--                        <source src="movie.webm" type="video/webm">-->
-<!--                        <object data="movie.mp4" width="320" height="240">-->
-<!--                            <embed width="320" height="240" src="movie.swf">-->
-                        </object>
-                    </video>
+                    <p>提示：</p>
+                    <p>1）考虑到浏览器兼容性问题，请最好选择mp4、mov、mpeg等格式的视频上传</p>
+                    <p>2）上传本地视频或者添加的网络视频源在下面的视频栏没有播放，则说明本地视频或者网络视频源不存在，请重新上传</p>
+                </div>
+                <div class="row" style="margin-top: 50px">
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-sm-6">
+                        <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="100%" height="264"
+
+                               data-setup="{}">
+                            <source src="<?=$video->address?>" type='video/swf' />
+                            <source src="<?=$video->address?>" type='video/mp4' />
+                            <source src="<?=$video->address?>" type='video/mp3' />
+                            <source src="<?=$video->address?>" type='video/webm' />
+                            <source src="<?=$video->address?>" type='video/ogg' />
+                            <source src="<?=$video->address?>" type='video/mov' />
+                            <track kind="captions" src="/video/demo.captions.vtt" srclang="en" label="English"></track>
+                            <track kind="subtitles" src="/video/demo.captions.vtt" srclang="en" label="English"></track>
+                        </video>
+                    </div>
+                    <div class="col-sm-3"></div>
                 </div>
             </div>
         </div>
@@ -93,12 +102,23 @@ $('#projectfile').uploadify({
 'formData': {'projectid': '${project.id}'},
 'fileObjName' : 'file',
 'fileSizeLimit' : '0',
+'auto':true,
+'width':'200',
+'height':'60',
+'buttonImg':'/img/index_03.png',
+'cancelImg':'/img/index_03.png',
+'fileDesc': '请选择视频',
+'buttonText': '点击选择视频文件',
+'multi': false,
+'fileExt':'*.mp4;*.ogg,*.webm,*.flv,*.swf',
 'onQueueComplete' : function(queueData) {
 alert('文件上传成功');
 LocationPageByTimeOut('', 1);
 }
 });
 });
+
+videojs.options.flash.swf = "/video/video-js.swf";
 <?php $this->endBlock() ?>
 
 <?php $this->registerJs($this->blocks['myjs'], \yii\web\View::POS_END); ?>

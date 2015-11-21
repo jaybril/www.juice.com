@@ -34,7 +34,7 @@
                     $this->addError('username','用户名不存在');
                 }
                 if(md5($this->password)!=$model->password){
-                    $this->addError('password','密码不正确');
+                    $this->addError('password','密码不正确'.'md5($this->password):'.md5($this->password).';;$model->password:'.$model->password);
                 }
                 if($model->status==1){
                     $this->addError('username','用户处于冻结状态，请联系系统管理员解锁');

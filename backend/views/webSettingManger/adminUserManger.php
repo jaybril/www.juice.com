@@ -64,16 +64,3 @@
     </div>
 </div>
 
-<div class="discount-fixed seller-fixed" id="seller-fixed">
-    <div class="dis-close">×</div>
-    <div class="dis-head">添加管理员</div>
-    <div class="dis-con">
-        <form>
-            <input type="text" placeholder="用户名" />
-            <input type="password" placeholder="密码" />
-            <input type="text" placeholder="手机号码" />
-            <input type="text" placeholder="角色" />
-            <input type="submit" value="确定" class="dis-btn" />
-        </form>
-    </div>
-</div>
