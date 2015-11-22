@@ -1,0 +1,97 @@
+@charset "utf-8";
+/*
+ * 果园
+ */
+html, body {
+    height: 100%;
+    position: relative;
+}
+.banner_max {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 9999;
+}
+.layout{ position: relative; width: 1190px; height: 100%; margin: 0 auto;}
+
+.banner1_wp{ background: url("/images/orchard/1.jpg") no-repeat center top; background-size: cover; height: 100%}
+.banner1_wp .tit_txt{ position: relative; top: 30%; left: 30px; background: url("/images/orchard/g.png") no-repeat 0 0; width: 314px; height: 194px;}
+.banner1_wp ul{ position: absolute; top: 1%; left: 3%}
+.banner1_wp li{ position: absolute; background: url("/images/orchard/g.png") no-repeat -364px 0; z-index: 33   }
+.banner1_wp .p1{ top: 325px; left: 460px; background-position: -364px 0; width: 113px; height: 74px;}
+.banner1_wp .p2{ top: 225px; left: 680px; background-position: -496px 0; width: 236px; height: 96px;}
+.banner1_wp .p3{ top: 385px; left: 670px; background-position: -364px -82px; width: 114px; height: 75px;}
+.banner1_wp .p4{ top: 275px; left: 850px; background-position: -519px -123px; width: 126px; height: 78px;}
+.banner1_wp .p5{ top: 170px; left: 890px; background-position: -749px 0; width: 160px; height: 50px;}
+.banner1_wp .p6{ top: 210px; left: 920px; background-position: -364px -167px; width: 145px; height: 50px;}
+.banner1_wp .p7{ top: 250px; left: 940px; background-position: -652px -141px; width: 142px; height: 52px;}
+.banner1_wp .p8{ top: 370px; left: 970px; background-position: -810px -141px; width: 114px; height: 75px;}
+.banner1_img{ position: absolute; top:0; left: 0; background: url("/images/orchard/1-img.png") no-repeat no-repeat center top; width: 100%; height: 100%; z-index: 22 }
+
+
+.banner2_wp{ background: url("/images/orchard/2.jpg") no-repeat center top; background-size: cover; height: 100%}
+.banner2_wp .tit_txt{ position: relative; top: 30%; left: 30px; background: url("../../images/orchard/g.png") no-repeat 0 -283px; width: 410px; height: 175px;}
+.banner2_wp li{ position: absolute; display: none; background: url("/images/orchard/g.png") no-repeat;  }
+
+.banner2_wp .p1{ top: 75px; left: 630px; background-position: -450px -687px; width: 446px; height: 77px;}
+.banner2_wp .p4{ top: 325px; left: 425px; background-position: -450px -288px; width: 506px; height: 117px;}
+.banner2_wp .p2{ top: 205px; left: 510px; background-position: -450px -413px; width: 496px; height: 137px;}
+.banner2_wp .p3{ top: 285px; left: 400px; background-position: -450px -559px; width: 506px; height: 117px;}
+
+.banner2_wp .q{ position: absolute; background: url("/images/orchard/g.png") no-repeat -440px -1001px; width: 41px; height: 41px; }
+.banner2_wp .q1{ left: 610px; top: 40px; animation-duration: 1s;}
+.banner2_wp .q2{ left: 920px; top: 180px; animation-duration: 8s;}
+.banner2_wp .q3{ left: 800px; top: 400px; background-position: -440px -1062px; width: 28px; height: 25px; animation-duration: 10s;}
+.banner2_wp .q4{ left: 700px; top: 280px; animation-duration: 5s;}
+
+.banner3_wp{ background: url("/images/orchard/3.jpg") no-repeat center top; background-size: cover; height: 100%}
+.banner3_wp .tit_txt{ position: relative; top: 30%; left: 60%; background: url("/images/orchard/g.png") no-repeat 0 -491px; width: 386px; height: 120px;}
+
+.banner4_wp{ background: url("/images/orchard/4.jpg") no-repeat center top; background-size: cover; height: 100%}
+.banner4_wp .tit_txt{ position: relative; top: 30%; left: 30px; background: url("/images/orchard/g.png") no-repeat 0 -647px; width: 340px; height: 124px;}
+
+.banner5_wp{ background: url("/images/orchard/5.jpg") no-repeat center top; background-size: cover; height: 100%}
+.banner5_wp .tit_txt{ position: relative; top: 35%; left: 45%; background: url("/images/orchard/g.png") no-repeat 0 -797px; width: 408px; height: 165px;}
+
+.banner6_wp{ background: url("/images/orchard/6.jpg") no-repeat center top; background-size: cover; height: 100%}
+.banner6_wp .tit_txt{ position: relative; top: 10%; left: 10px; background: url("/images/orchard/g.png") no-repeat 0 -1001px; width: 408px; height: 155px;}
+.banner6_wp .txt{ position: relative; top: 40%; left: 70%; display: none; background: url("/images/orchard/g.png") no-repeat -449px -797px; width: 187px; height: 167px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

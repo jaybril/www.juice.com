@@ -1,0 +1,211 @@
+
+@charset "utf-8";
+/*reset*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video,input{ margin: 0; padding: 0; border: 0; outline: 0; word-wrap: break-word; -webkit-tap-highlight-color: rgba(0,0,0,0);}
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{ display: block; clear: both }
+h1,h2,h3,h4,h5,h6{ font-size: 100%}
+form{ display: inline}
+ul,ol{list-style:none}
+header,footer,article,section,nav,menu,hgroup{ display: block; clear: both}
+
+img{ vertical-align: middle; border: 0; max-width: 100%; height: auto; width: auto\9; -ms-interpolation-mode: bicubic; -webkit-tap-highlight-color: rgba(0,0,0,0)}
+button,input,select,textarea{ font-size: 100%; vertical-align: middle; outline: 0; padding: 0; border: 0;}
+textarea{ resize: none}
+
+input,select{ margin: 0; padding: 0; border: 0; background: 0; font-size: 1.4rem;}
+button,input[type="button"],input[type="reset"],input[type="submit"]{ cursor: pointer; -webkit-appearance: button; -moz-appearance: button}
+input[type=search]{ -webkit-appearance: textfield}
+input[type="text"],input[type="tel"],input[type="search"],input[type="email"],input[type="password"],textarea{ -webkit-appearance: none; }
+
+table{ border-collapse: collapse; border-spacing: 0}
+a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+a[href], button { -ms-touch-action: none; touch-action: none; }
+a:hover, a:active { outline: 0; }
+a:focus { outline: thin dotted; }
+ 
+/*main*/
+html,body{ height: 100%;}
+html{ font-size: 20px;}
+body{ font: 12px/1.5 "microsoft yahei", arial, sans-serif; -webkit-text-size-adjust: none; color: #3a3a3a; background: #fff; margin: 0 auto;}
+a{ text-decoration: none; color: #f76540;}
+a:hover{ color:#f76540;}
+input::-webkit-input-placeholder {color:#3a3a3a;}
+input::-moz-placeholder {color:#3a3a3a;}
+input::-ms-input-placeholder {color: #3a3a3a;}
+.layout1190{ width: 1190px; margin: 0 auto;}
+.layout1062{ width: 1062px; margin: 0 auto;}
+
+/*font*/
+@font-face {
+    font-family: 'iconfont';
+    src: url('//at.alicdn.com/t/font_1442243084_0455112.eot'); /* IE9*/
+    src: url('//at.alicdn.com/t/font_1442243084_0455112.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/font_1442243084_0455112.woff') format('woff'), /* chrome、firefox */
+    url('//at.alicdn.com/t/font_1442243084_0455112.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/font_1442243084_0455112.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+             
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*com*/
+.hide{ display: none}
+.show{ display: block}
+.ellipsis{ white-space: nowrap; text-overflow: ellipsis; overflow: hidden; word-break: keep-all;}
+.break{ word-break: break-all; word-wrap: break-word}
+.clearfix{ clear: left; zoom: 1;}
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; zoom: 1}
+.box-sizing{ box-sizing: border-box; -moz-box-sizing:border-box; -webkit-box-sizing: border-box;}
+.bold{ font-weight: bold}
+.transition{ -webkit-transition: all linear 0.5s; -moz-transition: all linear 0.5s; transition: all linear 0.5s;}
+
+.ft14{ font-size: 14px;}
+.ft16{ font-size: 16px;}
+.ft18{ font-size: 18px;}
+.ft20{ font-size: 20px;}
+.ft24{ font-size: 24px;}
+.ft26{ font-size: 26px;}
+
+
+/*header*/
+.gol_header{ height: 70px; padding: 20px 0;}
+.gol_header .bd{ padding: 0 100px; }
+.gol_header .logo{ display: block; background: url("../../images/com/logo@154-70.jpg") no-repeat; width: 154px; height: 70px;}
+
+/*nav*/
+.gol_nav_wp{ background: #323232; height: 50px;}
+.gol_nav{ position: relative;}
+.gol_nav ul{ float: left; padding-left: 100px; overflow: hidden; zoom: 1}
+.gol_nav li{ float: left;}
+.gol_nav li a{ float: left; height: 50px; padding: 0 32px; line-height: 50px; border-left: 1px solid #3a3a3a; border-right: 1px solid #3a3a3a; color: #fff; font-size: 14px; -webkit-transition: all linear 0.5s; -moz-transition: all linear 0.5s; transition: all linear 0.5s;}
+.gol_nav .cur a,.gol_nav li a:hover{ background: #f76540; text-decoration: none}
+
+.gol_nav .search a{ padding: 0 20px; font-size: 22px;}
+
+.gol_nav .fast{ position: absolute; right: 86px; top: -8px; transition: all linear 0.5s; z-index: 9999}
+.gol_nav .fast .bg{ position: relative; display: block; background: url("../../images/com/fast.png") no-repeat; width: 198px; height: 63px; transition: all linear 0.5s;}
+.gol_nav .hum{ position: absolute; right: 60px; top: -93px; background: url("../../images/com/cz.png") no-repeat; width: 81px; height: 103px; -webkit-transition: all linear 0.5s; -moz-transition: all linear 0.5s; transition: all linear 0.5s;}
+.gol_nav .fast:hover .hum{ animation: 4s linear 0s infinite move; -webkit-animation: 4s linear 0s infinite move; -moz-animation: 4s linear 0s infinite move; transform: translate3d(0,0,0);}
+
+/*小人*/
+@-webkit-keyframes move{
+    0%   {right:86px;}
+    25%  {right:76px;}
+    50%  {right:86px;}
+    75%  {right:96px;}
+    100% {right:86px;}
+}
+@-moz-keyframes move{
+    0%   {right:66px;}
+    25%  {right:86px;}
+    50%  {right:66px;}
+    75%  {right:86px;}
+    100% {right:66px;}
+}
+@-ms-keyframes move{
+    0%   {right:66px;}
+    25%  {right:86px;}
+    50%  {right:66px;}
+    75%  {right:86px;}
+    100% {right:66px;}
+}
+@-webkit-keyframes move{
+    0%   {right:86px;}
+    25%  {right:76px;}
+    50%  {right:86px;}
+    75%  {right:96px;}
+    100% {right:86px;}
+}
+
+/*联系*/
+.gol_contact_wp{ background: #3b3b3b; border-top: 1px solid #e74e30;}
+.gol_contact{ width: 1200px; height: 253px; margin: 0 auto; padding: 30px 0;}
+.gol_contact .weixin-main{ position: absolute; display: none; background: url("../../images/com/wei.png") no-repeat; width: 220px; height: 236px; z-index: 1000 }
+
+.gol_contact .ly-lt{ float: left; overflow: hidden; zoom: 1}
+.gol_contact .ly-lt dl{ float: left; width: 88px; padding-right: 15px;}
+.gol_contact .ly-lt dt{ margin-bottom: 10px; font-size: 18px; color: #e74e30; font-weight: bold;}
+.gol_contact .ly-lt dd{ color: #cdcdcd; line-height: 22px;}
+.gol_contact .ly-lt dd a{ color: #cdcdcd; font-size: 12px;}
+.gol_contact .ly-lt dd a:hover{ color: #e74e30;}
+
+.gol_contact .ly-rt{ float: right; width: 360px; height: 263px; padding-left: 15px; border-left: 1px solid #e74e30; color: #c7c7c7; overflow: hidden;}
+
+.gol_contact .search_wp{ position: relative; width: 316px; height: 38px;}
+.gol_contact .search_wp input{ background: #7c7c7c; width: 260px; height: 38px; padding: 0 10px; padding-right: 40px; line-height: 38px; font-size: 12px;}
+.gol_contact .search_wp input:focus,.gol_contact .search_wp input:hover{ background: #fff;}
+.gol_contact .search_wp .iconfont{ position: absolute; right: 10px; top: -5px; font-size: 30px; cursor: pointer}
+.gol_contact .search_wp .iconfont:hover{ color: #e74e30}
+.gol_contact .search_wp .btn{ position: absolute; right: 0; top: -2px; width: 48px; height: 38px; filter:alpha( Opacity=0); opacity: 0}
+
+.gol_contact .ext{ margin-top: 30px; overflow: hidden; zoom: 1}
+.gol_contact .ext h3{ margin-bottom: 10px; font-size: 18px; color: #e74e30}
+.gol_contact .ext ul{ width: 440px; overflow: hidden; zoom: 1}
+.gol_contact .ext li{ float: left; width: 64px; margin-right: 10px; text-align: center; font-size: 14px;}
+.gol_contact .ext li .ico{ background: url("../../images/com/msg.png") no-repeat; width: 58px; height: 57px; margin-bottom: 10px; -webkit-transition: all linear 0.2s; -moz-transition: all linear 0.2s; transition: all linear 0.2s;  }
+.gol_contact .ext .weibo .ico{ background-position: -97px 0}
+.gol_contact .ext .weibo a{ display: block; width: 58px; height: 57px;}
+
+.gol_contact .ext .wx{ margin-right: 15px;}
+.gol_contact .ext .tel{ width: 100px; }
+.gol_contact .ext .tel .ico{ background-position: -191px 0; margin: 0 auto; margin-bottom: 10px;}
+.gol_contact .ext .tel span{ color: #fff;}
+.gol_contact .ext .add{ width: 70px;}
+.gol_contact .ext .add .ico{ background-position: -284px 0; margin: 0 auto; margin-bottom: 10px;}
+.gol_contact .ext .add span{ font-size: 12px; color: #fff}
+.gol_contact .ext .add a{ display: block; width: 58px; height: 57px;}
+
+.gol_contact .ext .wx:hover .ico{ background-position: 0 -67px}
+.gol_contact .ext .weibo:hover .ico{ background-position: -97px -67px}
+.gol_contact .ext .tel:hover .ico{ background-position: -191px -67px}
+.gol_contact .ext .add:hover .ico{ background-position: -284px -67px}
+
+.gol_contact .ext li:hover p,.gol_contact .ext li:hover span{ color: #e74e30; -webkit-transition: all linear 0.2s; -moz-transition: all linear 0.2s; transition: all linear 0.2s; }
+
+/*版权*/
+.gol_footer_wp{ background: #292929;}
+.gol_footer{ width: 1190px; margin: 0 auto; padding: 15px 0; color: #d5d3d3; font-size: 14px; overflow: hidden;}
+.gol_footer .ly_lt{ float: left;}
+.gol_footer .ly_lt a{ margin-right: 10px; color: #c7c7c7}
+.gol_footer .ly_lt a:hover{ color: #e74e30}
+.gol_footer .ly_rt{ float: right; color: #c7c7c7;}
+
+/*橙子*/
+.gol_cz_wp{ background: #f76540;}
+.gol_cz{ position: relative; height: 110px; z-index: 999}
+.gol_cz_wp .bg{ position: absolute; top: 32px; left: 50%; display: block; background: url("../../images/com/fast.png") no-repeat; width: 198px; height: 63px; margin-left: 25px; transition: all linear 0.5s; z-index: 10}
+.gol_cz_wp .hum{ position: absolute; top: -42px; left: 50%; background: url("../../images/com/cz2.png") no-repeat; width: 111px; height: 150px; margin-left: -50px; transition: all linear 0.5s; z-index: 0 }
+.gol_cz_wp .hum{ animation: 4s linxear 0s infinite move; -webkit-animation: 4s linear 0s infinite move; -moz-animation: 4s linear 0s infinite move; transform: translate3d(0,0,0);}
+.gol_cz_wp .hum_hand{ position: absolute; top: 30px; left: 50%; background: url("../../images/com/cz2.png") no-repeat 0 -197px; width: 24px; height: 16px; margin-left: 34px; z-index: 20}
+.gol_cz:hover .bg{ left: 45%;}
+
+/*菜单锚点*/
+.banner_max-pagination{ left: 20px; right: inherit; width: 26px; text-align: center; }
+.banner_max-pagination .swiper-pagination-bullet{ background: #fff; width: 20px; height: 20px; opacity: 1; -webkit-box-shadow:0 0 10px rgba(0, 0, 0, .2);
+ -moz-box-shadow:0 0 10px rgba(0, 0, 0, .2); box-shadow:0 0 10px rgba(0, 0, 0, .2); }
+.banner_max-pagination .swiper-pagination-bullet-active{ position: relative; left: -2px; background: #f76540; width: 26px; height: 26px; }
+
+
+.img_arr{ position: absolute; bottom: 30px; width: 97px; height: 28px; left: 50%; margin-left: -43px; z-index: 999999}
+
+.pt-page-moveIconUp {
+    animation: 1.5s ease 0s normal both infinite running moveToBottom;
+}
+
+
+@keyframes moveToBottom {
+    0% {
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+

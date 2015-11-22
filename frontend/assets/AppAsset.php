@@ -7,23 +7,34 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/reset.css',
-        'css/font-awesome.min.css',
-        'css/comment.css',
-        'css/index.css',
-        'css/otherpage.css',
+        'css/com.css',
+        'css/ext.css',
+//        'css/orc.css',
+//        'css/index.css',
+//        'css/new.css',
+//        'css/pro.css',
+//        'css/orc.css',
+//        'css/at.css',
+//        'css/serve.css',
+//        'css/life.css',
+//        'css/busines.css',
+//        'css/join.css',
     ];
     public $js = [
-        'js/html5.js',
-        'js/selectivizr.js',
+        'js/jquery/jquery.min.js',
+        'js/jquery/roundabout/jquery.roundabout.js',
+        'js/jquery/roundabout/jquery.roundabout-shapes.js',
         'layer/layer.js',
-        'js/comment.js',
-        'js/countDown.js',
-        'js/datatransfers.js',
+        'js/global.js',
+//        'js/index.js',
+//        'js/pro.js',
+//        'js/orc.js',
+//        'js/at.js',
+//        'js/join.js',
     ];
 
     public $depends = [
-        'yii\web\YiiAsset',
+//        'yii\web\YiiAsset',
 //        'yii\bootstrap\BootstrapAsset',
     ];
 

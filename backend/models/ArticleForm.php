@@ -72,9 +72,9 @@
         public function scenarios()
         {
             return [
-                'create' =>['title','author','useId','content','isTop','description','pic'],
-                'update' =>['title','author','useId','content','isTop','description','pic'],
-                'update' =>['title','author','useId','content','isTop','description','pic'],
+                'create' =>['title','author','useId','content','isTop','description','pic','isIndexShow'],
+                'update' =>['title','author','useId','content','isTop','description','pic','isIndexShow'],
+                'editLiftObject' =>['title','author','useId','content','isTop','description','pic'],
                 'service' =>['title','keywords','pic','useId','content'],
             ];
         }

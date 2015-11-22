@@ -14,7 +14,7 @@
             <?=$this->render(\common\widgets\Variable::$layoutAdminLeftMenu_view,['admin_cur'=>$admin_cur]); ?>
         </div>
         <div class="adminCon-right">
-            <?= Tool::setBreadcrumbs([['banner管理',\common\widgets\Variable::$editMaterial_url],[$this->title]]) ?>
+            <?= Tool::setBreadcrumbs([['banner管理',\common\widgets\Variable::$bannerList_url],[$this->title]]) ?>
             <div class="" id="seller-fixed">
                 <div class="dis-con">
                     <?php

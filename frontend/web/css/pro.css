@@ -1,0 +1,91 @@
+@charset "utf-8";
+/*
+ * 产品
+ */
+html, body {
+    height: 100%;
+    position: relative;
+}
+.banner_max {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 9999;
+}
+/* 轮播 */
+.banner_1_wp{ background: url("/images/pro/b1.jpg") no-repeat center top; background-size: cover; height: 100%}
+
+.banner_1{ position: relative; top: 24px; width: 536px; margin: 0 auto; }
+.banner_1 .h1{ height: 104px; line-height: 102px; font-size: 30px; color: #fff; text-align: center}
+.banner_1 .border{ position: absolute; top: 142px; left: 0; width: 532px; height: 269px; border: 2px solid #f76540}
+
+.gallery{ width: 532px; height: 309px; }
+.gallery .tit{ position: absolute; height: 32px; color: #fff; font-size: 18px; overflow: hidden;}
+.gallery .img{ display: block; width: 532px; height: 309px; margin-top: 40px;}
+
+.gallery-thumbs{ position: relative; margin-top: 30px; padding: 0 30px;}
+.gallery-thumbs .swiper-slide{ display: block; background: #000; width: 145px; height: 83px; border: 1px solid #f76540;}
+.gallery-thumbs .swiper-slide img{ filter: alpha( Opacity = 60); opacity: 0.6}
+.gallery-thumbs .swiper-button-prev{ left: 5px}
+.gallery-thumbs .swiper-button-next, .gallery-thumbs .swiper-button-prev{ top: 45px;}
+.gallery-thumbs .swiper-button-next{ right: 5px;}
+.gallery-thumbs .swiper-slide-active img{ filter:alpha( Opacity=100); opacity: 1;}
+
+/* 参数 */
+.banner_2_wp{ background: url("/images/pro/b2.jpg") no-repeat center top; background-size: cover; height: 100%}
+.banner_2_wp .layout1190{ position: relative; height: 100%}
+.banner_2_wp .img{ position: absolute; top: 10%; left: 0;}
+.banner_2_wp .btn_wp{ background: url("/images/pro/line.png") no-repeat center center; width: 504px; height: 100px; position: absolute; top: 75%; left: 530px; overflow: hidden;
+  z-index: 2; }
+.banner_2_wp .btn{ position: relative; left: 30%; top: 5px; float: left; width: 80px; height: 79px; margin-right: 40px; cursor: pointer}
+.banner_2_wp .btn_wp .big{ display: none}
+.banner_2_wp .btn_wp .cur .big{ display: block;}
+.banner_2_wp .btn_wp .cur .small{ display: none;}
+
+/* 优势 */
+.banner_3_wp{ background: url("/images/pro/b3.jpg") no-repeat center top; background-size: cover; height: 100%}
+.banner_3_wp ul{ position: relative; top: 50%; left: 1%; width: 1062px; margin: 0 auto; overflow: hidden; zoom: 1}
+.banner_3_wp ul li{ display: inline-block; float: left; width: 169px; margin-right: 26px;}
+.banner_3_wp ul div{ background: url("/images/pro/banner_3.png") no-repeat 0 0; width: 169px; height: 171px; }
+.banner_3_wp ul p{ display: none; background: url("/images/pro/banner_3.png") no-repeat; width: 169px; height: 90px;  margin-top: 20px;}
+
+.banner_3_wp .y2 div{ background: url("/images/pro/banner_3.png") -194px 0;}
+.banner_3_wp .y3 div{ background-position: -388px 0;}
+.banner_3_wp .y4 div{ background-position: -582px 0;}
+.banner_3_wp .y5 div{ background-position: -776px 0;}
+
+.banner_3_wp .y1 div.cur{ background: url("/images/pro/banner_3.png") no-repeat 0 -170px;}
+.banner_3_wp .y2 div.cur{ background-position: -194px -170px;}
+.banner_3_wp .y3 div.cur{ background-position: -388px -170px;}
+.banner_3_wp .y4 div.cur{ background-position: -582px -170px;}
+.banner_3_wp .y5 div.cur{ background-position: -776px -170px;}
+
+.banner_3_wp .y1 p.cur{ background-position: 0 -356px;}
+.banner_3_wp .y2 p.cur{ background-position: -194px -356px;}
+.banner_3_wp .y3 p.cur{ background-position: -388px -356px;}
+.banner_3_wp .y4 p.cur{ background-position: -582px -356px;}
+.banner_3_wp .y5 p.cur{ background-position: -776px -356px;}
+
+/* 认证 */
+.banner_4_wp{ background: url("/images/pro/3.jpg") no-repeat center top; background-size: cover; height: 100%; padding-top: 10%;}
+
+/* roundabout */
+.roundabout-holder{ width: 850px; height: 496px; margin: 0 auto;}
+.roundabout-moveable-item{ cursor: pointer; text-align: center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

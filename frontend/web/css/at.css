@@ -1,0 +1,142 @@
+@charset "utf-8";
+/*
+ * 在中国
+ */
+
+/* banner */
+.top_banner{ background: url("../../images/at/1.jpg") no-repeat center top; height: 425px}
+
+/*正文*/
+.content_pg{ padding: 40px 0 65px 0;}
+.content_pg .tit{ margin-bottom: 50px; text-align: center}
+.content_pg dl{ margin-bottom: 10px; padding: 0 30px; overflow: hidden; zoom: 1}
+.content_pg dt{ padding-top: 20px; float: left; width: 130px; font-size: 18px;}
+.content_pg dd{ float: left; width: 1000px;}
+.content_pg dd a{ margin-top: 10px; margin-right: 10px;}
+
+body .my_layer{ background: none; box-shadow: none}
+.logo_main .left_meun{ float: left; padding-right: 10px;}
+.logo_main .left_meun a{ display: block; background: #323232; width: 190px; height: 50px; margin-bottom: 5px; line-height: 50px; color: #fff; text-align: center}
+.logo_main .left_meun a:hover{ background: #2d2d2d}
+.logo_main .left_meun .cur{ background: #f76540;}
+.logo_main .center_bd{ position: relative; float: left; }
+.logo_main .close{ position: absolute; background: url("../../images/com/layer.png") no-repeat; width: 76px; height: 49px; right: -76px; top: 0; cursor: pointer z-index: 9999}
+
+
+.gallery{ width: 825px; height: 488px;}
+.gallery img{ display: block; width: 825px; height: 488px;}
+
+.swiper-button-next,.swiper-button-prev{ background: url("../../images/com/layer.png") no-repeat; width: 76px; height: 49px; top: 514px;}
+.swiper-button-next{ background-position: -167px 0; right: 0;}
+.swiper-button-prev{ background-position: -87px 0; left: auto; right: 78px; }
+
+.d_a{ display: block; float: left; width: 203px; height: 104px; }
+
+.d_1_1{ background: url("../../images/at/logo/1_1.jpg") no-repeat;}
+.d_1_1:hover{ background: url("../../images/at/logo/1_1_h.jpg") no-repeat;}
+
+.d_1_2{ background: url("../../images/at/logo/1_2.jpg") no-repeat;}
+.d_1_2:hover{ background: url("../../images/at/logo/1_2_h.jpg") no-repeat;}
+
+.d_2_1{ background: url("../../images/at/logo/2_1.jpg") no-repeat;}
+.d_2_1:hover{ background: url("../../images/at/logo/2_1_h.jpg") no-repeat;}
+
+.d_2_2{ background: url("../../images/at/logo/2_2.jpg") no-repeat;}
+.d_2_2:hover{ background: url("../../images/at/logo/2_2_h.jpg") no-repeat;}
+
+.d_2_3{ background: url("../../images/at/logo/2_3.jpg") no-repeat; width: 152px;}
+.d_2_3:hover{ background: url("../../images/at/logo/2_3_h.jpg") no-repeat;}
+
+.d_2_4{ background: url("../../images/at/logo/2_4.jpg") no-repeat; width: 272px;}
+.d_2_4:hover{ background: url("../../images/at/logo/2_4_h.jpg") no-repeat;}
+
+.d_3_1{ background: url("../../images/at/logo/3_1.jpg") no-repeat;}
+.d_3_1:hover{ background: url("../../images/at/logo/3_1_h.jpg") no-repeat;}
+
+.d_3_2{ background: url("../../images/at/logo/3_2.jpg") no-repeat;}
+.d_3_2:hover{ background: url("../../images/at/logo/3_2_h.jpg") no-repeat;}
+
+.d_3_3{ background: url("../../images/at/logo/3_3.jpg") no-repeat; width: 172px;}
+.d_3_3:hover{ background: url("../../images/at/logo/3_3_h.jpg") no-repeat;}
+
+.d_3_4{ background: url("../../images/at/logo/3_4.jpg") no-repeat; width: 198px;}
+.d_3_4:hover{ background: url("../../images/at/logo/3_4_h.jpg") no-repeat;}
+
+.d_3_5{ background: url("../../images/at/logo/3_5.jpg") no-repeat; width: 198px;}
+.d_3_5:hover{ background: url("../../images/at/logo/3_5_h.jpg") no-repeat;}
+
+.d_3_6{ background: url("../../images/at/logo/3_6.jpg") no-repeat; width: 203px;}
+.d_3_6:hover{ background: url("../../images/at/logo/3_6_h.jpg") no-repeat;}
+
+.d_3_7{ background: url("../../images/at/logo/3_7.jpg") no-repeat; width: 203px;}
+.d_3_7:hover{ background: url("../../images/at/logo/3_7_h.jpg") no-repeat;}
+
+.d_3_8{ background: url("../../images/at/logo/3_8.jpg") no-repeat; width: 198px;}
+.d_3_8:hover{ background: url("../../images/at/logo/3_8_h.jpg") no-repeat;}
+
+.d_3_9{ background: url("../../images/at/logo/3_9.jpg") no-repeat; width: 198px;}
+.d_3_9:hover{ background: url("../../images/at/logo/3_9_h.jpg") no-repeat;}
+
+.d_3_10{ background: url("../../images/at/logo/3_10.jpg") no-repeat; width: 198px;}
+.d_3_10:hover{ background: url("../../images/at/logo/3_10_h.jpg") no-repeat;}
+
+.d_3_11{ background: url("../../images/at/logo/3_11.jpg") no-repeat; width: 203px;}
+.d_3_11:hover{ background: url("../../images/at/logo/3_11_h.jpg") no-repeat;}
+
+.d_3_12{ background: url("../../images/at/logo/3_12.jpg") no-repeat; width: 203px;}
+.d_3_12:hover{ background: url("../../images/at/logo/3_12_h.jpg") no-repeat;}
+
+.d_3_13{ background: url("../../images/at/logo/3_13.jpg") no-repeat; width: 198px;}
+.d_3_13:hover{ background: url("../../images/at/logo/3_13_h.jpg") no-repeat;}
+
+.d_3_14{ background: url("../../images/at/logo/3_14.jpg") no-repeat; width: 198px;}
+.d_3_14:hover{ background: url("../../images/at/logo/3_14_h.jpg") no-repeat;}
+
+.d_3_15{ background: url("../../images/at/logo/3_15.jpg") no-repeat; width: 198px;}
+.d_3_15:hover{ background: url("../../images/at/logo/3_15_h.jpg") no-repeat;}
+
+.d_3_16{ background: url("../../images/at/logo/3_16.jpg") no-repeat; width: 203px;}
+.d_3_16:hover{ background: url("../../images/at/logo/3_16_h.jpg") no-repeat;}
+
+.d_3_17{ background: url("../../images/at/logo/3_17.jpg") no-repeat; width: 203px;}
+.d_3_17:hover{ background: url("../../images/at/logo/3_17_h.jpg") no-repeat;}
+
+.d_3_18{ background: url("../../images/at/logo/3_18.jpg") no-repeat; width: 203px;}
+.d_3_18:hover{ background: url("../../images/at/logo/3_18_h.jpg") no-repeat;}
+
+.d_3_19{ background: url("../../images/at/logo/3_19.jpg") no-repeat; width: 203px;}
+.d_3_19:hover{ background: url("../../images/at/logo/3_19_h.jpg") no-repeat;}
+
+.d_3_20{ background: url("../../images/at/logo/3_20.jpg") no-repeat; width: 203px;}
+.d_3_20:hover{ background: url("../../images/at/logo/3_20_h.jpg") no-repeat;}
+
+.d_4_1{ background: url("../../images/at/logo/4_1.jpg") no-repeat; width: 203px;}
+.d_4_1:hover{ background: url("../../images/at/logo/4_1_h.jpg") no-repeat;}
+
+.d_4_2{ background: url("../../images/at/logo/4_2.jpg") no-repeat; width: 203px;}
+.d_4_2:hover{ background: url("../../images/at/logo/4_2_h.jpg") no-repeat;}
+
+.d_5_1{ background: url("../../images/at/logo/5_1.jpg") no-repeat; width: 203px;}
+.d_5_1:hover{ background: url("../../images/at/logo/5_1_h.jpg") no-repeat;}
+
+.d_6_1{ position: relative;top: -15px; background: url("../../images/at/logo/6_1.jpg") no-repeat; width: 203px; height: 138px; }
+.d_6_1:hover{ background: url("../../images/at/logo/6_1_h.jpg") no-repeat;}
+
+.d_7_1{ background: url("../../images/at/logo/7_1.jpg") no-repeat; width: 203px;}
+.d_7_1:hover{ background: url("../../images/at/logo/7_1_h.jpg") no-repeat;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

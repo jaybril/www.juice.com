@@ -1,0 +1,108 @@
+@charset "utf-8";
+/*
+ * 加盟
+ */
+
+.meun_banner{ position: relative; background-repeat: no-repeat; background-position: center center; height: 599px; }
+
+.meun_banner .h1{ height: 130px; line-height: 130px; font-size: 40px; color: #fff; text-align: center}
+.meun_banner .layout1190{ position: relative;}
+
+.banner1_wp{ background-image: url("../../images/join/1.jpg");}
+.banner1_wp .h1{ padding: 40px 0;}
+.banner1_wp ul{ position: relative; left: 10px; width: 1100px; margin: 0 auto; overflow: hidden;}
+.banner1_wp li{ float: left; display: inline; background: url("../../images/join/s.png") no-repeat 0 0; width: 254px; height: 272px; margin-right: 20px; }
+.banner1_wp .p2{ background-position: -273px 0;}
+.banner1_wp .p3{ background-position: -545px 0;}
+.banner1_wp .p4{ background-position: -819px 0;}
+
+.banner2_wp{ background-image: url("../../images/join/2.jpg");}
+.banner2_wp .h1{ padding: 40px 0;}
+.banner2_wp .txt{ background: url("../../images/join/s.png") no-repeat 0 -314px; width: 1069px; height: 259px; margin: 0 auto;}
+
+.banner3_wp{ background-image: url("../../images/join/3.jpg");}
+.banner3_wp .qa_wp{ height: 420px;}
+.banner3_wp .qa_wp dl{ width: 800px; margin-top: 20px; color: #fff; font-size: 16px;}
+.banner3_wp .qa_wp dt{ font-weight: bold;}
+.banner3_wp .qa-swiper-pagination{ text-align: left; bottom: 0}
+.banner3_wp .qa-swiper-pagination span{ background: none; width: 30px; height: 30px; line-height: 30px; text-align: center; color: #fff; opacity: 1; font-size: 22px; font-family: "arial"}
+.banner3_wp span.swiper-pagination-bullet-active{ background: #f76540; }
+
+input::-webkit-input-placeholder { color: #501b00 !important;}
+input:-moz-placeholder { color: #501b00 !important;}
+input::-moz-placeholder { color: #501b00 !important;}
+input:-ms-input-placeholder {color: #501b00 !important;}
+
+.banner4_wp{ background-image: url("../../images/join/4.jpg");}
+.banner4_wp .sub{ background: url("../../images/join/s.png") no-repeat 0 -623px; width: 1091px; height: 399px; margin: 0 auto;  }
+.banner4_wp .sub table{ position: relative; top: 10px; width: 1059px; margin: 0 auto}
+.banner4_wp .sub td{ padding: 5px 0;}
+
+.banner4_wp .cl_wp{ background: url("../../images/join/s.png") no-repeat 0 -1035px; width: 336px; height: 34px; }
+.banner4_wp .cl_wp .ipt{  width: 226px; height: 34px; line-height: 34px; padding-left: 110px; font-size: 14px; color: #a32101;}
+
+.banner4_wp .c1_2{ background-position: -360px -1035px}
+.banner4_wp .c1_3{ background-position: -723px -1035px}
+
+.banner4_wp .c2_1{ background-position: 0 -1078px}
+.banner4_wp .c2_2{ background-position: -360px -1078px}
+.banner4_wp .c2_2 select{ position: relative; left: -4px; top: 6px; margin-left: 110px; width: 214px; font-size: 14px; color: #9c4417;  }
+.banner4_wp .c2_3{ background-position: -723px -1078px}
+.banner4_wp .c2_3 select{ position: relative; left: -4px; top: 6px; margin-left: 110px; width: 214px; font-size: 14px; color: #9c4417;  }
+
+.banner4_wp .c3_1{ background-position: 0 -1120px}
+.banner4_wp .c3_2{ background-position: -360px -1120px}
+.banner4_wp .c3_3{ background-position: -723px -1120px}
+.banner4_wp .c3_3 .ipt{ width: 170px}
+
+.banner4_wp .c4_1{ background-position: 0 -1162px; width: 600px; padding-left: 96px;}
+.banner4_wp .c4_1 a{ float: left; color: #fff; width: 73px; height: 34px; border-right: 1px solid #fff; line-height: 34px; text-align: center}
+.banner4_wp .c4_1 a.last{ border-right: 0 }
+.banner4_wp .c4_1 a:hover,.banner4_wp .c4_1 .cur{ background: #3b3b3b}
+.banner4_wp .c4_2{ background-position: -723px -1162px}
+
+.banner4_wp .c5_1{ background-position: 0 -1204px; width: 1059px}
+.banner4_wp .c5_1 .ipt{ width: 900px}
+
+.banner4_wp .c6_1{ background-position: 0 -1250px; width: 1059px}
+.banner4_wp .c6_1 .ipt{ width: 900px}
+
+.banner4_wp .c7_1{ background-position: 0 -1290px; width: 1059px}
+.banner4_wp .c7_1 .ipt{ width: 900px}
+
+.banner4_wp .btn{ position: relative; top: 20px; display: block; background: url("../../images/join/s.png") no-repeat -432px -1345px; width: 190px; height: 50px; margin: 0 auto;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

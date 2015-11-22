@@ -1,0 +1,46 @@
+@charset "utf-8";
+/*
+ * 橙鲜生活
+ */
+
+
+.fm{ font-weight: normal; color: #e74e30; }
+
+/* banner */
+.top_banner{ background: url("../../images/life/bn.jpg") no-repeat center top; height: 602px}
+
+/*正文*/
+.life_wp{ background: url("../../images/life/bg.jpg") no-repeat center top; padding: 80px 0;}
+.life_bg{ width: 1260px; margin: 0 auto; overflow: hidden; zoom: 1}
+
+/*导航*/
+.life_bg .sidermeun{ float: left; width: 238px; padding-left: 30px;}
+.life_bg .sidermeun h2{ font-size: 30px; color: #f76540; font-weight: normal; margin-bottom: 30px;}
+.life_bg .sidermeun li{ margin-bottom: 15px;}
+.life_bg .sidermeun a{ display: block; width: 89px; height: 22px; line-height: 22px; padding-left: 20px; color: #424242; text-align: center; -webkit-transition: all linear 0.5s; -moz-transition: all linear 0.5s; transition: all linear 0.5s;}
+.life_bg .sidermeun a:hover{ color: #e74e30}
+.life_bg .sidermeun .cur{ background: url("../../images/life/s.png") no-repeat 0 -44px; color: #fff; }
+
+/*右文*/
+.ly-right{ position: relative; left: -10px; float: left; width: 958px; padding-left: 32px; border-left: 1px dashed #f76540; overflow: hidden}
+.ly-right h2{ margin-bottom: 30px; color: #f76540}
+.ly-right p{ line-height: 24px;}
+.ly-right img{ display: block;}
+.ly-right .rt_img{ position: absolute; right: -10px; top: 160px}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

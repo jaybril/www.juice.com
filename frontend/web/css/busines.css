@@ -1,0 +1,103 @@
+@charset "utf-8";
+/*
+ * 企业
+ */
+html, body {
+    height: 100%;
+    position: relative;
+}
+.banner_max {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 9999;
+}
+.layout{ position: relative; width: 1190px; height: 100%; margin: 0 auto;}
+
+.layout .h1{ height: 110px; padding: 20px 0 0 0; line-height: 110px; font-size: 44px; color: #f76540; text-align: center}
+
+.cl_c{ color: #f76540}
+
+.banner1_wp{ background: url("../../images/busines/1.jpg") no-repeat center top; background-size: cover; height: 100%}
+.banner1_wp .ext{ margin-bottom: 20px; color: #fff; text-align: center}
+
+.banner1_wp ul{ position: relative; left: 20px; width: 1050px; margin: 0 auto; overflow: hidden;}
+.banner1_wp li{ float: left; display: inline; width: 190px; margin-right: 20px; }
+.banner1_wp .p1{ background: url("../../images/busines/s.png") no-repeat 0 0; width: 125px; height: 126px }
+.banner1_wp .p2{ background: url("../../images/busines/s.png") no-repeat -198px 0; width: 125px; height: 126px}
+.banner1_wp .p3{ background: url("../../images/busines/s.png") no-repeat -431px 0; width: 125px; height: 126px}
+.banner1_wp .p4{ background: url("../../images/busines/s.png") no-repeat -663px 0; width: 125px; height: 126px}
+.banner1_wp .p5{ background: url("../../images/busines/s.png") no-repeat -895px 0; width: 125px; height: 126px}
+
+.banner1_wp .t{ margin-top: 20px; color: #fff; font-size: 14px;}
+
+.banner2_wp{ background: url("../../images/busines/2.jpg") no-repeat center top; background-size: cover; height: 100%}
+.banner2_wp .ext{ margin-bottom: 40px; color: #fff; text-align: center}
+.banner2_wp .tit{ background: #f76540; display: inline-block; padding: 2px 15px;}
+.banner2_wp .b{ margin-top: 10px; font-size: 14px;}
+
+.banner2_wp ul{ position: relative; left: 20px; width: 915px; margin: 0 auto; overflow: hidden;}
+.banner2_wp li{ float: left; display: inline; background: url("../../images/busines/s.png") no-repeat; width: 192px; height: 193px; margin-right: 20px; }
+.banner2_wp .p1{ background-position: 0 -139px}
+.banner2_wp .p2{ background-position: -209px -139px}
+.banner2_wp .p3{ background-position: -417px -139px}
+.banner2_wp .p4{ background-position: -625px -135px }
+
+.banner2_wp .bt_txt{ margin-top: 20px; text-align: center; font-size: 16px; color: #fff}
+
+.banner3_wp{ background: url("../../images/busines/3.jpg") no-repeat center top; background-size: cover; height: 100%}
+.banner3_wp .ext{ margin-bottom: 40px; color: #fff; text-align: center}
+.banner3_wp .b{ width: 708px; margin: 10px auto 0 auto; font-size: 14px; color: #fff; text-align: center}
+.banner3_wp ul{ position: relative; left: 20px; width: 1015px; margin: 0 auto; overflow: hidden;}
+.banner3_wp li{ float: left; display: inline; background: url("../../images/busines/s.png") no-repeat; width: 334px; height: 268px; }
+.banner3_wp .p1{ background-position: 70px -345px}
+.banner3_wp .p2{ background-position: -323px -345px}
+.banner3_wp .p3{ background-position: -719px -345px}
+
+.banner4_wp{ background: url("../../images/busines/4.jpg") no-repeat center top; background-size: cover; height: 100%}
+.banner4_wp .t{ background: url("../../images/busines/s.png") no-repeat 0 -644px; width: 474px; height: 282px; margin: 0 auto }
+.banner4_wp .ext{ margin-top: 20px;  text-align: center; font-size: 16px; color: #fff}
+
+.banner5_wp{ background: url("../../images/busines/5.jpg") no-repeat center top; background-size: cover; height: 100%}
+.banner5_wp .t{ background: url("../../images/busines/s.png") no-repeat -610px -817px; width: 620px; height: 448px; margin: 0 auto }
+.banner5_wp .t-tit{ color: #fff; font-size: 22px; text-align: center}
+
+.banner6_wp{ background: url("../../images/busines/6.jpg") no-repeat center top; background-size: cover; height: 100%}
+.banner6_wp .h1{ padding: 0}
+.banner6_wp .t{ position: absolute; background: url("../../images/busines/s.png") no-repeat; }
+.banner6_wp .t1{ left: 0; top: 120px; background-position: 0 -1332px; width: 384px; height: 421px; border-right: 1px dashed #ff663a;}
+.banner6_wp .t2{ left: 404px; top: 120px; background-position: -394px -1312px; width: 380px; height: 421px; border-right: 1px dashed #ff663a;}
+.banner6_wp .t3{ left: 822px; top: 120px; background-position: -373px -1760px; width: 405px; height: 407px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
