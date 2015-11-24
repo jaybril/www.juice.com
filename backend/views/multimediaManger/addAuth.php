@@ -28,6 +28,7 @@
                     ]);
                     ?>
                     <?= $form->field($model, 'address')->label('请选择图片')->widget('common\widgets\file_upload\FileUpload',['config'=>[]]) ?>
+                    <?=$form->field($model, 'pcUrl', ['options' => ['class' => 'form-group col-lg-7  paddingLeft']])->textInput()->label('文字描述') ?>
                     <?= $form->field($model, 'isShow', ['options' => ['class' => 'form-group col-lg-7  paddingLeft']])->dropDownList(GlobalArray::$materialIsShowArray, ['prompt' => '请选择资质是否启用'])->label('是否启用'); ?>
                     <?=$form->field($model, 'sort', ['options' => ['class' => 'form-group col-lg-7  paddingLeft']])->textInput()->label('展示顺序');?>
 

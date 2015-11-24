@@ -35,6 +35,7 @@ class ArticleController extends Controller
             $this->redirect(FVariable::$articleIndex_url);
             return;
         }
+        (new Article())->updateArticleLookCount($id);
         $model=Article::findOne($id);
         $formerModel=Article::find()->where(['<','id',$id])->andWhere(['categoryId'=>Variable::$articleCat_type_news])->orderBy('id DESC')->limit(1)->one();
         $laterModel=Article::find()->where(['>','id',$id])->andWhere(['categoryId'=>Variable::$articleCat_type_news])->orderBy('id DESC')->limit(1)->one();

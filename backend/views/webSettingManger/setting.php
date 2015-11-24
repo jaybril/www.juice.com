@@ -32,9 +32,9 @@
                     <?=$form->field($model, 'copyright', ['options' => ['class' => 'form-group col-lg-6  paddingLeft']])->textInput()->label('网站版权');?>
                     <?=$form->field($model, 'phone', ['options' => ['class' => 'form-group col-lg-6  paddingLeft']])->textInput()->label('客服电话');?>
                     <?=$form->field($model, 'addr')->textInput()->label('公司地址');?>
-                    <?= $form->field($model, 'background')->label('网站背景图片')->widget('common\widgets\file_upload\FileUpload',[
-                        'config'=>[]
-                    ]) ?>
+<!--                     $form->field($model, 'background')->label('网站背景图片')->widget('common\widgets\file_upload\FileUpload',[-->
+<!--                        'config'=>[]-->
+<!--                    ]) -->
                     <?= $form->field($model, 'logo')->label('网站logo')->widget('common\widgets\file_upload\FileUpload',[
                         'config'=>[]
                     ]) ?>

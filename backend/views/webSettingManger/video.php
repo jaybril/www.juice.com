@@ -85,6 +85,7 @@
                             <source src="<?=$video->address?>" type='video/webm' />
                             <source src="<?=$video->address?>" type='video/ogg' />
                             <source src="<?=$video->address?>" type='video/mov' />
+                            <source src="<?=$video->address?>" type='video/flv' />
                             <track kind="captions" src="/video/demo.captions.vtt" srclang="en" label="English"></track>
                             <track kind="subtitles" src="/video/demo.captions.vtt" srclang="en" label="English"></track>
                         </video>

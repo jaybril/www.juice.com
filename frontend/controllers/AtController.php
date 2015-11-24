@@ -16,7 +16,7 @@ class AtController extends Controller
     public function actionIndex()
     {
 
-        $modelList=Customer::find()->all();
+        $modelList=Customer::find()->where(['level'=>0])->orWhere(['level'=>1])->all();
         $list=[];
         foreach($modelList as $k=>$v) {
             $name = null;

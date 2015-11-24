@@ -12,6 +12,14 @@ use common\widgets\Alert;
 use common\widgets\FVariable;
 
 AppAsset::register($this);
+
+$model=\frontend\models\WebSiteConfig::find()->one();
+ $logo='/images/com/logo@154-70.jpg';
+if($model->logo){
+    $logo=FVariable::$domainUrl.$model->logo;
+}
+
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -26,6 +34,14 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 <div class="gol_header layout1190">
+    <style>
+        .gol_header .logo {
+            display: block;
+            background: url("<?=$logo?>") no-repeat;
+            width: 154px;
+            height: 70px;
+        }
+    </style>
     <div class="bd"><a class="logo" href="<?=FVariable::$home_url?>"></a></div>
 </div>
 <!--<div class="wrap">-->
@@ -79,10 +95,10 @@ AppAsset::register($this);
 //                }
 
 
-                $parent=Bar::findAll(['isTop'=>0]);
+                $parent=Bar::find()->where(['isTop'=>0])->orderBy('sort ASC')->all();
                 $list=[];
                 foreach($parent as $k=>$v){
-                    $m=Bar::findAll(['parentBar'=>$v->id]);
+                    $m=Bar::find()->where(['parentBar'=>$v->id])->orderBy('sort ASC')->all();
                     echo '<dl>';
                     echo '<dt>'.$v->name.'</dt>';
                     foreach($m as $kk=>$vv){
@@ -108,7 +124,7 @@ AppAsset::register($this);
                             <p>点击<br/>扫码关注</p>
                         </li>
                         <li class="weibo">
-                            <div class="ico"><a href="#"></a></div>
+                            <div class="ico"><a href="http://weibo.com/u/5263811740"></a></div>
                             <p>点击<br/>进入微博</p>
                         </li>
                         <li class="tel">

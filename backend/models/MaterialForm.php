@@ -22,11 +22,11 @@ class MaterialForm extends Model
     {
         return array(
             [['pcUrl', 'sort','address','isShow','materialId','wapUrl'], 'trim'],
-            [
-                ['pcUrl'],
-                'required',
-                'message'=>'请输入图片跳转链接'
-            ],
+//            [
+//                ['pcUrl'],
+//                'required',
+//                'message'=>'请输入图片跳转链接'
+//            ],
             [
                 ['address'],
                 'required',
@@ -49,7 +49,7 @@ class MaterialForm extends Model
     {
         return [
             'banner' =>['pcUrl', 'sort','address','isShow','materialId','wapUrl'],
-            'auth' =>['address','isShow','sort'],
+            'auth' =>['address','isShow','sort','pcUrl'],
             'update' =>['pcUrl', 'sort','address','isShow','materialId'],
         ];
     }

@@ -11,6 +11,7 @@ use backend\models\ArticleCategory;
 use backend\models\ArticleForm;
 use backend\models\Material;
 use backend\models\MaterialForm;
+use common\widgets\FVariable;
 use Yii;
 use backend\models\MaterialCategory;
 use yii\web\Controller;
@@ -25,7 +26,7 @@ class MultimediamangerController extends  Controller{
             'upload' => [
                 'class' => 'kucha\ueditor\UEditorAction',
                 'config' => [
-                    "imageUrlPrefix"  =>'',//图片访问路径前缀
+                    "imageUrlPrefix"  =>FVariable::$domainUrl,//图片访问路径前缀
                     "imagePathFormat" => "/uploads/{yyyy}{mm}{dd}/{time}{rand:6}" //上传保存路径
                 ],
             ]
@@ -155,7 +156,7 @@ class MultimediamangerController extends  Controller{
         $form->setScenario('auth');
 
         if($form->load($req->post()) && $form->validate()){
-            if($materialModel->addOneImage(0,$form->materialId,$form->materialId,$form->address,0,$form->isShow,200,200,$form->sort,$form->pcUrl)){
+            if($materialModel->addOneImage(0,$form->materialId,$form->materialId,$form->address,0,$form->isShow,200,200,$form->sort,$form->pcUrl,'0')){
                 Yii::$app->session->setFlash(Variable::$flash_success,'资质认证添加成功');
                 $this->redirect(Variable::$authList_url);
                 return;
@@ -188,6 +189,7 @@ class MultimediamangerController extends  Controller{
             $isSuccess = (new Material())->updateMaterial($id,$form->materialId,$form->address,$form->isShow,$form->sort,$form->pcUrl);
             if($isSuccess){
                 Yii::$app->session->setFlash(Variable::$flash_success,'资料更新成功');
+                $this->redirect(Variable::$authList_url);
             }
             else{
                 Yii::$app->session->setFlash(Variable::$flash_error,'资料更新失败，请刷新重试');

@@ -29,7 +29,7 @@
                     <div class="action">
                         <span class="user"><a  ><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?=Tool::echoEncodeString($model->adminUser->username)?></a></span>
                         <span class="time"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> <?=Tool::echoEncodeString($model->publishTime)?></span>
-                        <span class="views"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> <?=Tool::echoEncodeString($model->lookCount,'10')?>次浏览</span>
+                        <span class="views"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> <?=Tool::echoEncodeString($model->lookCount,'0')?>次浏览</span>
                         <span class="replies"><a ><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> <?=Tool::echoEncodeString($model->isTop)?>条回复</a></span>
                         <span class="favourites"><a  data-toggle="tooltip" data-original-title="收藏"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> <em>0</em></a></span>
                     </div>

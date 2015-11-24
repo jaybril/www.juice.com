@@ -35,7 +35,6 @@
                     <div class="row">
                         <?= $form->field($model, 'pic')->label('请选择图片')->widget('common\widgets\file_upload\FileUpload',['config'=>[]]) ?>
                     </div>
-<!--                    --><?//=$form->field($model, 'content', ['options' => ['class' => 'form-group col-lg-12  paddingLeft']])->textarea()->label('文字描述');?>
                     <?= $form->field($model,'content')->label('活动规则')->widget(UEditor::className(),[
                         'clientOptions' => [
                             //编辑区域大小

@@ -26,7 +26,7 @@
                     ]);
                     ?>
                     <?= $form->field($model, 'address')->label('请选择图片')->widget('common\widgets\file_upload\FileUpload',['config'=>[]]) ?>
-                    <?=$form->field($model, 'pcUrl', ['options' => ['class' => 'form-group col-lg-7  paddingLeft']])->textInput()->label('图片链接地址') ?>
+                    <?=$form->field($model, 'pcUrl', ['options' => ['class' => 'form-group col-lg-7  paddingLeft']])->textInput()->label('文字描述') ?>
                     <?= $form->field($model, 'isShow', ['options' => ['class' => 'form-group col-lg-7  paddingLeft']])->dropDownList(GlobalArray::$materialIsShowArray, ['prompt' => '请选择图片是否启用'])->label('发布状态'); ?>
                     <?=$form->field($model, 'sort', ['options' => ['class' => 'form-group col-lg-7  paddingLeft']])->textInput()->label('展示顺序');?>
 

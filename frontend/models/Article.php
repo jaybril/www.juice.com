@@ -33,4 +33,20 @@
             }
             return false;
         }
+        //更新文章阅读数
+        public function updateArticleLookCount($id){
+            $model=Article::findOne($id);
+            if(!$model){
+                return false;
+            }
+            $cur=intval($model->lookCount);
+            if($cur<1){
+                $cur=0;
+            }
+            $model->lookCount=$cur+1;
+            if($model->save()){
+                return true;
+            }
+            return false;
+        }
     }
