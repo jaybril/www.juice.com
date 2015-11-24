@@ -8,19 +8,19 @@
             use yii\web;
             use yii\base;
             use common\widgets\Tool;
-            $admin_cur="banner";
-            $this->title='编辑素材';
+            $admin_cur="auth";
+            $this->title='编辑资质认证';
             ?>
             <?=$this->render(\common\widgets\Variable::$layoutAdminLeftMenu_view,['admin_cur'=>$admin_cur]); ?>
         </div>
         <div class="adminCon-right">
-            <?= Tool::setBreadcrumbs([['banner管理',\common\widgets\Variable::$bannerList_url],[$this->title]]) ?>
+            <?= Tool::setBreadcrumbs([['资质认证',\common\widgets\Variable::$authList_url],[$this->title]]) ?>
             <div class="" id="seller-fixed">
                 <div class="dis-con">
                     <?php
                     $form = ActiveForm::begin([
                         'id' => 'add-activity-form',
-                        'action'=>Yii::$app->urlManager->createUrl([\common\widgets\Variable::$editMaterial_url,'id'=>Tool::echoEncodeString($materialModel->id)]),
+                        'action'=>Yii::$app->urlManager->createUrl([\common\widgets\Variable::$editAuth_url,'id'=>Tool::echoEncodeString($materialModel->id)]),
                         'method'=>'post',
                         'options' => [ 'enctype' => 'multipart/form-data']
                     ]);
@@ -35,7 +35,7 @@
                     ?>
                     <div class="form-group col-lg-12">
                         <?= Html::submitButton('确定', ['class' => 'btn btn-primary', 'name' => 'add-activity-button','error'=>'ss']) ?>
-                        <a class="btn-cancel" href="<?php echo \common\widgets\Variable::$bannerList_url ;?>">返回</a>
+                        <a class="btn-cancel" href="<?php echo \common\widgets\Variable::$authList_url ;?>">返回</a>
                     </div>
                     <?php ActiveForm::end(); ?>
                 </div>

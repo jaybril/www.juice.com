@@ -12,7 +12,11 @@
 .content_pg dl{ margin-bottom: 10px; padding: 0 30px; overflow: hidden; zoom: 1}
 .content_pg dt{ padding-top: 20px; float: left; width: 130px; font-size: 18px;}
 .content_pg dd{ float: left; width: 1000px;}
-.content_pg dd a{ margin-top: 10px; margin-right: 10px;}
+.content_pg dd a{
+    margin-top: 10px;
+    margin-right: 10px;
+    /*width: 203px; height: 138px;*/
+}
 
 body .my_layer{ background: none; box-shadow: none}
 .logo_main .left_meun{ float: left; padding-right: 10px;}
@@ -30,7 +34,12 @@ body .my_layer{ background: none; box-shadow: none}
 .swiper-button-next{ background-position: -167px 0; right: 0;}
 .swiper-button-prev{ background-position: -87px 0; left: auto; right: 78px; }
 
-.d_a{ display: block; float: left; width: 203px; height: 104px; }
+.d_a{
+    display: block;
+    float: left;
+    width: 203px;
+    height: 120px;
+}
 
 .d_1_1{ background: url("../../images/at/logo/1_1.jpg") no-repeat;}
 .d_1_1:hover{ background: url("../../images/at/logo/1_1_h.jpg") no-repeat;}

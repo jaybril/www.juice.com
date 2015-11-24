@@ -24,8 +24,8 @@ AppAsset::addScript($this,'@web/js/at.js');
             $blogo=FVariable::$domainUrl.$model['blogo'];
             ?>
             <style>
-                .d_1_<?=$vv['id']?>{ background: url("<?=$blogo?>") no-repeat;}
-                .d_1_<?=$vv['id']?>:hover{ background: url("<?=$clogo?>") no-repeat;}
+                .d_1_<?=$vv['id']?>{ background: url("<?=$blogo?>") no-repeat;background-size: 100%;}
+                .d_1_<?=$vv['id']?>:hover{ background: url("<?=$clogo?>") no-repeat;background-size: 100%}
             </style>
     <?php
             echo '<a onclik="initClick()" class="d_a d_1_'.$vv['id'].'" data-id="1_'.$vv['id'].'" href="javascript:void(0)"></a>';

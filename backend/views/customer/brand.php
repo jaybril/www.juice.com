@@ -34,7 +34,11 @@
                             echo ' <tr>';
                             echo '<td>'.($k+1).'</td>';
                             echo '<td>'.Tool::echoEncodeString($v->name).'</td>';
-                            echo '<td>'.Tool::echoEncodeString($v->parent->name).'</td>';
+                            $parent='';
+                            if($v->parent){
+                                $parent=$v->parent->name;
+                            }
+                            echo '<td>'.Tool::echoEncodeString($parent,'无').'</td>';
                             echo '<td><a target="_blank" href="'.Tool::echoEncodeString($v->blogo).'"><img width="120" height="60" src="'.Tool::echoEncodeString($v->blogo).'"></a></td>';
                             echo '<td><a target="_blank" href="'.Tool::echoEncodeString($v->clogo).'"><img width="120" height="60" src="'.Tool::echoEncodeString($v->clogo).'"></a></td>';
                             echo '<td><a href="'.Yii::$app->urlManager->createUrl([Variable::$editBrand_url,'id'=>Html::encode($v['id'])]).'"  >编辑</a><a onclick="deleteCus(this,'.Tool::echoEncodeString($v->id).')">删除</a><a href="'.Yii::$app->urlManager->createUrl([Variable::$editPoint_url,'id'=>Html::encode($v['id'])]).'"  >编辑点位信息</a></td>';

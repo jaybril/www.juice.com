@@ -35,6 +35,13 @@ AppAsset::register($this);
 <!--</div>-->
 
 <footer class="footer">
+    <div class="gol_cz_wp">
+        <div class="gol_cz layout1062">
+            <a class="bg" href="<?=FVariable::$aboutJoin_url?>"></a>
+            <div class="hum"></div><div class="hum_hand">
+            </div>
+        </div>
+    </div>
     <div class="gol_contact_wp">
         <div class="gol_contact">
             <div class="ly-lt">

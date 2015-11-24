@@ -11,15 +11,17 @@ use yii\base\Model;
 class MaterialForm extends Model
 {
     public $pcUrl;
+    public $id;
     public $sort;
     public $address;
     public $isShow;
     public $materialId;
+    public $wapUrl;
 
     public function rules()
     {
         return array(
-            [['pcUrl', 'sort','address','isShow','materialId'], 'trim'],
+            [['pcUrl', 'sort','address','isShow','materialId','wapUrl'], 'trim'],
             [
                 ['pcUrl'],
                 'required',
@@ -46,8 +48,8 @@ class MaterialForm extends Model
     public function scenarios()
     {
         return [
-            'banner' =>['pcUrl', 'sort','address','isShow','materialId'],
-            'auth' =>['address','isShow'],
+            'banner' =>['pcUrl', 'sort','address','isShow','materialId','wapUrl'],
+            'auth' =>['address','isShow','sort'],
             'update' =>['pcUrl', 'sort','address','isShow','materialId'],
         ];
     }

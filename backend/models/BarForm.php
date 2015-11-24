@@ -4,21 +4,23 @@ use yii\base\Model;
 
 class BarForm extends Model
 {
+    public $id;
     public $name;
     public $isTop;
     public $link;
     public $parentBar;
     public $count;
+    public $sort;
 
     public function rules()
     {
         return array(
-            [['name', 'isTop','link','parentBar','count'], 'trim'],
-//            [
-//                ['employName'],
-//                'required',
-//                'message'=>'请输入职位名称'
-//            ],
+            [['name', 'isTop','link','parentBar','sort'], 'trim'],
+            [
+                ['name'],
+                'required',
+                'message'=>'请输入导航栏的名称'
+            ],
 //            [
 //                ['address'],
 //                'required',
@@ -45,8 +47,8 @@ class BarForm extends Model
     public function scenarios()
     {
         return [
-            'create' =>['name', 'isTop','link','parentBar','count'],
-            'update' =>['name', 'isTop','link','parentBar','count']
+            'create' =>['name','link','sort'],
+            'update' =>['name','link','sort']
 
         ];
     }

@@ -71,13 +71,50 @@ class MultimediamangerController extends  Controller{
         $form->setScenario('banner');
 
         if($form->load($req->post()) && $form->validate()){
-            if($materialModel->addOneImage(0,$form->materialId,$form->materialId,$form->address,0,$form->isShow,200,200,$form->sort,$form->pcUrl)){
+            if($materialModel->addOneImage(0,$form->materialId,$form->materialId,$form->address,0,$form->isShow,200,200,$form->sort,$form->pcUrl,$form->wapUrl)){
                 Yii::$app->session->setFlash(Variable::$flash_success,'banner添加成功');
                 $this->redirect(Variable::$bannerList_url);
                 return;
             }
         }
         return $this->render(Variable::$addBanner_view,['model'=>$form,'materialModel'=>$materialModel]);
+    }
+    public function actionEditbanner(){
+        $user=new AdminUser();
+        if(!$user->checkUserIsLogin()){
+            $this->redirect(Variable::$home_url);
+            return;
+        }
+        $req=Yii::$app->request;//创建一个请求对象
+        $form = new MaterialForm();
+        $form->setScenario('banner');
+        $id=trim($req->get('id'));
+        if (!is_numeric($id) || $id == 0) {
+            $this->redirect(Variable::$setting_url);
+            return;
+        }
+        $materialModel = Material::findOne($id);
+        $form->materialId=$materialModel->materialId;
+        //修改
+        if($form->load($req->post()) && $form->validate()){
+            $isSuccess = (new Material())->updateMaterial($id,$form->materialId,$form->address,$form->isShow,$form->sort,$form->pcUrl,$form->wapUrl);
+            if($isSuccess){
+                Yii::$app->session->setFlash(Variable::$flash_success,'资料更新成功');
+            }
+            else{
+                Yii::$app->session->setFlash(Variable::$flash_error,'资料更新失败，请刷新重试');
+            }
+        }
+        $materialModel = Material::findOne($id);
+        $form->materialId=$materialModel->materialId;
+        $form->id=$materialModel->id;
+        $form->address=$materialModel->address;
+        $form->isShow=$materialModel->isShow;
+        $form->sort=$materialModel->sort;
+        $form->pcUrl=$materialModel->pcUrl;
+        $form->wapUrl=$materialModel->wapUrl;
+        return $this->render(Variable::$editBanner_view,['model'=>$form,'materialModel'=>$materialModel]);
+
     }
     /*
  *资质认证列表
@@ -125,6 +162,45 @@ class MultimediamangerController extends  Controller{
             }
         }
         return $this->render(Variable::$addAuth_view,['model'=>$form,'materialModel'=>$materialModel]);
+    }
+
+    /*
+     *编辑资质
+     */
+    public function actionEditauth(){
+        $user=new AdminUser();
+        if(!$user->checkUserIsLogin()){
+            $this->redirect(Variable::$home_url);
+            return;
+        }
+        $req=Yii::$app->request;//创建一个请求对象
+        $form = new MaterialForm();
+        $form->setScenario('auth');
+        $id=trim($req->get('id'));
+        if (!is_numeric($id) || $id == 0) {
+            $this->redirect(Variable::$setting_url);
+            return;
+        }
+        $materialModel = Material::findOne($id);
+        $form->materialId=$materialModel->materialId;
+        //修改
+        if($form->load($req->post()) && $form->validate()){
+            $isSuccess = (new Material())->updateMaterial($id,$form->materialId,$form->address,$form->isShow,$form->sort,$form->pcUrl);
+            if($isSuccess){
+                Yii::$app->session->setFlash(Variable::$flash_success,'资料更新成功');
+            }
+            else{
+                Yii::$app->session->setFlash(Variable::$flash_error,'资料更新失败，请刷新重试');
+            }
+        }
+        $materialModel = Material::findOne($id);
+        $form->materialId=$materialModel->materialId;
+        $form->address=$materialModel->address;
+        $form->isShow=$materialModel->isShow;
+        $form->sort=$materialModel->sort;
+        $form->pcUrl=$materialModel->pcUrl;
+        return $this->render(Variable::$editAuth_view,['model'=>$form,'materialModel'=>$materialModel]);
+
     }
     /*
 *删除素材
@@ -429,7 +505,7 @@ class MultimediamangerController extends  Controller{
             else{
                 Yii::$app->session->setFlash(Variable::$flash_error,'资料更新失败，请刷新重试');
             }
-            $this->redirect(Yii::$app->urlManager->createUrl([Variable::$showLiftObject_url,'id'=>$id]));
+//            $this->redirect(Yii::$app->urlManager->createUrl([Variable::$showLiftObject_url,'id'=>$id]));
         }
 
         $articleModel = Article::findOne($id);

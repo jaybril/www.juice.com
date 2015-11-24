@@ -35,7 +35,28 @@
                     <div class="row">
                         <?= $form->field($model, 'pic')->label('请选择图片')->widget('common\widgets\file_upload\FileUpload',['config'=>[]]) ?>
                     </div>
-                    <?=$form->field($model, 'content', ['options' => ['class' => 'form-group col-lg-12  paddingLeft']])->textarea()->label('文字描述');?>
+<!--                    --><?//=$form->field($model, 'content', ['options' => ['class' => 'form-group col-lg-12  paddingLeft']])->textarea()->label('文字描述');?>
+                    <?= $form->field($model,'content')->label('活动规则')->widget(UEditor::className(),[
+                        'clientOptions' => [
+                            //编辑区域大小
+                            'initialFrameHeight' => '200',
+                            //设置语言
+                            'lang' =>'en', //中文为 zh-cn
+                            //定制菜单
+                            'toolbars' => [
+                                [
+                                    'fullscreen', 'source', 'undo', 'redo', '|',
+                                    'fontsize',
+                                    'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'removeformat',
+                                    'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|',
+                                    'forecolor', 'backcolor', '|',
+                                    'lineheight', '|',
+                                    'indent', '|'
+                                ],
+                            ]
+                        ]
+                    ]);
+                    ?>
                     <?php
                     echo   $form->errorSummary($model,['header'=>false,'class' => 'form-group col-lg-7  paddingLeft']);
                     ?>

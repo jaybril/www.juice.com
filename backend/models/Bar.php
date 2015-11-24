@@ -36,19 +36,22 @@ class Bar extends  ActiveRecord{
      *增加一个栏目
      *
      */
-    public function addBar($name,$link,$isTop,$parentBar){
+    public function addBar($name,$link,$isTop,$parentBar,$sort){
         $model=new Bar();
         $model->name=$name;
         $model->link=$link;
         $model->isTop=$isTop;
         $model->parentBar=$parentBar;
+        $model->sort=$sort;
         $model->addTime=date('Y-m-d H:i:s',time());
         $model->addUser=Yii::$app->session->get(Variable::$session_userId_str);
 
         if($model->save()){
-            $parent=Bar::findOne(['id'=>$parentBar]);
-            $parent->count=intval($parent->count+1);
-            $parent->save();
+            if($parentBar) {
+                $parent = Bar::findOne(['id' => $parentBar]);
+                $parent->count = intval($parent->count + 1);
+                $parent->save();
+            }
             return true;
         }
         return false;
@@ -57,13 +60,16 @@ class Bar extends  ActiveRecord{
    *更新一个栏目
    *
    */
-    public function updateBar($id,$name,$link){
+    public function updateBar($id,$name,$link,$sort=""){
         $model=Bar::findOne($id);
         if(!$model){
             return false;
         }
         $model->name=$name;
         $model->link=$link;
+        if($sort) {
+            $model->sort = $sort;
+        }
         $model->addTime=date('Y-m-d H:i:s',time());
         $model->addUser=Yii::$app->session->get(Variable::$session_userId_str);
 

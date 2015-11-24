@@ -92,6 +92,7 @@ class Customer extends  ActiveRecord{
             return false;
         }
         if($model->delete()){
+            Customer::deleteAll(['parentId'=>$id]);
             return true;
         }
         return false;

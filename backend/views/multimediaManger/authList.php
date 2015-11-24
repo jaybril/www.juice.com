@@ -7,7 +7,7 @@
             use common\widgets\Variable;
             use yii\helpers\Html;
             $admin_cur="auth";
-            $this->title='首页banner';
+            $this->title='资质认证';
             ?>
             <?=$this->render(\common\widgets\Variable::$layoutAdminLeftMenu_view,['admin_cur'=>$admin_cur]); ?>
         </div>
@@ -35,7 +35,7 @@
                             echo '<td>'.\common\widgets\GlobalArray::$materialIsShowArray[Tool::echoEncodeString($v->isShow)].'</td>';
                             echo '<td><a target="_blank" href="'.Tool::echoEncodeString($v->address).'"><img width="200" height="100" src="'.Tool::echoEncodeString($v->address).'"></a></td>';
                             echo '<td>'.Tool::echoEncodeString($v->adminUser->username,0).'</td>';
-                            echo '<td><a href="'.Yii::$app->urlManager->createUrl([Variable::$editMaterial_url,'id'=>Html::encode($v['id'])]).'"  >编辑</a><a onclick="deleteMaterial(this,'.Tool::echoEncodeString($v->id).')">删除</a></td>';
+                            echo '<td><a href="'.Yii::$app->urlManager->createUrl([Variable::$editAuth_url,'id'=>Html::encode($v['id'])]).'"  >编辑</a><a onclick="deleteMaterial(this,'.Tool::echoEncodeString($v->id).')">删除</a></td>';
                             echo '</tr>';
                         }
                         ?>

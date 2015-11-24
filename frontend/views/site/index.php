@@ -14,12 +14,13 @@ AppAsset::addScript($this,'@web/js/index.js');
         if($bannerList){
             foreach($bannerList as $k=>$v){
                 $address=FVariable::$domainUrl.$v->address;
+                $wapUrl=FVariable::$domainUrl.$v->wapUrl;
 
                 echo '<div class="swiper-slide swiper-no-swiping">';
                 echo ' <div class="img" style="background: url('.$address.') no-repeat center top;"></div>';
                 echo '<div class="wp">';
                 echo '<div class="txt1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.2s">';
-                echo '<img src="'.$address.'">';
+                echo '<img src="'.$wapUrl.'">';
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';

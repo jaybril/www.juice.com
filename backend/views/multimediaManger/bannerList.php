@@ -37,7 +37,7 @@
                             echo '<td>'.\common\widgets\GlobalArray::$materialIsShowArray[Tool::echoEncodeString($v->isShow)].'</td>';
                             echo '<td><a target="_blank" href="'.Tool::echoEncodeString($v->address).'"><img width="180" height="100" src="'.Tool::echoEncodeString($v->address).'"></a></td>';
                             echo '<td>'.Tool::echoEncodeString($v->sort,0).'</td>';
-                            echo '<td><a href="'.Yii::$app->urlManager->createUrl([Variable::$editMaterial_url,'id'=>Html::encode($v['id'])]).'"  >编辑</a><a onclick="deleteMaterial(this,'.Tool::echoEncodeString($v->id).')">删除</a></td>';
+                            echo '<td><a href="'.Yii::$app->urlManager->createUrl([Variable::$editBanner_url,'id'=>Html::encode($v['id'])]).'"  >编辑</a><a onclick="deleteMaterial(this,'.Tool::echoEncodeString($v->id).')">删除</a></td>';
                             echo '</tr>';
                         }
                         ?>

@@ -14,7 +14,7 @@
         /*
          *添加一个产品图片
          */
-        public function addOneImage($type=0,$materialId,$useId,$address,$isDefault=0,$isShow=0,$width=200,$height=200,$sort,$pcUrl){
+        public function addOneImage($type=0,$materialId,$useId,$address,$isDefault=0,$isShow=0,$width=200,$height=200,$sort,$pcUrl,$wapUrl){
             $model=new Material();
             $model->type=$type;
             $model->materialId=$materialId;
@@ -27,6 +27,7 @@
             $model->height=$height;
             $model->sort=$sort;
             $model->pcUrl=$pcUrl;
+            $model->wapUrl=$wapUrl;
             $model->addTime=date('Y-m-d H:i:s',time());
             $model->addUser=Yii::$app->session->get(Variable::$session_userId_str);
             if($model->save()>0){
@@ -50,7 +51,7 @@
         /*
          *update 素材
          */
-        public function updateMaterial($id,$materialId,$address,$isShow,$sort,$pcUrl){
+        public function updateMaterial($id,$materialId,$address,$isShow,$sort,$pcUrl,$wapUrl=''){
             $model=Material::findOne($id);
             if(!$model){
                 return false;
@@ -60,7 +61,10 @@
 //            $model->isDefault=$isDefault;
             $model->isShow=$isShow;
             $model->sort=$sort;
-            $model->pcUrl=$pcUrl;
+            $model->pcUrl = $pcUrl;
+            if($wapUrl) {
+                $model->wapUrl = $wapUrl;
+            }
             $model->addTime=date('Y-m-d H:i:s',time());
             $model->addUser=Yii::$app->session->get(Variable::$session_userId_str);
             if($model->save()){

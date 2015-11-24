@@ -53,7 +53,6 @@
                     ?>
                     <div class="form-group col-lg-12">
                         <?= Html::submitButton('确定', ['class' => 'btn btn-primary', 'name' => 'add-activity-button','error'=>'ss']) ?>
-                        <?= Html::resetButton('重置', ['class' => 'btn btn-primary', 'name' => 'reset-button','error'=>'ss']) ?>
                         <a class="btn-cancel" href="<?php echo Variable::$liftObject_url ;?>">返回</a>
                     </div>
                     <?php ActiveForm::end(); ?>

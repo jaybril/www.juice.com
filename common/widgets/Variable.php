@@ -34,7 +34,9 @@
      public static $materialManger_url='/multimediamanger/materialmanger';
      public static $bannerList_url='/multimediamanger/bannerlist';
      public static $addBanner_url='/multimediamanger/addbanner';
+     public static $editBanner_url='/multimediamanger/editbanner';
      public static $authList_url='/multimediamanger/authlist';
+     public static $editAuth_url='/multimediamanger/editauth';
      public static $addAuth_url='/multimediamanger/addauth';
      public static $editMaterial_url='/multimediamanger/editmaterial';
      public static $commentManger_url='/comment/index';
@@ -57,6 +59,8 @@
      public static $addEmploy_url='/employ/addemploy';
      public static $editEmploy_url='/employ/editemploy';
      public static $barIndex_url='/bar/index';
+     public static $addBarCat_url='/bar/addbarcat';
+     public static $editBarCat_url='/bar/editbarcat';
      public static $editBarList_url='/bar/editbarlist';
      public static $serviceIndex_url='/service/index';
      public static $addService_url='/service/addservice';
@@ -100,7 +104,9 @@
      public static $materialManger_view='/multimediaManger/materialManger';
      public static $bannerList_view='/multimediaManger/bannerList';
      public static $addBanner_view='/multimediaManger/addBanner';
+     public static $editBanner_view='/multimediaManger/editBanner';
      public static $authList_view='/multimediaManger/authList';
+     public static $editAuth_view='/multimediaManger/editAuth';
      public static $addAuth_view='/multimediaManger/addAuth';
      public static $editMaterial_view='/multimediaManger/editMaterial';
      public static $layoutMaterialMenu_view='/layouts/materialMenu';
@@ -121,6 +127,8 @@
      public static $addEmploy_view='/employ/addEmploy';
      public static $editEmploy_view='/employ/editEmploy';
      public static $barIndex_view='/bar/index';
+     public static $addBarCat_view='/bar/addBarCat';
+     public static $editBarCat_view='/bar/editBarCat';
      public static $editBarList_view='/bar/editBarList';
      public static $serviceIndex_view='/service/index';
      public static $addService_view='/service/addService';
