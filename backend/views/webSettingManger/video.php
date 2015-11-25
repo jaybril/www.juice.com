@@ -19,12 +19,13 @@
             ?>
             <div class="" id="seller-fixed">
                 <div class="row dis-con">
+<!--                    <p style="color: red;font-size: 18px">系统检测：This browser does not support HTML5 video!</p>-->
                     <div>
 
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">本地上传</a></li>
-                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">网络视频源 </a></li>
+<!--                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">网络视频源 </a></li>-->
                         </ul>
 
                         <!-- Tab panes -->
@@ -35,42 +36,43 @@
                                 </form>
 
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="profile">
-                                <div id="barform-name" class="multiple-input">
-                                    <table class="multiple-input-list table table-condensed" id="rowTable">
-                                        <thead>
-                                        <tr><th class="list-cell__user_id">网络链接</th>
-                                            <th class="list-cell__button"></th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <input type="hidden" value="1020" id="barId">
-                                        <tr class="list__item">
-                                            <td class="list_name">
-                                                <div class="form-group">
-                                                    <input type="text" id="videoLink" class="input-priority col-lg-3 form-control barName" value="<?=$video->address?>">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="btn btn btn-success" onclick="submitVideo()">确定</div>
-                                                <!--                                                <div class="btn btn btn-cancel" style="margin-left: 4px;" onclick="deleteOnRowForCus(this,1020)">删除</div>-->
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+<!--                            <div role="tabpanel" class="tab-pane" id="profile">-->
+<!--                                <div id="barform-name" class="multiple-input">-->
+<!--                                    <table class="multiple-input-list table table-condensed" id="rowTable">-->
+<!--                                        <thead>-->
+<!--                                        <tr><th class="list-cell__user_id">网络链接</th>-->
+<!--                                            <th class="list-cell__button"></th>-->
+<!--                                        </tr>-->
+<!--                                        </thead>-->
+<!--                                        <tbody>-->
+<!--                                        <input type="hidden" value="1020" id="barId">-->
+<!--                                        <tr class="list__item">-->
+<!--                                            <td class="list_name">-->
+<!--                                                <div class="form-group">-->
+<!--                                                    <input type="text" id="videoLink" class="input-priority col-lg-3 form-control barName" value="=$video->address">-->
+<!--                                                </div>-->
+<!--                                            </td>-->
+<!--                                            <td>-->
+<!--                                                <div class="btn btn btn-success" onclick="submitVideo()">确定</div>-->
+<!--                                                <!--                                                <div class="btn btn btn-cancel" style="margin-left: 4px;" onclick="deleteOnRowForCus(this,1020)">删除</div>-->
+<!--                                            </td>-->
+<!--                                        </tr>-->
+<!--                                        </tbody>-->
+<!--                                    </table>-->
+<!--                                </div>-->
+<!--                            </div>-->
                         </div>
 
                     </div>
 
                 </div>
-                <div class="row">
+                <div class="row "style="margin-top: 30px">
                     <p>提示：</p>
-                    <p>1）考虑到浏览器兼容性问题，请最好选择mp4、mov、mpeg等格式的视频上传</p>
-                    <p>2）上传本地视频或者添加的网络视频源在下面的视频栏没有播放，则说明本地视频或者网络视频源不存在，请重新上传</p>
-                    <p>3）本地上传的视频文件不能超过20M</p>
-                    <p>4）系统配置需要把php.ini里的upload_max_filesize</p>
+                    <p>1）考虑到浏览器兼容性问题，请最好选择<b style="color: red">mp4、mov、mpeg等格式的视频上传</b></p>
+                    <p>2）本地上传的视频文件不能超过<b style="color: red">50M</b></p>
+                    <p>3）上传本地视频在下面的视频栏没有播放，则说明本地视文件格式不符合或者超出了50M，请重新上传</p>
+<!--                    <p>2）上传本地视频或者添加的网络视频源在下面的视频栏没有播放，则说明本地视频或者网络视频源不存在，请重新上传</p>-->
+                    <p>4）系统配置需要把php.ini里的upload_max_filesize=50</p>
                 </div>
                 <div class="row" style="margin-top: 50px">
                     <div class="col-sm-3">
@@ -86,6 +88,7 @@
                             <source src="<?=$video->address?>" type='video/ogg' />
                             <source src="<?=$video->address?>" type='video/mov' />
                             <source src="<?=$video->address?>" type='video/flv' />
+                            <object data="<?=$video->address?>">
                             <track kind="captions" src="/video/demo.captions.vtt" srclang="en" label="English"></track>
                             <track kind="subtitles" src="/video/demo.captions.vtt" srclang="en" label="English"></track>
                         </video>
