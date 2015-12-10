@@ -45,7 +45,6 @@ AppAsset::addScript($this,'@web/js/pro.js');
                             ?>
                         </div>
                     </div>
-
                     <div class="swiper-container gallery-thumbs">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">

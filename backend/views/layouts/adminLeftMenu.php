@@ -16,7 +16,8 @@
             <li <?php echo $admin_cur=="employ" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$employIndex_url?>">招聘管理</a></li>
             <li <?php echo $admin_cur=="bar" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$barIndex_url?>">导航栏管理</a></li>
             <li <?php echo $admin_cur=="service" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$serviceIndex_url?>">服务项管理</a></li>
-            <li <?php echo $admin_cur=="video" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$video_url?>">视频管理</a></li>
+            <li <?php echo $admin_cur=="video" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$video_url?>">产品视频管理</a></li>
+            <li <?php echo $admin_cur=="proBanner" ? "class='active'" : "" ?>><a href="<?php echo \common\widgets\Variable::$proBanner_url?>">产品轮播图管理</a></li>
 
         </ul>
     </li>

@@ -577,7 +577,7 @@ class MultimediamangerController extends  Controller{
         return $this->render(Variable::$editLiftObject_view,['model'=>$form,'articleModel'=>$articleModel]);
     }
     /*
- *展示文章
+ *展示生活方式
  */
     public function actionShowliftobject(){
         $user=new AdminUser();
@@ -592,6 +592,92 @@ class MultimediamangerController extends  Controller{
             return;
         }
         return $this->render(Variable::$showLiftObject_view,['model' => (new Article())->findOne($id)]);
+    }
+    /*
+ *产品轮播图列表
+ */
+    public function actionProbanner(){
+        $user=new AdminUser();
+        if(!$user->checkUserIsLogin()){
+            $this->redirect(Variable::$home_url);
+            return;
+        }
+        $query = Material::find()->where(['materialId'=>Variable::$materialId_proBanner]);
+        $pagination = new Pagination([
+            'defaultPageSize' => 5,
+            'totalCount' => $query->count(),
+        ]);
+        $countries = $query->orderBy('addTime DESC')->offset($pagination->offset)->limit($pagination->limit)->all();
+        return $this->render(Variable::$proBanner_view,[
+            'countries' => $countries,
+            'pagination' => $pagination,
+        ]);
+
+    }
+    /*
+     *添加产品轮播图
+     *
+     */
+    public function actionAddprobanner(){
+        $user=new AdminUser();
+        if(!$user->checkUserIsLogin()){
+            $this->redirect(Variable::$home_url);
+            return;
+        }
+        $req=Yii::$app->request;//创建一个请求对象
+        $form = new MaterialForm();
+        $form->materialId=Variable::$materialId_proBanner;
+        $materialModel=new Material();
+        //添加
+        $form->setScenario('probanner');
+
+        if($form->load($req->post()) && $form->validate()){
+            if($materialModel->addOneImage(0,$form->materialId,$form->materialId,$form->address,0,$form->isShow,200,200,$form->sort,$form->pcUrl,$form->wapUrl)){
+                Yii::$app->session->setFlash(Variable::$flash_success,'添加成功');
+                $this->redirect(Variable::$proBanner_url);
+                return;
+            }
+        }
+        return $this->render(Variable::$addProBanner_view,['model'=>$form,'materialModel'=>$materialModel]);
+    }
+    public function actionEditprobanner(){
+        $user=new AdminUser();
+        if(!$user->checkUserIsLogin()){
+            $this->redirect(Variable::$home_url);
+            return;
+        }
+        $req=Yii::$app->request;//创建一个请求对象
+        $form = new MaterialForm();
+        $form->setScenario('probanner');
+        $id=trim($req->get('id'));
+        if (!is_numeric($id) || $id == 0) {
+            $this->redirect(Variable::$setting_url);
+            return;
+        }
+        $materialModel = Material::findOne($id);
+        $form->materialId=$materialModel->materialId;
+        //修改
+        if($form->load($req->post()) && $form->validate()){
+            $isSuccess = (new Material())->updateMaterial($id,$form->materialId,$form->address,$form->isShow,$form->sort,$form->pcUrl,$form->wapUrl);
+            if($isSuccess){
+                Yii::$app->session->setFlash(Variable::$flash_success,'资料更新成功');
+            }
+            else{
+                Yii::$app->session->setFlash(Variable::$flash_error,'资料更新失败，请刷新重试');
+            }
+            $this->redirect(Variable::$proBanner_url);
+            return;
+        }
+        $materialModel = Material::findOne($id);
+        $form->materialId=$materialModel->materialId;
+        $form->id=$materialModel->id;
+        $form->address=$materialModel->address;
+        $form->isShow=$materialModel->isShow;
+        $form->sort=$materialModel->sort;
+        $form->pcUrl=$materialModel->pcUrl;
+        $form->wapUrl=$materialModel->wapUrl;
+        return $this->render(Variable::$editProBanner_view,['model'=>$form,'materialModel'=>$materialModel]);
+
     }
 
 }

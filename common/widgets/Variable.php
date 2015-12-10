@@ -47,6 +47,9 @@
      public static $setting_url='/websettingmanger/index';
      public static $area_url='/websettingmanger/area';
      public static $video_url='/websettingmanger/video';
+     public static $proBanner_url='/multimediamanger/probanner';
+     public static $addProBanner_url='/multimediamanger/addprobanner';
+     public static $editProBanner_url='/multimediamanger/editprobanner';
      public static $joinList_url='/websettingmanger/joinlist';
      public static $editJoin_url='/websettingmanger/editjoin';
      public static $addCustomer_url='/usermanger/addcustomer';
@@ -118,6 +121,9 @@
      public static $setting_view='/webSettingManger/setting';
      public static $area_view='/webSettingManger/area';
      public static $video_view='/webSettingManger/video';
+     public static $proBanner_view='/multimediaManger/proBanner';
+     public static $addProBanner_view='/multimediaManger/addProBanner';
+     public static $editProBanner_view='/multimediaManger/editProBanner';
      public static $joinList_view='/webSettingManger/joinList';
      public static $editJoin_view='/webSettingManger/editJoin';
      public static $addSeller_view='/productManger/addSeller';
@@ -168,6 +174,7 @@
      public static $materialId_auth=1002;//资质认证
      public static $materialId_productVideo=1003;//产品视频
      public static $materialId_placeImg=1004;//点位图片
+     public static $materialId_proBanner=1005;//产品轮播图
      //文章类型
      public static $articleCat_type_news=1004;//新闻
      public static $articleCat_type_nutrition=1005;//橙子营养

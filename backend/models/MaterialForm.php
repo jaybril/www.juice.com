@@ -51,6 +51,7 @@ class MaterialForm extends Model
             'banner' =>['pcUrl', 'sort','address','isShow','materialId','wapUrl'],
             'auth' =>['address','isShow','sort','pcUrl'],
             'update' =>['pcUrl', 'sort','address','isShow','materialId'],
+            'probanner' =>[ 'sort','address','isShow','materialId'],
         ];
     }
 }

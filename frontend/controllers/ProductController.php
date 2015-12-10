@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function actionIndex()
     {
-        $bannerList=Material::find()->where(['materialId'=>Variable::$materialId_banner])->orderBy('sort ASC')->all();
+        $bannerList=Material::find()->where(['materialId'=>Variable::$materialId_proBanner])->orderBy('sort ASC')->all();
         $model=Material::findOne(['materialId'=>Variable::$materialId_productVideo]);
         $list=Material::findAll(['materialId'=>Variable::$materialId_auth]);
 
