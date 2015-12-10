@@ -783,3 +783,30 @@ var submitVideo= function () {
     });
 
 }
+
+/*更新文章置顶状态*/
+var updateArticleTop=function(obj,status,id){
+        if(!parseInt(id)){
+            layer.msg('文章ID不存在，出错啦~',{icon:2});
+            return;
+        }
+        var index = layer.load(1, {shade: [0.1,'#fff']});
+        $.post('/multimediamanger/updatearticletop',{'status':status,'id':id},function(json){
+            if(json){
+                layer.closeAll();
+                if(json.status=='_0000'){
+                    var arr=json.message.split('-');
+                    if(arr.length!=2){
+                        layer.msg('出错啦，请刷新重试',{icon: 1});
+                        return;
+                    }
+                    $(obj).text(arr[1]);
+                    $(obj).attr('onclick','updateArticleTop(this,'+arr[0]+','+id+')');
+                    layer.msg('状态更新成功',{icon: 1});
+                    return;
+                }
+                layer.msg(json.message,{icon: 1});
+                return;
+            }
+        },'json');
+}

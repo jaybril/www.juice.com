@@ -9,19 +9,19 @@ AppAsset::addCss($this,'@web/css/serve.css');
     a {
         text-decoration: none;
         color: #201F1F;
-        cursor:move;
+        cursor:pointer;
     }
     a:hover {
         text-decoration: none;
         color: #201F1F;
-        cursor:move;
+        cursor:pointer;
     }
 </style>
 <div class="content_pg layout1190">
     <?php
     use common\widgets\FVariable;
     foreach($list as $k=>$v){
-        echo '<a href="#'.$v->keywords.'"> <div class="box">';
+        echo '<div id="'.$v->keywords.'"> <div class="box">';
         $pic=FVariable::$domainUrl.$v->pic;
         echo ' <div class="img"><img src="'.$pic.'"></div>';
         echo ' <div class="ly-rt">';
@@ -29,7 +29,7 @@ AppAsset::addCss($this,'@web/css/serve.css');
         echo '<p style="color: #000000">'.$v->content.'</p>';
         echo '</div>';
         echo '</div>';
-        echo '</a>';
+        echo '</div>';
     }
     ?>
 </div>

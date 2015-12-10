@@ -11,7 +11,9 @@ use backend\models\ArticleCategory;
 use backend\models\ArticleForm;
 use backend\models\Material;
 use backend\models\MaterialForm;
+use backend\models\Product;
 use common\widgets\FVariable;
+use common\widgets\GlobalArray;
 use Yii;
 use backend\models\MaterialCategory;
 use yii\web\Controller;
@@ -434,6 +436,65 @@ class MultimediamangerController extends  Controller{
         return $this->render(Variable::$addArticle_view,['model'=>$form,'articleModel'=>$articleModel]);
     }
     /*
+* 编辑文章
+*/
+    public function actionEditarticle(){
+        $user=new AdminUser();
+        if(!$user->checkUserIsLogin()){
+            $this->redirect(Variable::$home_url);
+            return;
+        }
+        $req=Yii::$app->request;//创建一个请求对象
+        $form = new ArticleForm();
+        $form->setScenario('update');
+        $id=trim($req->get('id'));
+        if (!is_numeric($id) || $id == 0) {
+            $this->redirect(Variable::$articleManger_url);
+            return;
+        }
+        $articleModel = Article::findOne($id);
+        $form->categoryId=$articleModel->categoryId;
+        //修改
+        if($form->load($req->post()) && $form->validate()){
+            $isSuccess = (new Article())->updateArticleByNews($id,$form->title,$form->isTop,$form->description,$form->pic,$form->isIndexShow,$form->content);
+            if($isSuccess){
+                Yii::$app->session->setFlash(Variable::$flash_success,'文章更新成功');
+            }
+            else{
+                Yii::$app->session->setFlash(Variable::$flash_error,'文章更新失败，请刷新重试');
+            }
+            $this->redirect(Variable::$articleManger_url);
+            return;
+        }
+
+        $articleModel = Article::findOne($id);
+        $form->content=$articleModel->content;
+        $form->isTop=$articleModel->isTop;
+        $form->title=$articleModel->title;
+        $form->isIndexShow=$articleModel->isIndexShow;
+        $form->pic=$articleModel->pic;
+        $form->id=$articleModel->id;
+        return $this->render(Variable::$editArticle_view,['model'=>$form,'articleModel'=>$articleModel]);
+    }
+    /*
+ *更新文章置顶状态
+ */
+    public function actionUpdatearticletop(){
+        $id=trim(Yii::$app->request->post('id'));
+        $status=trim(Yii::$app->request->post('status'));
+        if(!isset($id) || empty($id)){
+            JsonParser::GenerateJsonResult('_0001','ID不能为空');
+            exit;
+        }
+        $isUpdate=(new Article())->updateArticleTop($id,$status);
+//        if($isUpdate){
+            JsonParser::GenerateJsonResult('_0000',$isUpdate.'-'.GlobalArray::$isTopArray[$isUpdate]);
+            exit;
+//        }
+//        JsonParser::GenerateJsonResult('_0002','产品状态更新失败，请刷新重试');
+//        exit;
+    }
+    /*
      *展示文章
      */
     public function actionShowarticle(){
@@ -532,4 +593,5 @@ class MultimediamangerController extends  Controller{
         }
         return $this->render(Variable::$showLiftObject_view,['model' => (new Article())->findOne($id)]);
     }
+
 }

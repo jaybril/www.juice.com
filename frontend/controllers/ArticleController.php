@@ -22,7 +22,7 @@ class ArticleController extends Controller
             'defaultPageSize' => 3,
             'totalCount' => $query->count(),
         ]);
-        $countries = $query->orderBy('addTime DESC')->offset($pagination->offset)->limit($pagination->limit)->all();
+        $countries = $query->orderBy('isTop DESC,addTime DESC')->offset($pagination->offset)->limit($pagination->limit)->all();
         return $this->render(FVariable::$articleIndex_view,[
             'countries' => $countries,
             'pagination' => $pagination,

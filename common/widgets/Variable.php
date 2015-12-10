@@ -27,6 +27,7 @@
      public static $articleManger_url='/multimediamanger/articlemanger';
      public static $articleCat_url='/multimediamanger/articlcat';
      public static $addArticle_url='/multimediamanger/addarticle';
+     public static $editArticle_url='/multimediamanger/editarticle';
      public static $showArticle_url='/multimediamanger/showarticle';
      public static $liftObject_url='/multimediamanger/liftobject';
      public static $editLiftObject_url='/multimediamanger/editliftobject';
@@ -97,6 +98,7 @@
      public static $articleManger_view='/multimediaManger/articleManger';
      public static $articleCat_view='/multimediaManger/articleCat';
      public static $addArticle_view='/multimediaManger/addArticle';
+     public static $editArticle_view='/multimediaManger/editArticle';
      public static $showArticle_view='/multimediaManger/showArticle';
      public static $liftObject_view='/multimediaManger/liftObject';
      public static $editLiftObject_view='/multimediaManger/editLiftObject';

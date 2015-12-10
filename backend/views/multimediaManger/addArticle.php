@@ -41,17 +41,19 @@
                             //定制菜单
                             'toolbars' => [
                                 [
-                                    'fullscreen', 'source', '|', 'undo', 'redo', '|',
-                                    'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
+                                    'fullscreen', 'source', '|',
+                                    'undo', 'redo', '|',
+                                    'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|',
+                                    'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
                                     'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
                                     'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
                                     'directionalityltr', 'directionalityrtl', 'indent', '|',
                                     'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
                                     'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
-                                    'simpleupload', 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'map', 'gmap', 'insertframe', 'insertcode', 'webapp', 'pagebreak', 'template', 'background', '|',
-                                    'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
-                                    'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',
-                                    'print', 'preview', 'searchreplace', 'help', 'drafts'
+                                    'simpleupload', 'emotion', 'scrawl', 'attachment', 'map', 'gmap', 'insertframe', 'pagebreak', 'background', '|',
+                                    'horizontal', 'date', 'time', 'spechars', 'snapscreen', '|',
+                                    'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', '|',
+                                    'print', 'preview'
                                 ],
                             ]
                         ]
@@ -62,7 +64,6 @@
                     ?>
                     <div class="form-group col-lg-12">
                         <?= Html::submitButton('确定', ['class' => 'btn btn-primary', 'name' => 'add-activity-button','error'=>'ss']) ?>
-                        <?= Html::resetButton('重置', ['class' => 'btn btn-primary', 'name' => 'reset-button','error'=>'ss']) ?>
                         <a class="btn-cancel" href="<?php echo \common\widgets\Variable::$activityList_url ;?>">返回</a>
                     </div>
                     <?php ActiveForm::end(); ?>

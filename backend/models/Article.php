@@ -62,7 +62,54 @@
             return false;
         }
         /*
-         * 更新文章内容
+       * 更新文章置顶状态
+      */
+        public function updateArticleTop($id,$isTop){
+            $model=Article::findOne($id);
+            if(!$model){
+                return false;
+            }
+            switch($isTop){
+                case 0:
+                    $model->isTop=1;
+                    break;
+                case 1:
+                    $model->isTop=0;
+                    break;
+            }
+
+            $model->addTime=date('Y-m-d H:i:s',time());
+            $model->addUser=Yii::$app->session->get(Variable::$session_userId_str);
+            if($model->save()){
+                return $model->isTop;
+            }
+            return false;
+
+        }
+        /*
+         * 更新文章内容(新闻)
+         */
+        public function updateArticleByNews($id,$title,$isTop,$description,$pic,$isIndexShow,$content){
+            $model=Article::findOne($id);
+            if(!$model){
+                return false;
+            }
+            $model->title=$title;
+            $model->content=$content;
+            $model->isTop=$isTop;
+            $model->description=$description;
+            $model->pic=$pic;
+            $model->isIndexShow=$isIndexShow;
+            $model->addTime=date('Y-m-d H:i:s',time());
+            $model->addUser=Yii::$app->session->get(Variable::$session_userId_str);
+            if($model->save()){
+                return true;
+            }
+            return false;
+
+        }
+        /*
+         * 更新文章内容(鲜城生活)
          */
         public function updateArticleContent($id,$content){
             $model=Article::findOne($id);

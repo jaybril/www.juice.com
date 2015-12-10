@@ -103,9 +103,11 @@ class ServiceController extends  Controller{
             if($isSuccess){
                 Yii::$app->session->setFlash(Variable::$flash_success,'服务项修改成功');
                 $this->redirect(Variable::$serviceIndex_url);
+                return;
             }
             else{
                 Yii::$app->session->setFlash(Variable::$flash_error,'服务项修改失败，请重试');
+                return;
             }
         }
         $articleModel = Article::findOne($id);

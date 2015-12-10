@@ -7,7 +7,7 @@ AppAsset::addScript($this,'@web/js/pro.js');
 <?=$this->render('/layouts/tabbar',['cur'=>'pro'])?>
 <div class="swiper-container banner_max" id="banner_max">
     <div class="swiper-wrapper">
-        <div class="swiper-slide">
+        <div id="video" class="swiper-slide">
             <div class="banner_1_wp">
                 <img src="/images/com/arr.png" class="img_arr pt-page-moveIconUp">
                 <div class="banner_1 layout1062">
@@ -15,12 +15,6 @@ AppAsset::addScript($this,'@web/js/pro.js');
                     <div class="border"></div>
                     <div class="swiper-container gallery">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="tit">橙汁先生全新功能产品首登万达</div>
-                                <div class="img">
-                                    <img src="/images/local/v.jpg" />
-                                </div>
-                            </div>
                             <div class="swiper-slide">
                                 <div class="tit">橙汁先生全新功能产品首登万达222</div>
                                 <div class="img">
@@ -39,38 +33,34 @@ AppAsset::addScript($this,'@web/js/pro.js');
                                         <track kind="captions" src="/video/demo.captions.vtt" srclang="en" label="English"></track>
                                         <track kind="subtitles" src="/video/demo.captions.vtt" srclang="en" label="English"></track>
                                     </video>
-<!--                                    <script language="JavaScript">-->
-<!--                                        var n = '<iframe height=100% width=100% src="http://player.youku.com/embed/XMTM0NjE5NDg3Ng==" frameborder=0 allowfullscreen ></iframe>';-->
-<!--                                        var moz = '<embed src="--><?//=\common\widgets\FVariable::$domainUrl.$model->address?>//" wmode="transparent" allowFullScreen="true" quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>';
-//
-<!--//                                        if(isMozilla=navigator.userAgent.indexOf("Gecko/")>0){-->
-<!--//                                            document.write(moz)-->
-<!--//                                        }else{-->
-<!--//                                            document.write(n)-->
-<!--//                                        }-->
-<!--//                                    </script>-->
+
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="tit">橙汁先生全新功能产品首登万达3333</div>
-                                <div class="img">
-                                    <img src="/images/local/v.jpg" />
-                                </div>
-                            </div>
+                            <?php
+                            foreach($bannerList as $k=>$v){
+                                echo ' <div class="swiper-slide">';
+                                echo '<img src="'.\common\widgets\FVariable::$domainUrl. $v->address.'" />';
+                                echo '</div>';
+                            }
+                            ?>
                         </div>
                     </div>
 
                     <div class="swiper-container gallery-thumbs">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="/images/local/v_small.jpg" />
+                                <div class="tit">橙汁先生全新功能产品首登万达</div>
+                                <div class="img">
+                                    <img src="/images/local/v.jpg" />
+                                </div>
                             </div>
-                            <div class="swiper-slide">
-                                <img src="/images/local/v_small.jpg" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="/images/local/v_small.jpg" />
-                            </div>
+                            <?php
+                            foreach($bannerList as $k=>$v){
+                                echo ' <div class="swiper-slide">';
+                              echo '<img src="'.\common\widgets\FVariable::$domainUrl. $v->address.'" />';
+                                echo '</div>';
+                            }
+                            ?>
                         </div>
                         <div class="swiper-button-next swiper-button-white"></div>
                         <div class="swiper-button-prev swiper-button-white"></div>
@@ -78,25 +68,26 @@ AppAsset::addScript($this,'@web/js/pro.js');
                 </div>
             </div>
         </div>
-        <div class="swiper-slide">
+        <div id="parm" class="swiper-slide">
             <div class="banner_2_wp">
                 <img src="/images/com/arr.png" class="img_arr pt-page-moveIconUp">
                 <div class="layout1190">
-                    <img class="img" src="/images/pro/b2-img.png" />
+                    <img class="img" src="/images/pro/b2-1-img.png" />
                     <div class="btn_wp">
-                        <div class="btn cur" data-src="/images/pro/b2-img.png">
-                            <img class="big" src="/images/pro/1.png" />
-                            <img class="small" src="/images/pro/1_s.png" />
-                        </div>
-                        <div class="btn" data-src="/images/pro/b2-1-img.png">
+
+                        <div class="btn cur" data-src="/images/pro/b2-1-img.png">
                             <img class="big" src="/images/pro/2.png" />
                             <img class="small" src="/images/pro/2_s.png" />
+                        </div>
+                        <div class="btn " data-src="/images/pro/b2-img.png">
+                            <img class="big" src="/images/pro/1.png" />
+                            <img class="small" src="/images/pro/1_s.png" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="swiper-slide">
+        <div id="advance" class="swiper-slide">
             <img src="/images/com/arr.png" class="img_arr pt-page-moveIconUp">
             <div class="swiper-container banner_3_wp">
                 <div class="swiper-wrapper">
@@ -127,7 +118,7 @@ AppAsset::addScript($this,'@web/js/pro.js');
                 </div>
             </div>
         </div>
-        <div class="swiper-slide">
+        <div id="auth" class="swiper-slide">
             <div class="banner_4_wp">
                 <ul class="myroundabout">
                     <?php

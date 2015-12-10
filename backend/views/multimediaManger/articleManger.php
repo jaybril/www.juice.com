@@ -56,9 +56,9 @@
 //                                echo '<td>'.Tool::echoEncodeString($v->articleCat->name).'</td>';
                                 echo '<td>'.Tool::echoEncodeString($v->adminUser->username).'</td>';
                                 echo '<td>'.Tool::echoEncodeString($v->publishTime).'</td>';
-                                echo '<td>'.\common\widgets\GlobalArray::$isTopArray[Tool::echoEncodeString($v->isTop,0)].'</td>';
+                                echo '<td><a class="btn1" onclick="updateArticleTop(this,'.$v['isTop'].','.$v['id'].')">'.\common\widgets\GlobalArray::$isTopArray[Tool::echoEncodeString($v->isTop,0)].'</a></td>';
                                 echo '<td>'.\common\widgets\GlobalArray::$articleIsIndexShowArr[Tool::echoEncodeString($v->isIndexShow,0)].'</td>';
-                                echo '<td><a href="'.Yii::$app->urlManager->createUrl([Variable::$showArticle_url,'id'=>Html::encode($v['id'])]).'"  >查看</a><a onclick="deleteArticle(this,'.Tool::echoEncodeString($v->id).')">删除</a></td>';
+                                echo '<td><a href="'.Yii::$app->urlManager->createUrl([Variable::$showArticle_url,'id'=>Html::encode($v['id'])]).'"  >查看</a><a href="'.Yii::$app->urlManager->createUrl([Variable::$editArticle_url,'id'=>Html::encode($v['id'])]).'">编辑</a><a onclick="deleteArticle(this,'.Tool::echoEncodeString($v->id).')">删除</a></td>';
                                 echo '</tr>';
                             }
                         ?>

@@ -10,6 +10,7 @@
 
     class ArticleForm extends Model
     {
+        public $id;
         public $title;
         public $keywords;
         public $author;
@@ -56,11 +57,11 @@
                     'required',
                     'message'=>'请选择是否置顶'
                 ],
-                [
-                    ['description'],
-                    'required',
-                    'message'=>'请选择简介'
-                ],
+//                [
+//                    ['description'],
+//                    'required',
+//                    'message'=>'请填写文章简介'
+//                ],
                 [
                     ['isIndexShow'],
                     'required',
